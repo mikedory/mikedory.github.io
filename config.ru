@@ -20,9 +20,9 @@ require 'rack/contrib'
 use Rack::ETag
 
 map "/projects" do
-  run Rack::File.new('./projects')
+  run Rack::File.new('/projects')
 end
 
 map "/" do
-  run Rack::File.new('./public')
+  run Rack::File.new('/public/')
 end
