@@ -15,7 +15,7 @@
 
 require 'rubygems'
 require 'rack'
-# require 'rack/contrib'
+require 'rack/contrib'
 
 use Rack::ETag
 
