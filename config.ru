@@ -27,10 +27,10 @@
 #   run Rack::File.new('./public')
 # end
 
-# require 'bundler'
-# Bundler.setup
-# Bundler.require
-# require 'rack/contrib/try_static'
+require 'bundler'
+Bundler.setup
+Bundler.require
+require 'rack/contrib/try_static'
 
 use Rack::TryStatic, 
     :root => "public",  # static files root dir
