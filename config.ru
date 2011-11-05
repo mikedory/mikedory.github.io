@@ -27,9 +27,7 @@
 #   run Rack::File.new('./public')
 # end
 
-require 'bundler'
-Bundler.setup
-Bundler.require
+require 'rack'
 require 'rack/contrib/try_static'
 
 use Rack::TryStatic, 
