@@ -7,4 +7,4 @@ use Rack::TryStatic,
     :try => ['.html', 'index.html', '/index.html'] # try these postfixes sequentially
 
 # otherwise 404 NotFound
-run lambda { [404, {'Content-Type' => 'text/html'}, ['whoops! Not Found']]}
+run lambda { [404, {'Content-Type' => 'text/html'}, ['Not Found. =(']]}
