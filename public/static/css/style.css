@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'FranchiseRegular';
-    src: url('/fonts/franchise-bold-webfont.eot');
-    src: url('/fonts/franchise-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/franchise-bold-webfont.woff') format('woff'),
-         url('/fonts/franchise-bold-webfont.ttf') format('truetype'),
-         url('/fonts/franchise-bold-webfont.svg#FranchiseRegular') format('svg');
+    src: url('/static/fonts/franchise-bold-webfont.eot');
+    src: url('/static/fonts/franchise-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/franchise-bold-webfont.woff') format('woff'),
+         url('/static/fonts/franchise-bold-webfont.ttf') format('truetype'),
+         url('/static/fonts/franchise-bold-webfont.svg#FranchiseRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
