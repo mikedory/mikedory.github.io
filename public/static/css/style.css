@@ -24,6 +24,13 @@ body{
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#bdd2e1', EndColorStr='#f0f2f2');
 }
 
+.huge {
+	font-size: 300px;
+	line-height: 1em;
+	padding: 0;
+	letter-spacing: -.02em;
+	overflow: hidden;
+}
 
 
 #main {
