@@ -11,7 +11,7 @@
 
 body{
 	font-family: 'FranchiseRegular';
-
+	font-size: 24px;
 	background-color: #bdd2e1;
 	background-image: -webkit-gradient(linear, left center, right center, from(rgb(189, 210, 225)), to(rgb(240, 242, 242)));
 	background-image: -webkit-linear-gradient(left, rgb(189, 210, 225), rgb(240, 242, 242));
@@ -31,12 +31,12 @@ body{
 	#main h1 {
 		color: #999;
 		font-style: italic;
-		font-family: 'Mate', serif;
+		/*font-family: 'Mate', serif;*/
 	}
 
 	#main p {
 		color: #555;
-		font-family: 'Mate', serif;
+		/*font-family: 'Mate', serif;*/
 	}
 
 #container
