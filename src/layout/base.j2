@@ -101,13 +101,15 @@
 		</div>
 		{% endblock main %}
 
-	{% endblock container %}
-	</div> <!-- end of container -->
 
+	<hr>
 
 	<footer>
 			Footer lol.
 	</footer>
+
+	{% endblock container %}
+	</div> <!-- end of container -->
 
 	{% endblock content%}
 
@@ -115,9 +117,9 @@
 
 		{% block jquery %}
 			{% if site.config.mode == "production" %}
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
 			{% endif %}
-		<script>window.jQuery || document.write('<script src="{{ media_url('js/libs/jquery-1.6.2.min.js') }}">\x3C/script>')</script>
+		<script>window.jQuery || document.write('<script src="{{ media_url('js/libs/jquery-1.7.1.min.js') }}">\x3C/script>')</script>
 		{% endblock jquery %}
 
 		{% block scripts %}
