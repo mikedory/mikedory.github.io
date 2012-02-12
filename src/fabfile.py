@@ -10,7 +10,7 @@ def scss():
 	local('sass --update content/static/css/style.scss:content/static/css/style.css')
 
 def coffee():
-	local('coffee -c content/static/js/script.coffee')
+	local('/usr/local/bin/coffee -c content/static/js/script.coffee')
 
 # REMOVE ALL THE THINGS
 def clean():
@@ -32,7 +32,7 @@ def regen(fresh=False,compress=False):
 	scss()
 	
 	# run the coffeescript->js update
-	coffee()
+	# coffee()
 		
 	# generate the fancy files
 	local('hyde gen')
@@ -47,6 +47,10 @@ def reserve(fresh=False,compress=False):
 	serve()
 
 #### DEPLOY #######
+
+def deploy_prep():
+	local('rm -rf ../public/')
+	local('cp -r ./deploy ../public/')
 
 # # the user to use for the remote commands
 # env.user = 'mjd'
