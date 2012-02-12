@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        BASIC blog excerpts feed    </title>
+        <link href="blog/excerpts.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2011-09-06T16:32:53Z</updated>
+
+    <id>/blog/excerpts.xml/</id>
+
+            <entry>
+            <title type="html">Bup?</title>
+            <author><name>Mike Dory</name></author>
+            <link href="/blog/2011-02-01_blog-post 2.html"/>
+            <updated>2011-02-02T10:00:00Z</updated>
+            <published>2011-02-02T10:00:00Z</published>
+            <id>/blog/2011-02-01_blog-post 2.html</id>
+                        <category   scheme="/blog/tags"
+                        term="puppies"
+                        label="Puppies" />
+                        <category   scheme="/blog/tags"
+                        term="kittens"
+                        label="Kittens" />
+            
+            <content type="html">
+                &lt;p&gt;&lt;img alt=&#34;Airport&#34; src=&#34;/static/images/gdf-141.jpg&#34; /&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;span class=&#34;caps&#34;&gt;EXCERPT&lt;/span&gt;&amp;nbsp;&lt;span class=&#34;caps&#34;&gt;LOL&lt;/span&gt;&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">BLOG POST LOL</title>
+            <author><name>Mike Dory</name></author>
+            <link href="/blog/2011-02-01_blog-post.html"/>
+            <updated>2011-02-01T10:00:00Z</updated>
+            <published>2011-02-01T10:00:00Z</published>
+            <id>/blog/2011-02-01_blog-post.html</id>
+                        <category   scheme="/blog/tags"
+                        term="puppies"
+                        label="Puppies" />
+                        <category   scheme="/blog/tags"
+                        term="kittens"
+                        label="Kittens" />
+            
+            <content type="html">
+                &lt;p&gt;&lt;img alt=&#34;Airport&#34; src=&#34;/static/images/gdf-141.jpg&#34; /&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;span class=&#34;caps&#34;&gt;EXCERPT&lt;/span&gt;&amp;nbsp;&lt;span class=&#34;caps&#34;&gt;LOL&lt;/span&gt;&lt;/p&gt;            </content>
+        </entry>
+    </feed>

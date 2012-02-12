@@ -1,0 +1,58 @@
+---
+title: OH HAI PORTFOLIO
+extends: portfolio_listing.j2
+default_block: test
+description: I ARE GREAT PORTOOLIO LOL
+listable: false
+---
+
+{% block intro %}
+{% filter markdown -%}
+
+This is the intro section
+
+If I were so inclined, I might eventually write up a bit about what I've done here.
+
+_...maybe._
+
+{%- endfilter %}
+{% endblock intro %}
+
+
+{# because thius is all in default_block test, none of this will render.  Yay/boo. #}
+
+{#
+
+## DEBUGGERY ##
+
+__site.content__: {{ site.content }}
+
+__site.content.walk|first__: {{ site.content.walk_resources_sorted_by_time() }}
+
+---
+
+__node.walk__: {{node.walk_resources_sorted_by_time() }}
+
+__node.walk|first__: {{ node.walk_resources_sorted_by_time()|first }}
+
+---
+
+__node__: {{node}}
+
+---
+#}
+
+{% set projects = node.walk_resources_sorted_by_time() %}
+
+{% if projects -%}
+	{% for project in projects -%}
+
+	{{ render_portfolio_excerpt(project, 'post') }}
+
+<a class="button white medium"
+    	href="{{ content_url(latest.url) }}">Read more!!1!</a>
+	{%- endfor %}
+{%- endif %}
+
+
+</section>
