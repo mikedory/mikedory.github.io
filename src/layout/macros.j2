@@ -33,7 +33,7 @@
 {% macro render_nav(menu, cls=None) -%}
 {% if menu -%}
 <nav {{'class='~cls if cls }}>
-    <ul>
+    <ul class="nav">
         {% for item in menu -%}
         {% set active = False -%}
         {% if item.type == 'page' -%}
