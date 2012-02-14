@@ -27,7 +27,7 @@
 	{% block css %}
 	<!-- <script type="text/javascript" src="http://use.typekit.com/yna6ipo.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
-	<!-- <link rel="stylesheet" href="{{ media_url('css/style.css') }}"> -->
+	<link rel="stylesheet" href="{{ media_url('css/style.css') }}">
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap-responsive.css') }}">
 	{% endblock css %}
@@ -73,11 +73,13 @@
 	{% block intro %}
 		<div class="hero-unit">
 		{% block header -%}
-			<h1><a href="/">/// dory ex machina ///</a></h1>
-			<h2>experiments on living life in perpetual beta</h2>
+			<h1><!-- <a href="/">Hi.</a> -->Hi, I'm Mike Dory. </h1>
+			<h2> I make things and drink coffee. Let's build something together!</h2>
 		{%- endblock %}
-		<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-		<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+			<p>I've spent the last decade studying the ways people communicate and working to make their conversations better. As the CTO and co-founder of Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them. 
+			</p>
+			<p>Prior to starting up Socialbomb, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine.</p>
+			<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 		</div>
 	{% endblock intro %}
 		<!-- Example row of columns -->
@@ -87,7 +89,9 @@
 		<div class="row">
 		<div class="span4">
 			<h2>Heading</h2>
-			 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+				<p>I've spent the last decade studying the ways people communicate and working to make their conversations better. As the CTO and co-founder of Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them. 
+			</p>
+				<p>Prior to starting up Socialbomb, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine.</p>
 			<p><a class="btn" href="#">View details &raquo;</a></p>
 		</div>
 		<div class="span4">
@@ -136,7 +140,7 @@
 		<script src="{{ media_url('js/bootstrap-button.js') }}"= ></script>
 		<script src="{{ media_url('js/bootstrap-collapse.js') }}"= ></script>
 		<script src="{{ media_url('js/bootstrap-carousel.js') }}"= ></script>
-		<script src="{{ media_url('js/bootstrap-typeahead.js') }}"= ></script>
+		<!-- <script src="{{ media_url('js/bootstrap-typeahead.js') }}"= ></script> -->
 
 		<!-- site-specific scripts -->
 		<script src="{{ media_url('js/script.js') }}"= ></script>
