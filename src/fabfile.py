@@ -44,6 +44,7 @@ def serve():
 
 def reserve(fresh=False,compress=False):
 	regen(fresh,compress)
+	notify("sup",'Finished building')
 	serve()
 
 #### DEPLOY #######
@@ -77,3 +78,20 @@ def deploy_prep():
 #     # and finally touch the .wsgi file so that mod_wsgi triggers
 #     # a reload of the application
 #     run('touch /var/www/yourapplication.wsgi')
+
+
+
+#### HELPERS #######
+
+import sys
+import os
+from Growl import GrowlNotifier
+from Growl import Image
+
+def notify(header,body):
+	gi = Image.imageFromPath('./deploy/static/images/_apple-touch-icon.png')
+	gn = GrowlNotifier(applicationName="DxNotifier",notifications=[header,body],applicationIcon=gi)
+	gn.register()
+	gn.notify(noteType='sup',title=header,description=body,icon=gi)
+
+	
