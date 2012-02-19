@@ -15,6 +15,7 @@ def coffee():
 
 # REMOVE ALL THE THINGS
 def clean():
+	notify('Hyde','Local copy torched')
 	local('rm -rf ./deploy')
 
 # regenerate the output files (optionally, do so with a fresh install, and/or compress the css and js)
@@ -46,7 +47,7 @@ def serve():
 
 def reserve(fresh=False,compress=False):
 	regen(fresh,compress)
-	notify("sup",'Finished building')
+	notify('Hyde','Finished building')
 	serve()
 
 #### DEPLOY #######
@@ -54,6 +55,7 @@ def reserve(fresh=False,compress=False):
 def deploy_prep():
 	local('rm -rf ../public/')
 	local('cp -r ./deploy ../public/')
+	notify('Hyde','Deploy prep finished')
 
 # # the user to use for the remote commands
 # env.user = 'mjd'
