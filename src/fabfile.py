@@ -6,8 +6,11 @@ import os
 import fabric.contrib.project as project
 
 # run the sass update on the .scss file.
-def scss():
-	local('sass --update content/static/css/style.scss:content/static/css/style.css')
+def scss(fresh=False):
+	if (fresh):
+		local('sass --update content/static/css/style.scss:content/static/css/style.css')
+	else: 
+		local('sass --watch content/static/css/')
 
 # update the coffeescript script
 def coffee():
@@ -31,7 +34,7 @@ def regen(fresh=False,compress=False):
 		clean()
 
 	# run the scss->css update
-	scss()
+	scss(fresh)
 	
 	# run the coffeescript->js update
 	# coffee()
@@ -41,7 +44,6 @@ def regen(fresh=False,compress=False):
 
 
 def serve():
-	local('sass --watch content/static/css/')
 	local('hyde serve')
 
 
@@ -93,7 +95,7 @@ from Growl import GrowlNotifier
 from Growl import Image
 
 def notify(header,body):
-	gi = Image.imageFromPath('./deploy/static/images/_apple-touch-icon.png')
+	gi = Image.imageFromPath('./content/static/images/_apple-touch-icon.png')
 	gn = GrowlNotifier(applicationName="DxNotifier",notifications=[header,body],applicationIcon=gi)
 	gn.register()
 	gn.notify(noteType='Hyde',title=header,description=body,icon=gi)
