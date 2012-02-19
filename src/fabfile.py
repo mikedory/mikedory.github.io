@@ -39,6 +39,7 @@ def regen(fresh=False,compress=False):
 
 
 def serve():
+	local('sass --watch content/static/css/')
 	local('hyde serve')
 
 
