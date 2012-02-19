@@ -27,7 +27,7 @@
 	{% block css %}
 	<!-- <script type="text/javascript" src="http://use.typekit.com/yna6ipo.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
-	<link rel="stylesheet" href="{{ media_url('css/style.css') }}">
+	<!-- <link rel="stylesheet" href="{{ media_url('css/style.css') }}"> -->
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap-responsive.css') }}">
 	{% endblock css %}
@@ -36,7 +36,8 @@
 	<script src="{{ media_url('js/libs/modernizr-1.7.min.js') }}"></script>
 	{% endblock headjs %}
 
-	{% block endhead %}{% endblock endhead %}
+	{% block endhead %}
+	{% endblock endhead %}
 </head>
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
 	{% block content %}
@@ -68,49 +69,22 @@
 
 	<div class="container">
 	{% block container %}
-
 		<!-- Main hero unit for a primary marketing message or call to action -->
 	{% block intro %}
-		<div class="hero-unit">
-		{% block header -%}
-			<h1><!-- <a href="/">Hi.</a> -->Hi, I'm Mike Dory. </h1>
-			<h2> I make things and drink coffee. Let's build something together!</h2>
-		{%- endblock %}
-			<p>I've spent the last decade studying the ways people communicate and working to make their conversations better. As the CTO and co-founder of Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them. 
-			</p>
-			<p>Prior to starting up Socialbomb, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine.</p>
-			<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-		</div>
+	<p>BIP</p>
 	{% endblock intro %}
 		<!-- Example row of columns -->
-
+FOOP
 
 	{% block main %}
-		<div class="row">
-		<div class="span4">
-			<h2>Heading</h2>
-				<p>I've spent the last decade studying the ways people communicate and working to make their conversations better. As the CTO and co-founder of Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them. 
-			</p>
-				<p>Prior to starting up Socialbomb, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine.</p>
-			<p><a class="btn" href="#">View details &raquo;</a></p>
-		</div>
-		<div class="span4">
-			<h2>Heading</h2>
-			 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			<p><a class="btn" href="#">View details &raquo;</a></p>
-		 </div>
-		<div class="span4">
-			<h2>Heading</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-			<p><a class="btn" href="#">View details &raquo;</a></p>
-		</div>
-		{% endblock main %}
+
+	{% endblock main %}
 
 
 	<hr>
 
 	<footer>
-			Footer lol.
+			&copy; Mike Dory, 2006-2012
 	</footer>
 
 	{% endblock container %}
