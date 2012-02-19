@@ -43,6 +43,7 @@ def serve():
 
 
 def reserve(fresh=False,compress=False):
+	clean()
 	regen(fresh,compress)
 	notify("sup",'Finished building')
 	serve()
