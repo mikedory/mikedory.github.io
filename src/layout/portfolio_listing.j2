@@ -1,16 +1,46 @@
 {% extends "portfolio.j2" %}
+
 {% from "macros.j2" import render_portfolio_excerpt with context  %}
+
 {% block main %}
-{% block page_title %}<h1 class="title">{{ resource.meta.title }}</h1>{% endblock %}
 
-{{ node.walk_resources_sorted_by_time() }}
+<!-- 		<div class="row">
+		<div class="span4">
+			<h2>Heading</h2>
+				<p>I've spent the last decade studying the ways people communicate and working to make their conversations better. As the CTO and co-founder of Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them. 
+			</p>
+				<p>Prior to starting up Socialbomb, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine.</p>
+			<p><a class="btn" href="#">View details &raquo;</a></p>
+		</div>
+		<div class="span4">
+			<h2>Heading</h2>
+			 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+			<p><a class="btn" href="#">View details &raquo;</a></p>
+		 </div>
+		<div class="span4">
+			<h2>Heading</h2>
+			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+			<p><a class="btn" href="#">View details &raquo;</a></p>
+		</div>
+		</div> -->
+		
+<div class="row">
+	<div class="span4">
+		{% block page_title %}
+		<h1 class="title">{{ resource.meta.title }}</h1>
+		{% endblock %}
+
+		{{ node.walk_resources_sorted_by_time() }}
 
 
-<ul class="listing clear">
-{% for res in node.walk_resources_sorted_by_time() %}
-<li>
-    {{ render_portfolio_excerpt(res) }}
-</li>
-{% endfor %}
-</ul>
-{% endblock %}
+		<ul class="listing clear">
+		{% for res in node.walk_resources_sorted_by_time() %}
+		<li>
+		    {{ render_portfolio_excerpt(res) }}
+		</li>
+		{% endfor %}
+		</ul>
+	</div>
+</div>
+
+{% endblock main %}
