@@ -9,6 +9,7 @@ import fabric.contrib.project as project
 def scss():
 	local('sass --update content/static/css/style.scss:content/static/css/style.css')
 
+# update the coffeescript script
 def coffee():
 	local('/usr/local/bin/coffee -c content/static/js/script.coffee')
 
@@ -93,6 +94,6 @@ def notify(header,body):
 	gi = Image.imageFromPath('./deploy/static/images/_apple-touch-icon.png')
 	gn = GrowlNotifier(applicationName="DxNotifier",notifications=[header,body],applicationIcon=gi)
 	gn.register()
-	gn.notify(noteType='sup',title=header,description=body,icon=gi)
+	gn.notify(noteType='Hyde',title=header,description=body,icon=gi)
 
 	
