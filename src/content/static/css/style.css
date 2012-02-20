@@ -2,25 +2,13 @@
    Author: Mike Dory | http://doryexmachina.com
    ========================================================================== */
 body {
-  color: #adc5d4;
+  color: #3e6177;
   font-family: adelle-1, adelle-2, serif;
   font-weight: 100;
   font-style: normal; }
   body a {
     text-decoration: none;
-    color: #507c98; }
-
-#container {
-  width: 900px;
-  background-color: #fafafa;
-  width: 640px;
-  margin: 0 auto;
-  padding: 12px;
-  -moz-box-shadow: 0px 4px 12px #cccccc;
-  -webkit-box-shadow: 0px 4px 12px #cccccc;
-  box-shadow: 0px 4px 12px #cccccc;
-  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='$shadow_gray');
-  -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='$shadow_gray')"; }
+    color: #8cadc2; }
 
 header h1 {
   font-family: adelle-1, adelle-2, serif;
@@ -47,24 +35,25 @@ header li {
   display: inline;
   margin: 0 15px 0 0; }
 header a {
-  color: #9cb9cb; }
+  color: #dfe8ee; }
 
-.content {
-  width: 600px;
-  margin: 10px auto 10px auto; }
-  .content img {
-    margin: 0 0 15px 0; }
+.no_hero_padder {
+  margin: 40px 0 30px 0; }
+
+.main_container {
+  background-color: #fafafa;
+  margin: 0 auto;
+  padding: 12px;
+  -moz-box-shadow: 0px 4px 12px #cccccc;
+  -webkit-box-shadow: 0px 4px 12px #cccccc;
+  box-shadow: 0px 4px 12px #cccccc;
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='$shadow_gray');
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='$shadow_gray')"; }
 
 footer {
   font-size: 10px;
   margin-top: 24px;
   text-shadow: 1px 1px 2px #999999; }
-
-code {
-  border: 1px solid #999;
-  padding: 7px;
-  background: #cecece;
-  color: #555; }
 
 blockquote {
   font-style: italic;

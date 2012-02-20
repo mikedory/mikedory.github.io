@@ -4,14 +4,12 @@
 
 // --- FANCY VARIABLES --- //
 
-//$blue: #3bbfce;
 $blue: #ADC5D4;
-//$lgray: #777;
 $lgray: #999;
 $dgray: #666;
 $background_white: #FAFAFA;
 $shadow_gray: #ccc;
-$link: darken($blue, 30%); 
+$link: darken($blue, 10%); 
 $margin: 16px;
 
 
@@ -21,7 +19,6 @@ $margin: 16px;
 @mixin outer_shadow($background_white, $shadow_gray) {
 	background-color: $background_white;
 //	background-color: #eaeaea;
-	width: 640px;
 	margin: 0 auto;
 	padding: 12px;
 	-moz-box-shadow: 0px 4px 12px $shadow_gray;
@@ -37,12 +34,12 @@ $margin: 16px;
 	font-weight: $weight;
 	font-style: $style;
 }
-
+ 
 // --- BODY --- //
 
 body {
 
-	color: $blue;
+	color: darken($blue,40%);
 	@include font_adelle(100, normal);
 
 	a {
@@ -54,20 +51,17 @@ body {
 
 // --- CONTAINER --- //
 
-#container {
-	width: 900px;
-	@include outer_shadow($background_white, $shadow_gray);
-}
+// #container {
+// 	width: 900px;
+// 	@include outer_shadow($background_white, $shadow_gray);
+// }
 
 
 // --- HEADER --- //
 
 header {
-
-//	text-align: center;
 	
 	h1 {
-//		font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
 		@include font_adelle(700, normal);
 		text-shadow: 1px 1px 2px lighten($lgray, 25%);
 		display: inline;
@@ -88,17 +82,9 @@ header {
 	}
 	
 	li {
-//	  font: {
-//	    family: serif;
-//	    size: 1.2em;
-//	  }
 		@include font_adelle(100, italic);
 		display: inline;
 		margin: 0 15px 0 0;
-//		border: {
-//			right: 1px solid $blue;
-//			left: 1px solid $blue;
-//		}
 	}
 
 	a {
@@ -110,17 +96,24 @@ header {
 
 // --- CONTENT ---- //
 
-.content {
-	width: 600px;
-	margin: 10px auto 10px auto;
-	//@include outer_shadow($background_white, $shadow_gray);
-
-	img {
-		margin: 0 0 15px 0;
-	}
-
-
+.no_hero_padder {
+	margin: 40px 0 30px 0;
 }
+
+
+.main_container {
+	@include outer_shadow($background_white, $shadow_gray);
+}
+
+// article {
+// 	// width: 600px;
+// 	// margin: 10px auto 10px auto;
+// 	@include outer_shadow($background_white, $shadow_gray);
+
+// 	img {
+// 		margin: 0 0 15px 0;
+// 	}
+// }
 
 // --- FOOTER --- //
 
@@ -134,10 +127,10 @@ footer {
 // --- Special things --- //
 
 code {
-	border: 1px solid #999;
-	padding: 7px;
-	background: #cecece;
-	color: #555;
+	// border: 1px solid #999;
+	// padding: 7px;
+	// background: #cecece;
+	// color: #555;
 }
 
 blockquote {
