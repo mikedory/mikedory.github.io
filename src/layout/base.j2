@@ -25,11 +25,11 @@
 	{% endblock favicons %}
 
 	{% block css %}
-	<!-- <script type="text/javascript" src="http://use.typekit.com/yna6ipo.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
-	<!-- <link rel="stylesheet" href="{{ media_url('css/style.css') }}"> -->
+	<script type="text/javascript" src="http://use.typekit.com/yna6ipo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap-responsive.css') }}">
+	<link rel="stylesheet" href="{{ media_url('css/style.css') }}">
 	{% endblock css %}
 
 	{% block headjs %}
@@ -40,57 +40,48 @@
 	{% endblock endhead %}
 </head>
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
-	{% block content %}
+	{% block body %}
 				
+	{% block topbar %}
 	<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-						<a class="brand" href="#">Mike Dory</a>
-						<div class="nav-collapse">
-						{% block nav %}
-							{% from "macros.j2" import render_nav with context %}
-							{{ render_nav(menu, 'main_nav') }}
-						{% endblock %}
-
-			<!-- 				<li class="active"><a href="#">Home</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#contact">Contact</a></li>
-			 -->
-						</div><!--/.nav-collapse -->
-				</div>
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="/">Mike Dory</a>
+				<div class="nav-collapse">
+				{% block nav %}
+					{% from "macros.j2" import render_nav with context %}
+					{{ render_nav(menu, 'main_nav') }}
+				{% endblock %}
+				</div><!--/.nav-collapse -->
+			</div>
 			</div>
 	</div>
+	{% endblock topbar %}
+
+	<div class="container main_container">
+		{% block container %}
+
+			{# main block #}
+			{% block intro %}
+			{% endblock intro %}
+
+			{# main block #}
+			{% block main %}
+			{% endblock main %}
 
 
-	<div class="container">
-	{% block container %}
-		<!-- Main hero unit for a primary marketing message or call to action -->
-	{% block intro %}
-	<p>BIP</p>
-	{% endblock intro %}
-		<!-- Example row of columns -->
-FOOP
+			{# nice lil' footer #}
+			{% block footer %}
+				<hr>
+				<footer>
+					&copy; Mike Dory, 2006-2012
+				</footer>
+			{% endblock footer %}
 
-	{% block main %}
-
-	{% endblock main %}
-
-
-	<hr>
-
-	<footer>
-			&copy; Mike Dory, 2006-2012
-	</footer>
-
-	{% endblock container %}
+		{% endblock container %}
 	</div> <!-- end of container -->
 
-	{% endblock content%}
+	{% endblock body%}
 
 	{% block js %}
 
@@ -124,7 +115,7 @@ FOOP
 
 		<!--[if lt IE 7 ]>
 			<script src="js/libs/dd_belatedpng.js"></script>
-			<script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+			<script>DD_belatedPNG.fix('img, .png_bg'); </script>
 		<![endif]-->
 
 		{% block analytics %}
