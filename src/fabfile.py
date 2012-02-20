@@ -6,11 +6,16 @@ import os
 import fabric.contrib.project as project
 
 # run the sass update on the .scss file.
-def scss(fresh=False):
+def scss(watch=False,fresh=False):
+	# kill the local copy if desired
 	if (fresh):
-		local('sass --update content/static/css/style.scss:content/static/css/style.css')
+		local('rm -rf ./content/static/css/style.css')
+
+	# watch dis?
+	if (watch):
+		local('sass --watch ./content/static/css/')
 	else: 
-		local('sass --watch content/static/css/')
+		local('sass --update ./content/static/css/style.scss:content/static/css/style.css')
 
 # update the coffeescript script
 def coffee():
@@ -34,7 +39,7 @@ def regen(fresh=False,compress=False):
 		clean()
 
 	# run the scss->css update
-	scss(fresh)
+	scss(False,fresh)
 	
 	# run the coffeescript->js update
 	# coffee()
@@ -42,11 +47,11 @@ def regen(fresh=False,compress=False):
 	# generate the fancy files
 	local('hyde gen')
 
-
+# just serve dis
 def serve():
 	local('hyde serve')
 
-
+# generate a fresh copy of everything and serve it on :8080
 def reserve(fresh=False,compress=False):
 	regen(fresh,compress)
 	notify('Hyde','Finished building')
