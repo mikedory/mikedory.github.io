@@ -1,26 +1,32 @@
 ---
 extends: base.j2
-default_block: main
-title_ending: "| ABOUT LOL"
+default_block: container
+title: "Mike Dory | About"
 description: about page and stuff
 ---
 
+{# header override #}
+{% block intro %}
+	<div class="no_hero_padder">
+	</div>
+{% endblock %}
 
-OMG ABOUT PAGE
-=====
+{# this is the main text to be concerned with #}
+{% block main %}
+{% filter markdown -%}
+
 
 {% mark text %}
-
-#ABOUT#
+#I am mike#
 
 >_aboot_
-
 {% endmark %}
-
 
 	about! code about and stuff.
 
-#ABOUT#
+#wat?#
 
 	_aboot_
 
+{%- endfilter %}
+{% endblock main %}

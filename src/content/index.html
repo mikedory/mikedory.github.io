@@ -1,53 +1,55 @@
 ---
-title: OH HAI
+title: Mike Dory | Hi!
 extends: base.j2
-default_block: container
-description: BLAM
+description: Mike Dory | dory.me
 listable: false
 ---
 
-BOOP
+{% block intro %}
+	<div class="hero-unit">
+		<h1>Hi, I'm Mike Dory. </h1>
+		<h2> I make things and drink coffee. Let's build something together!</h2>
 
-	{% block intro %}
-		<div class="hero-unit">
-			{% block header -%}
-				<h1><!-- <a href="/">Hi.</a> -->Hi, I'm Mike Dory. </h1>
-				<h2> I make things and drink coffee. Let's build something together!</h2>
-			{%- endblock %}
-				<p>I've spent the last decade studying the ways people communicate and working to make their conversations better. As the CTO and co-founder of Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them. 
-				</p>
-				<p>Prior to starting up Socialbomb, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine.</p>
-				<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-			</div>
-	{% endblock intro %}
-
-
-{% from "macros.j2" import render_excerpt with context %}
-<section class="blog_excerpt">
-
-{# grab the latest 3 entries #}
-{% set projects = node.walk_resources_sorted_by_time()[0:3] %}
-
-{% if projects -%}
-	<div class="row">
-			{% for project in projects -%}
-			<div class="span4">
-				{{ render_excerpt(project, 'post') }}
-
-				<a class="btn" href="{{ content_url(latest.url) }}">Read more &raquo;</a>
-			</div>
-			{%- endfor %}
+		<p>I've spent the last decade studying the ways people communicate and working to make their conversations better. As the CTO and co-founder of Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them. 
+		</p>
+		<p>Prior to starting up Socialbomb, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine.</p>
+		<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 	</div>
-{%- endif %}
-<!-- 
-{% set latest = site.content.walk_resources_sorted_by_time()|first %}
+{% endblock intro %}
 
-{% if latest -%}
-{{ render_excerpt(latest, 'post') }}
 
-<a class="btn"
-    href="{{ content_url(latest.url) }}">Read more &raquo;</a>
+{% block main %}
+	{% from "macros.j2" import render_excerpt with context %}
+	<section class="blog_excerpt">
 
-{%- endif %} -->
+	{# grab the latest 3 entries #}
+	{% set projects = node.walk_resources_sorted_by_time()[0:3] %}
+	{% set projects = node.walk()[0:3] %}
 
-</section>
+HEY
+	{{ projects }}
+
+	{% if projects -%}
+		<div class="row">
+				{% for project in projects -%}
+				<div class="span4">
+					{{ render_excerpt(project, 'post') }}
+
+					<a class="btn" href="{{ content_url(latest.url) }}">Read more &raquo;</a>
+				</div>
+				{%- endfor %}
+		</div>
+	{%- endif %}
+	<!-- 
+	{% set latest = site.content.walk_resources_sorted_by_time()|first %}
+
+	{% if latest -%}
+	{{ render_excerpt(latest, 'post') }}
+
+	<a class="btn"
+	    href="{{ content_url(latest.url) }}">Read more &raquo;</a>
+
+	{%- endif %} -->
+
+	</section>
+{% endblock main %}
