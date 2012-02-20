@@ -25,12 +25,12 @@ context:
         css_class: portfolio
         type: node
         url: portfolio
-      -
-        name: Boog
-        description: Blog
-        css_class: blog
-        type: node
-        url: blog
+      # -
+      #   name: Boog
+      #   description: Blog
+      #   css_class: blog
+      #   type: node
+      #   url: blog
       -
         name: About
         description: About
@@ -39,7 +39,7 @@ context:
         url: about.html
 meta:
   nodemeta: meta.yaml
-  created: !!timestamp 2010-01-01 00:00:00
+  created: !!timestamp 2012-02-18 10:00:00
   author: Mike Dory
   ga_tracking_code: XX-XXXXXXXX-X
 sorter:
