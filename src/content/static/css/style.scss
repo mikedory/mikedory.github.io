@@ -39,13 +39,51 @@ $margin: 16px;
 
 body {
 
-	color: darken($blue,40%);
+	// color: darken($blue,40%);
 	@include font_adelle(100, normal);
 
 	a {
 		text-decoration: none;
 		color: $link;		
 	}
+
+	// background-color: #800; 
+	background-color: #FAFAFA; 
+	background-image: -moz-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px); 
+	-moz-background-size: 22px 22px;
+	 background-image: -webkit-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px);
+	 -webkit-background-size: 22px 22px; 
+	 background-size: 12px 12px;  
+
+	 // Much respect for this one:
+	 // http://lea.verou.me/demos/css3-patterns.html
+	//  	-webkit-background-size: 50px 50px;
+	// -moz-background-size: 50px 50px;
+	// background-size: 50px 50px; /* Controls the size of the stripes */
+	// background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #555), color-stop(.25, transparent), to(transparent)),
+	// 				  -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #555), color-stop(.25, transparent), to(transparent)),
+	// 				  -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #555)),
+	//   				  -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #555));
+	// background-image: -webkit-linear-gradient(45deg, #555 25%, transparent 25%, transparent),
+	// 				  -webkit-linear-gradient(-45deg, #555 25%, transparent 25%, transparent),
+	// 				  -webkit-linear-gradient(45deg, transparent 75%, #555 75%),
+	//   				  -webkit-linear-gradient(-45deg, transparent 75%, #555 75%);
+	// background-image: -moz-linear-gradient(45deg, #555 25%, transparent 25%, transparent),
+	// 				  -moz-linear-gradient(-45deg, #555 25%, transparent 25%, transparent),
+	// 				  -moz-linear-gradient(45deg, transparent 75%, #555 75%),
+	//   				  -moz-linear-gradient(-45deg, transparent 75%, #555 75%);
+	// background-image: -ms-linear-gradient(45deg, #555 25%, transparent 25%, transparent),
+	// 				  -ms-linear-gradient(-45deg, #555 25%, transparent 25%, transparent),
+	// 				  -ms-linear-gradient(45deg, transparent 75%, #555 75%),
+	//   				  -ms-linear-gradient(-45deg, transparent 75%, #555 75%);
+	// background-image: -o-linear-gradient(45deg, #555 25%, transparent 25%, transparent),
+	// 				  -o-linear-gradient(-45deg, #555 25%, transparent 25%, transparent),
+	// 				  -o-linear-gradient(45deg, transparent 75%, #555 75%),
+	//   				  -o-linear-gradient(-45deg, transparent 75%, #555 75%);
+	// background-image: linear-gradient(45deg, #555 25%, transparent 25%, transparent),
+	// 				  linear-gradient(-45deg, #555 25%, transparent 25%, transparent),
+	// 				  linear-gradient(45deg, transparent 75%, #555 75%),
+	//   				  linear-gradient(-45deg, transparent 75%, #555 75%);
 
 }
 
@@ -105,21 +143,30 @@ header {
 	@include outer_shadow($background_white, $shadow_gray);
 }
 
-// article {
+article {
 // 	// width: 600px;
 // 	// margin: 10px auto 10px auto;
 // 	@include outer_shadow($background_white, $shadow_gray);
 
-// 	img {
-// 		margin: 0 0 15px 0;
-// 	}
-// }
+ 	img {
+ 		margin: 0 0 15px 0;
+ 	}
+}
+
+.email-me {
+	margin-top: 15px;
+}
 
 // --- FOOTER --- //
 
+p {
+	font-size: 14px;
+	font-family: Georgia;
+	color: darken($lgray,10%);
+}
+
 footer {
 	font-size: 10px;
-	// text-align: center;
 	margin-top: 24px;
 	text-shadow: 1px 1px 2px $lgray;
 }
@@ -127,10 +174,10 @@ footer {
 // --- Special things --- //
 
 code {
-	// border: 1px solid #999;
 	// padding: 7px;
 	// background: #cecece;
 	// color: #555;
+	font-family: Courier;
 }
 
 blockquote {
