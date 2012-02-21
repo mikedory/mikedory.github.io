@@ -1,0 +1,59 @@
+---
+title: "Mike Dory | About"
+extends: base.j2
+description: about page and stuff
+listable: false
+---
+
+{# header override #}
+{% block intro %}
+<!-- 	<div class="no_hero_padder">
+	</div> -->
+
+<div class="hero-unit">
+
+{% filter markdown -%}
+
+<div class="page-header">
+	<h1>Hi! I'm Mike. <small>I might have said that already, but...</small></h1>
+</div>
+
+## The short version:
+
+Co-founder and CTO of [Socialbomb](http://socialbomb.com). 
+Co-author of a [book about Tornado](http://shop.oreilly.com/product/0636920021292.do) for [O'Reilly](http://oreilly.com/) (_out in March!_).  
+Occasional adjunct faculty at [NYU ITP](http://itp.nyu.edu).
+
+I live in Jersey City, NJ with my wife and dog, and I work in Brooklyn.
+
+<hr/>
+
+## The professional version:
+
+I've spent the last decade studying the ways people communicate and working to make their conversations better. Since co-founding Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them.
+
+Previously, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine. 
+
+I graduated with a BA in Journalism & Media Studies from Rutgers University and an MPS in Interactive Telecommunications from NYU ITP.
+
+<hr/>
+
+<!-- ### <small>The fun stuff:</small> -->
+
+<small>This site was built using Hyde and Markdown, with a Python thrown in for good measure. SCSS and Coffeescript handle styles and scripting. It is served via Ruby/Rack on Heroku. </small>
+
+<!-- <div class="alert ">
+	If you are still reading this, you should probably just email me.
+</div>
+ -->
+{%- endfilter %}
+
+
+</div>
+
+{% endblock %}
+
+{# this is the main text to be concerned with #}
+{% block main %}
+{% endblock main %}
+

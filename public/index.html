@@ -1,62 +1,91 @@
-<!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+---
+title: Mike Dory | Hi!
+extends: base.j2
+description: Mike Dory | dory.me
+listable: false
+---
 
-  <title></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+{% block intro %}
+	<div class="hero-unit">
+		<div class="page-header">
+			<h1>Hi! I'm Mike. <small>I make things and drink coffee.</small></h1>
+			<!-- <h2> I make things and drink coffee. Let's build something together!</h2> -->
+		</div>
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+{% filter markdown -%}
 
-  <!-- CSS concatenated and minified via ant build script-->
-  <link rel="stylesheet" href="/static/css/style.css">
-  <!-- end CSS-->
+## Who are you?
 
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
-</head>
+I'm a technologist, writer, and artist.  I like to build things that real people can use to explore their relationships and the world around them.</p>
 
-<body>
+&nbsp;
 
-  <div id="container">
-    <header>
-    	<h1 class="huge">Mike Dory</h1>
-    </header>
-    <div id="main" role="main">
-    	<h1>I make things and drink coffee</h1>
-    </div>
-    <footer>
+## What do you do?
 
-    </footer>
-  </div> <!--! end of #container -->
+All sorts of stuff!  I co-founded [Socialbomb](http://socialbomb.com), a social technology agency based in Brooklyn. I've taught at places like [NYU ITP](http://itp.nyu.edu) and [General Assembly](http://generalassemb.ly/), and spoken at places like [O'Reilly OSCon](http://www.oscon.com/oscon2011) and the [Mobile Gaming Summit](http://nyc.mogasummit.com/). Most recently, I co-wrote a book for [O'Reilly Media](http://oreilly.com/) called [Introduction to Tornado](http://shop.oreilly.com/product/0636920021292.do), and it will be out this March!
 
+When not doing all that, I like to take hikes, shoot pictures, and ride boards. I really like coffee, too.
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+&nbsp;
 
+## Hey, I want to get in touch with you!
 
-  <!-- scripts concatenated and minified via ant build script-->
-  <script defer src="js/plugins.js"></script>
-  <script defer src="js/script.js"></script>
-  <!-- end scripts-->
+That sounds rad! You can:
 
+- read my witty banter on [Twitter](https://twitter.com/mike_dory)
+- check out my timeline on [Facebook](https://facebook.com/michael.dory)
+- fork my latest work on [Github](https://github.com/mikedory)
+- do... professional stuff... on [Linkedin](http://www.linkedin.com/in/michaeldory)
 
-  <script> // Change UA-XXXXX-X to be your site's ID
-    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
-  </script>
+<!-- - [Twitter](https://twitter.com/mike_dory)
+- [Facebook](https://facebook.com/michael.dory)
+- [Github](https://github.com/mikedory)
+- [Linkedin](http://www.linkedin.com/in/michaeldory)
+ -->
+
+But for most things, you can also just <a href="mailto:mike@dory.me">email</a> me. It would be cool to hear from you!
+
+{%- endfilter %}
 
 
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-  
-</body>
-</html>
+<!-- 		<p class="email-me">
+			<a class="btn btn-large" href="mailto:mike@dory.me">
+				Email me &raquo;
+			</a>
+		</p> -->
+
+<!-- 		<p>
+			<button class="btn btn-large">Facebook</button>
+			<button class="btn btn-large">Twitter</button>
+			<button class="btn btn-large">Github</button>
+			<button class="btn btn-large">Tumblr</button>
+		  </p>
+ -->
+	</div>
+{% endblock intro %}
+
+
+{% block main %}
+	{% from "macros.j2" import render_excerpt with context %}
+	<section class="blog_excerpt">
+
+
+	{# grab the latest 3 entries #}
+{#
+	{% set projects = node.walk_resources_sorted_by_time()[0:3] %}
+	{% set projects = node.walk_resources_tagged_with('portfolio') %}
+
+	{% if projects -%}
+		<div class="row">
+				{% for project in projects -%}
+				<div class="span4">
+					{{ render_excerpt(project, 'post') }}
+
+					<a class="btn" href="{{ content_url(latest.url) }}">Read more &raquo;</a>
+				</div>
+				{%- endfor %}
+		</div>
+	{%- endif %}
+#}	
+	</section>
+{% endblock main %}

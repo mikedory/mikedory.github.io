@@ -1,0 +1,9 @@
+---
+extends: false
+
+---
+
+{% set tag = site.tagger.tags['group'] %}
+{% set source = site.content.node_from_relative_path('portfolio') %}
+{% set walker = source.walk_resources_tagged_with_group %}
+{% extends "tagged_posts.j2" %}

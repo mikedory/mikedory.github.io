@@ -1,92 +1,83 @@
-@font-face {
-    font-family: 'FranchiseRegular';
-    src: url('/static/fonts/franchise-bold-webfont.eot');
-    src: url('/static/fonts/franchise-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/static/fonts/franchise-bold-webfont.woff') format('woff'),
-         url('/static/fonts/franchise-bold-webfont.ttf') format('truetype'),
-         url('/static/fonts/franchise-bold-webfont.svg#FranchiseRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+/* ==|== primary styles =====================================================
+   Author: Mike Dory | http://doryexmachina.com
+   ========================================================================== */
+body {
+  font-family: adelle-1, adelle-2, serif;
+  font-weight: 100;
+  font-style: normal;
+  background-color: #FAFAFA;
+  background-image: -moz-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px);
+  -moz-background-size: 22px 22px;
+  background-image: -webkit-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px);
+  -webkit-background-size: 22px 22px;
+  background-size: 12px 12px; }
+  body a {
+    text-decoration: none;
+    color: #8cadc2; }
 
-body{
-	font-family: 'FranchiseRegular';
-	font-size: 24px;
-	margin: 40px;
+header h1 {
+  font-family: adelle-1, adelle-2, serif;
+  font-weight: 700;
+  font-style: normal;
+  text-shadow: 1px 1px 2px #d9d9d9;
+  display: inline;
+  margin: 0 40px 0 0; }
+header h2 {
+  font-family: adelle-1, adelle-2, serif;
+  font-weight: 100;
+  font-style: italic;
+  text-shadow: 1px 1px 1px #d9d9d9;
+  display: inline;
+  font-size: 14px; }
+header ul {
+  margin: 20px 0 20px 0;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #999999; }
+header li {
+  font-family: adelle-1, adelle-2, serif;
+  font-weight: 100;
+  font-style: italic;
+  display: inline;
+  margin: 0 15px 0 0; }
+header a {
+  color: #dfe8ee; }
 
-	background-color: #bdd2e1;
-	background-image: -webkit-gradient(linear, left center, right center, from(rgb(189, 210, 225)), to(rgb(240, 242, 242)));
-	background-image: -webkit-linear-gradient(left, rgb(189, 210, 225), rgb(240, 242, 242));
-	background-image: -moz-linear-gradient(left, rgb(189, 210, 225), rgb(240, 242, 242));
-	background-image: -o-linear-gradient(left, rgb(189, 210, 225), rgb(240, 242, 242));
-	background-image: -ms-linear-gradient(left, rgb(189, 210, 225), rgb(240, 242, 242));
-	background-image: linear-gradient(left, rgb(189, 210, 225), rgb(240, 242, 242));
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#bdd2e1', EndColorStr='#f0f2f2');
-}
+.no_hero_padder {
+  margin: 40px 0 30px 0; }
 
-.huge {
-	font-size: 250px;
-	line-height: 1em;
-	padding: 0;
-	letter-spacing: -.02em;
-	overflow: hidden;
-}
+.main_container {
+  background-color: #fafafa;
+  margin: 0 auto;
+  padding: 12px;
+  -moz-box-shadow: 0px 4px 12px #cccccc;
+  -webkit-box-shadow: 0px 4px 12px #cccccc;
+  box-shadow: 0px 4px 12px #cccccc;
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='$shadow_gray');
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='$shadow_gray')"; }
 
+article img {
+  margin: 0 0 15px 0; }
 
-#main {
-	/*margin: 40px;*/
-}
+.email-me {
+  margin-top: 15px; }
 
-	#main h1 {
-		font-size: 36px;
-		color: #333;
-		font-style: italic;
-		/*font-family: 'Mate', serif;*/
-	}
+p {
+  font-size: 14px;
+  font-family: Georgia;
+  color: gray; }
 
-	#main p {
-		color: #555;
-		/*font-family: 'Mate', serif;*/
-	}
+footer {
+  font-size: 10px;
+  margin-top: 24px;
+  text-shadow: 1px 1px 2px #999999; }
 
-#container
-{  
-    position: relative;  
-    width: 500px;  
-    padding: 50px;  
-    margin: 0 auto;  
-    background-color: #fff;  
-    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);  
-    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);  
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);  
-}  
+code {
+  font-family: Courier; }
 
-	#container:before, #container:after  
-	{  
-	    position: absolute;  
-	    width: 40%;  
-	    height: 10px;  
-	    content: ' ';  
-	    left: 12px;  
-	    bottom: 12px;  
-	    background: transparent;  
-	    -webkit-transform: skew(-5deg) rotate(-5deg);  
-	    -moz-transform: skew(-5deg) rotate(-5deg);  
-	    -ms-transform: skew(-5deg) rotate(-5deg);  
-	    -o-transform: skew(-5deg) rotate(-5deg);  
-	    transform: skew(-5deg) rotate(-5deg);  
-	    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  
-	    -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  
-	    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  
-	    z-index: -1;  
-	}  
-	#container:after  
-	{  
-	    left: auto;  
-	    right: 12px;  
-	    -webkit-transform: skew(5deg) rotate(5deg);  
-	    -moz-transform: skew(5deg) rotate(5deg);  
-	    -ms-transform: skew(5deg) rotate(5deg);  
-	    -o-transform: skew(5deg) rotate(5deg);  
-	    transform: skew(5deg) rotate(5deg);  
-	}  
+blockquote {
+  font-style: italic;
+  color: #bed1dd; }
+
+span.amp {
+  font-family: Baskerville, Palatino, "Book Antiqua", serif;
+  font-style: italic; }
