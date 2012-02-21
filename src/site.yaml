@@ -20,11 +20,11 @@ context:
         type: page
         url: index.html
       -
-        name: Portfolio
-        description: Portfolio
-        css_class: portfolio
+        name: Projects
+        description: Projects
+        css_class: projects
         type: node
-        url: portfolio
+        url: projects
       # -
       #   name: Boog
       #   description: Blog
@@ -58,9 +58,9 @@ tagger:
       target: blog/tags
       template: tagged_posts.j2
       archive_extension: html
-    portfolio:
-      source: portfolio
-      target: portfolio/tags
+    projects:
+      source: projects
+      target: projects/tags
       template: tagged_posts.j2
       archive_extension: html
 urlcleaner: 
