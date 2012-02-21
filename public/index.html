@@ -1,52 +1,99 @@
----
-title: Mike Dory | Hi!
-extends: base.j2
-description: Mike Dory | dory.me
-listable: false
----
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>		 <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>		 <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+		<meta charset="">
+	<meta http-equiv="X-UA-Compatible" content="">
 
-{% block intro %}
-	<div class="hero-unit">
+	<title>Mike Dory | Hi!</title>
+	<meta name="description" content="Mike Dory | dory.me">
+	<meta name="author" content="Mike Dory">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<meta name="viewport" content="">
+
+		<link rel="shortcut icon" href="/static/images/_favicon.ico">
+	<link rel="apple-touch-icon" href="/static/images/_apple-touch-icon.png">
+	
+		<script type="text/javascript" src="http://use.typekit.com/yna6ipo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<link rel="stylesheet" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+	
+		<script src="/static/js/libs/modernizr-1.7.min.js"></script>
+	
+		</head>
+<body id="index">
+					
+		<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="/">Mike Dory</a>
+				<div class="nav-collapse">
+														<nav class=main_nav>
+    <ul class="nav">
+                <li  class="active" >
+            <a title="Home Page"
+                class="button white active home"
+                href="/index.html">
+                Home
+            </a>
+        </li>        <li >
+            <a title="Projects"
+                class="button white projects"
+                href="/projects">
+                Projects
+            </a>
+        </li>        <li >
+            <a title="About"
+                class="button white about"
+                href="/about.html">
+                About
+            </a>
+        </li>    </ul>
+</nav>
+								</div><!--/.nav-collapse -->
+			</div>
+			</div>
+	</div>
+	
+	<div class="container main_container">
+		
+							<div class="hero-unit">
 		<div class="page-header">
 			<h1>Hi! I'm Mike. <small>I make things and drink coffee.</small></h1>
 			<!-- <h2> I make things and drink coffee. Let's build something together!</h2> -->
 		</div>
 
-{% filter markdown -%}
-
-## Who are you?
-
-I'm a technologist, writer, and artist.  I like to build things that real people can use to explore their relationships and the world around them.</p>
-
-&nbsp;
-
-## What do you do?
-
-All sorts of stuff!  I co-founded [Socialbomb](http://socialbomb.com), a social technology agency based in Brooklyn. I've taught at places like [NYU ITP](http://itp.nyu.edu) and [General Assembly](http://generalassemb.ly/), and spoken at places like [O'Reilly OSCon](http://www.oscon.com/oscon2011) and the [Mobile Gaming Summit](http://nyc.mogasummit.com/). Most recently, I co-wrote a book for [O'Reilly Media](http://oreilly.com/) called [Introduction to Tornado](http://shop.oreilly.com/product/0636920021292.do), and it will be out this March!
-
-When not doing all that, I like to take hikes, shoot pictures, and ride boards. I really like coffee, too.
-
-&nbsp;
-
-## Hey, I want to get in touch with you!
-
-That sounds rad! You can:
-
-- read my witty banter on [Twitter](https://twitter.com/mike_dory)
-- check out my timeline on [Facebook](https://facebook.com/michael.dory)
-- fork my latest work on [Github](https://github.com/mikedory)
-- do... professional stuff... on [Linkedin](http://www.linkedin.com/in/michaeldory)
-
+<h2>Who are you?</h2>
+<p>I'm a technologist, writer, and artist.  I like to build things that real people can use to explore their relationships and the world around them.</p></p>
+<p>&nbsp;</p>
+<h2>What do you do?</h2>
+<p>All sorts of stuff!  I co-founded <a href="http://socialbomb.com">Socialbomb</a>, a social technology agency based in Brooklyn. I've taught at places like <a href="http://itp.nyu.edu">NYU ITP</a> and <a href="http://generalassemb.ly/">General Assembly</a>, and spoken at places like <a href="http://www.oscon.com/oscon2011">O'Reilly OSCon</a> and the <a href="http://nyc.mogasummit.com/">Mobile Gaming Summit</a>. Most recently, I co-wrote a book for <a href="http://oreilly.com/">O'Reilly Media</a> called <a href="http://shop.oreilly.com/product/0636920021292.do">Introduction to Tornado</a>, and it will be out this March!</p>
+<p>When not doing all that, I like to take hikes, shoot pictures, and ride boards. I really like coffee, too.</p>
+<p>&nbsp;</p>
+<h2>Hey, I want to get in touch with you!</h2>
+<p>That sounds rad! You can:</p>
+<ul>
+<li>read my witty banter on <a href="https://twitter.com/mike_dory">Twitter</a></li>
+<li>check out my timeline on <a href="https://facebook.com/michael.dory">Facebook</a></li>
+<li>fork my latest work on <a href="https://github.com/mikedory">Github</a></li>
+<li>do... professional stuff... on <a href="http://www.linkedin.com/in/michaeldory">Linkedin</a></li>
+</ul>
 <!-- - [Twitter](https://twitter.com/mike_dory)
 - [Facebook](https://facebook.com/michael.dory)
 - [Github](https://github.com/mikedory)
 - [Linkedin](http://www.linkedin.com/in/michaeldory)
  -->
 
-But for most things, you can also just <a href="mailto:mike@dory.me">email</a> me. It would be cool to hear from you!
-
-{%- endfilter %}
-
+<p>But for most things, you can also just <a href="mailto:mike@dory.me">email</a> me. It would be cool to hear from you!</p>
 
 <!-- 		<p class="email-me">
 			<a class="btn btn-large" href="mailto:mike@dory.me">
@@ -62,30 +109,49 @@ But for most things, you can also just <a href="mailto:mike@dory.me">email</a> m
 		  </p>
  -->
 	</div>
-{% endblock intro %}
+
+								<section class="blog_excerpt">
 
 
-{% block main %}
-	{% from "macros.j2" import render_excerpt with context %}
-	<section class="blog_excerpt">
-
-
-	{# grab the latest 3 entries #}
-{#
-	{% set projects = node.walk_resources_sorted_by_time()[0:3] %}
-	{% set projects = node.walk_resources_tagged_with('portfolio') %}
-
-	{% if projects -%}
-		<div class="row">
-				{% for project in projects -%}
-				<div class="span4">
-					{{ render_excerpt(project, 'post') }}
-
-					<a class="btn" href="{{ content_url(latest.url) }}">Read more &raquo;</a>
-				</div>
-				{%- endfor %}
-		</div>
-	{%- endif %}
-#}	
+		
 	</section>
-{% endblock main %}
+
+
+										<hr>
+				<footer>
+					&copy; Mike Dory, 2006-2012
+				</footer>
+			
+			</div> <!-- end of container -->
+
+	
+	
+							<script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.7.1.min.js">\x3C/script>')</script>
+		
+				<!-- Bootstrap goodies -->
+		<script src="/static/js/bootstrap.js"= ></script>
+<!--		<script src="/static/js/bootstrap-transition.js"= ></script>
+		<script src="/static/js/bootstrap-alert.js"= ></script>
+		<script src="/static/js/bootstrap-modal.js"= ></script>
+		<script src="/static/js/bootstrap-dropdown.js"= ></script>
+		<script src="/static/js/bootstrap-scrollspy.js"= ></script>
+		<script src="/static/js/bootstrap-tab.js"= ></script>
+		<script src="/static/js/bootstrap-tooltip.js"= ></script>
+		<script src="/static/js/bootstrap-popover.js"= ></script>
+		<script src="/static/js/bootstrap-button.js"= ></script>
+		<script src="/static/js/bootstrap-collapse.js"= ></script>
+-->
+		<!-- <script src="/static/js/bootstrap-carousel.js"= ></script> -->
+		<!-- <script src="/static/js/bootstrap-typeahead.js"= ></script> -->
+
+		<!-- site-specific scripts -->
+		<script src="/static/js/script.js"= ></script>
+		
+		<!--[if lt IE 7 ]>
+			<script src="js/libs/dd_belatedpng.js"></script>
+			<script>DD_belatedPNG.fix('img, .png_bg'); </script>
+		<![endif]-->
+
+							
+	</body>
+</html>

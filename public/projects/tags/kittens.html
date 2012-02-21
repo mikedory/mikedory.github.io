@@ -1,9 +1,148 @@
----
-extends: false
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>		 <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>		 <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+		<meta charset="">
+	<meta http-equiv="X-UA-Compatible" content="">
 
----
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="Mike Dory">
 
-{% set tag = site.tagger.tags['kittens'] %}
-{% set source = site.content.node_from_relative_path('projects') %}
-{% set walker = source.walk_resources_tagged_with_kittens %}
-{% extends "tagged_posts.j2" %}
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<meta name="viewport" content="">
+
+		<link rel="shortcut icon" href="/static/images/_favicon.ico">
+	<link rel="apple-touch-icon" href="/static/images/_apple-touch-icon.png">
+	
+		<script type="text/javascript" src="http://use.typekit.com/yna6ipo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<link rel="stylesheet" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+	
+		<script src="/static/js/libs/modernizr-1.7.min.js"></script>
+	
+		</head>
+<body id="kittens">
+					
+		<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="/">Mike Dory</a>
+				<div class="nav-collapse">
+														<nav class=main_nav>
+    <ul class="nav">
+                <li >
+            <a title="Home Page"
+                class="button white home"
+                href="/index.html">
+                Home
+            </a>
+        </li>        <li >
+            <a title="Projects"
+                class="button white projects"
+                href="/projects">
+                Projects
+            </a>
+        </li>        <li >
+            <a title="About"
+                class="button white about"
+                href="/about.html">
+                About
+            </a>
+        </li>    </ul>
+</nav>
+								</div><!--/.nav-collapse -->
+			</div>
+			</div>
+	</div>
+	
+	<div class="container main_container">
+		
+									
+						<section class="archives">
+<h1 class="tag title">kittens</h1>
+<ul class="posts clear">
+<li class="post clear">
+    <time datetime="2011-02-02">
+        Wed, 02 Feb 2011
+    </time>
+    <a href="/blog/2011-02-01_blog-post%202.html">Bup?</a>
+        <ul class="tags">
+        <li>
+        <a class="small" href="/blog/tags/puppies.html">
+            puppies
+        </a>
+    </li>
+        <li>
+        <a class="small" href="/blog/tags/kittens.html">
+            kittens
+        </a>
+    </li>
+        </ul>
+    </li><li class="post clear">
+    <time datetime="2011-02-01">
+        Tue, 01 Feb 2011
+    </time>
+    <a href="/blog/2011-02-01_blog-post.html">BLOG POST LOL</a>
+        <ul class="tags">
+        <li>
+        <a class="small" href="/blog/tags/puppies.html">
+            puppies
+        </a>
+    </li>
+        <li>
+        <a class="small" href="/blog/tags/kittens.html">
+            kittens
+        </a>
+    </li>
+        </ul>
+    </li></ul>
+</section>
+
+
+										<hr>
+				<footer>
+					&copy; Mike Dory, 2006-2012
+				</footer>
+			
+			</div> <!-- end of container -->
+
+	
+	
+							<script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.7.1.min.js">\x3C/script>')</script>
+		
+				<!-- Bootstrap goodies -->
+		<script src="/static/js/bootstrap.js"= ></script>
+<!--		<script src="/static/js/bootstrap-transition.js"= ></script>
+		<script src="/static/js/bootstrap-alert.js"= ></script>
+		<script src="/static/js/bootstrap-modal.js"= ></script>
+		<script src="/static/js/bootstrap-dropdown.js"= ></script>
+		<script src="/static/js/bootstrap-scrollspy.js"= ></script>
+		<script src="/static/js/bootstrap-tab.js"= ></script>
+		<script src="/static/js/bootstrap-tooltip.js"= ></script>
+		<script src="/static/js/bootstrap-popover.js"= ></script>
+		<script src="/static/js/bootstrap-button.js"= ></script>
+		<script src="/static/js/bootstrap-collapse.js"= ></script>
+-->
+		<!-- <script src="/static/js/bootstrap-carousel.js"= ></script> -->
+		<!-- <script src="/static/js/bootstrap-typeahead.js"= ></script> -->
+
+		<!-- site-specific scripts -->
+		<script src="/static/js/script.js"= ></script>
+		
+		<!--[if lt IE 7 ]>
+			<script src="js/libs/dd_belatedpng.js"></script>
+			<script>DD_belatedPNG.fix('img, .png_bg'); </script>
+		<![endif]-->
+
+							
+	</body>
+</html>

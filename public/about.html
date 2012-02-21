@@ -1,59 +1,141 @@
----
-title: "Mike Dory | About"
-extends: base.j2
-description: about page and stuff
-listable: false
----
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>		 <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>		 <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+		<meta charset="">
+	<meta http-equiv="X-UA-Compatible" content="">
 
-{# header override #}
-{% block intro %}
-<!-- 	<div class="no_hero_padder">
+	<title>Mike Dory | About</title>
+	<meta name="description" content="about page and stuff">
+	<meta name="author" content="Mike Dory">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<meta name="viewport" content="">
+
+		<link rel="shortcut icon" href="/static/images/_favicon.ico">
+	<link rel="apple-touch-icon" href="/static/images/_apple-touch-icon.png">
+	
+		<script type="text/javascript" src="http://use.typekit.com/yna6ipo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<link rel="stylesheet" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+	
+		<script src="/static/js/libs/modernizr-1.7.min.js"></script>
+	
+		</head>
+<body id="about">
+					
+		<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="/">Mike Dory</a>
+				<div class="nav-collapse">
+														<nav class=main_nav>
+    <ul class="nav">
+                <li >
+            <a title="Home Page"
+                class="button white home"
+                href="/index.html">
+                Home
+            </a>
+        </li>        <li >
+            <a title="Projects"
+                class="button white projects"
+                href="/projects">
+                Projects
+            </a>
+        </li>        <li  class="active" >
+            <a title="About"
+                class="button white active about"
+                href="/about.html">
+                About
+            </a>
+        </li>    </ul>
+</nav>
+								</div><!--/.nav-collapse -->
+			</div>
+			</div>
+	</div>
+	
+	<div class="container main_container">
+		
+						<!-- 	<div class="no_hero_padder">
 	</div> -->
 
 <div class="hero-unit">
 
-{% filter markdown -%}
-
 <div class="page-header">
-	<h1>Hi! I'm Mike. <small>I might have said that already, but...</small></h1>
+    <h1>Hi! I'm Mike. <small>I might have said that already, but...</small></h1>
 </div>
 
-## The short version:
-
-Co-founder and CTO of [Socialbomb](http://socialbomb.com). 
-Co-author of a [book about Tornado](http://shop.oreilly.com/product/0636920021292.do) for [O'Reilly](http://oreilly.com/) (_out in March!_).  
-Occasional adjunct faculty at [NYU ITP](http://itp.nyu.edu).
-
-I live in Jersey City, NJ with my wife and dog, and I work in Brooklyn.
-
+<h2>The short version:</h2>
+<p>Co-founder and CTO of <a href="http://socialbomb.com">Socialbomb</a>. 
+Co-author of a <a href="http://shop.oreilly.com/product/0636920021292.do">book about Tornado</a> for <a href="http://oreilly.com/">O'Reilly</a> (<em>out in March!</em>).<br />
+Occasional adjunct faculty at <a href="http://itp.nyu.edu">NYU ITP</a>.</p>
+<p>I live in Jersey City, NJ with my wife and dog, and I work in Brooklyn.</p>
 <hr/>
 
-## The professional version:
-
-I've spent the last decade studying the ways people communicate and working to make their conversations better. Since co-founding Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them.
-
-Previously, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine. 
-
-I graduated with a BA in Journalism & Media Studies from Rutgers University and an MPS in Interactive Telecommunications from NYU ITP.
-
+<h2>The professional version:</h2>
+<p>I've spent the last decade studying the ways people communicate and working to make their conversations better. Since co-founding Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them.</p>
+<p>Previously, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine. </p>
+<p>I graduated with a BA in Journalism &amp; Media Studies from Rutgers University and an MPS in Interactive Telecommunications from NYU ITP.</p>
 <hr/>
 
 <!-- ### <small>The fun stuff:</small> -->
 
-<small>This site was built using Hyde and Markdown, with a Python thrown in for good measure. SCSS and Coffeescript handle styles and scripting. It is served via Ruby/Rack on Heroku. </small>
-
+<p><small>This site was built using Hyde and Markdown, with a Python thrown in for good measure. SCSS and Coffeescript handle styles and scripting. It is served via Ruby/Rack on Heroku. </small></p>
 <!-- <div class="alert ">
-	If you are still reading this, you should probably just email me.
+    If you are still reading this, you should probably just email me.
 </div>
  -->
-{%- endfilter %}
-
 
 </div>
 
-{% endblock %}
 
-{# this is the main text to be concerned with #}
-{% block main %}
-{% endblock main %}
+						
 
+										<hr>
+				<footer>
+					&copy; Mike Dory, 2006-2012
+				</footer>
+			
+			</div> <!-- end of container -->
+
+	
+	
+							<script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.7.1.min.js">\x3C/script>')</script>
+		
+				<!-- Bootstrap goodies -->
+		<script src="/static/js/bootstrap.js"= ></script>
+<!--		<script src="/static/js/bootstrap-transition.js"= ></script>
+		<script src="/static/js/bootstrap-alert.js"= ></script>
+		<script src="/static/js/bootstrap-modal.js"= ></script>
+		<script src="/static/js/bootstrap-dropdown.js"= ></script>
+		<script src="/static/js/bootstrap-scrollspy.js"= ></script>
+		<script src="/static/js/bootstrap-tab.js"= ></script>
+		<script src="/static/js/bootstrap-tooltip.js"= ></script>
+		<script src="/static/js/bootstrap-popover.js"= ></script>
+		<script src="/static/js/bootstrap-button.js"= ></script>
+		<script src="/static/js/bootstrap-collapse.js"= ></script>
+-->
+		<!-- <script src="/static/js/bootstrap-carousel.js"= ></script> -->
+		<!-- <script src="/static/js/bootstrap-typeahead.js"= ></script> -->
+
+		<!-- site-specific scripts -->
+		<script src="/static/js/script.js"= ></script>
+		
+		<!--[if lt IE 7 ]>
+			<script src="js/libs/dd_belatedpng.js"></script>
+			<script>DD_belatedPNG.fix('img, .png_bg'); </script>
+		<![endif]-->
+
+							
+	</body>
+</html>
