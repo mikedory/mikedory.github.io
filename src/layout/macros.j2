@@ -43,7 +43,7 @@
         {% set classes = ['button', 'white'] -%}
         {% do classes.append('active') if active -%}
         {% do classes.append(item.css_class) if item.css_class -%}
-        <li>
+        <li {% if active %} class="active" {% endif %}>
             <a title="{{ item.description }}"
                 class="{{ classes|join(' ') }}"
                 href="{{ content_url(item.url) }}">
