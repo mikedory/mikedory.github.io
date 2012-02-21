@@ -7,13 +7,27 @@ listable: false
 
 {% block intro %}
 	<div class="hero-unit">
-		<h1>Hi, I'm Mike Dory. </h1>
-		<h2> I make things and drink coffee. Let's build something together!</h2>
+		<div class="page-header">
+			<h1>Hi, I'm Mike Dory. </h1>
+			<h2> I make things and drink coffee. Let's build something together!</h2>
+		</div>
 
 		<p>I've spent the last decade studying the ways people communicate and working to make their conversations better. As the CTO and co-founder of Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them. 
 		</p>
 		<p>Prior to starting up Socialbomb, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine.</p>
-		<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+
+		<p class="email-me">
+			<a class="btn btn-large" href="mailto:mike@dory.me">
+				Email me &raquo;
+			</a>
+		</p>
+<!-- 		<p>
+			<button class="btn btn-large">Facebook</button>
+			<button class="btn btn-large">Twitter</button>
+			<button class="btn btn-large">Github</button>
+			<button class="btn btn-large">Tumblr</button>
+		  </p>
+ -->
 	</div>
 {% endblock intro %}
 
@@ -22,12 +36,11 @@ listable: false
 	{% from "macros.j2" import render_excerpt with context %}
 	<section class="blog_excerpt">
 
-	{# grab the latest 3 entries #}
-	{% set projects = node.walk_resources_sorted_by_time()[0:3] %}
-	{% set projects = node.walk()[0:3] %}
 
-HEY
-	{{ projects }}
+	{# grab the latest 3 entries #}
+{#
+	{% set projects = node.walk_resources_sorted_by_time()[0:3] %}
+	{% set projects = node.walk_resources_tagged_with('portfolio') %}
 
 	{% if projects -%}
 		<div class="row">
@@ -40,16 +53,6 @@ HEY
 				{%- endfor %}
 		</div>
 	{%- endif %}
-	<!-- 
-	{% set latest = site.content.walk_resources_sorted_by_time()|first %}
-
-	{% if latest -%}
-	{{ render_excerpt(latest, 'post') }}
-
-	<a class="btn"
-	    href="{{ content_url(latest.url) }}">Read more &raquo;</a>
-
-	{%- endif %} -->
-
+#}	
 	</section>
 {% endblock main %}
