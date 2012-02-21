@@ -7,22 +7,23 @@ listable: false
 
 {# override the intro #}
 {% block intro %}
-	<div class="no_hero_padder">
+<div class="no_hero_padder">
 {% filter markdown -%}
 
-This is the intro section
+<h2 class="page-header">Projects</h2>
 
-If I were so inclined, I might eventually write up a bit about what I've done here.
+This is kind of a work in progress.  And by that I mean that there is nothing to see here yet.  
 
-_...maybe._
+But soon, I promise, I will actually document the stuff I've been working on! Sorted by date and type, even!
 
 {%- endfilter %}
-	</div>
-{% endblock intro %}
+</div>
 
+{% endblock intro %}
 
 {% block main %}
 	{# these are the fancy projects #}
+{#
 	{% set projects = node.walk_resources_sorted_by_time() %}
 
 	{% if projects -%}
@@ -39,8 +40,8 @@ _...maybe._
 
 
 	</section>
+#}
 {% endblock main %}
-
 
 
 {# because this is all in default_block test, none of this will render.  Yay/boo. #}
