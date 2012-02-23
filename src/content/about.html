@@ -12,36 +12,52 @@ listable: false
 	</div> -->
 
 <div class="hero-unit">
+	<div class="page-header">
+		<h1>Hi! I'm Mike. <small>I might have said that already, but...</small></h1>
+	</div>
+{% endblock %}
 
+{# this is the main text to be concerned with #}
+{% block main %}
 {% filter markdown -%}
 
-<div class="page-header">
-	<h1>Hi! I'm Mike. <small>I might have said that already, but...</small></h1>
-</div>
+## Who are you?
 
-## The short version:
+I'm a technologist, writer, and artist.  I like to build things that real people can use to explore their relationships and the world around them.</p>
 
-Co-founder and CTO of [Socialbomb](http://socialbomb.com). 
-Co-author of a [book about Tornado](http://shop.oreilly.com/product/0636920021292.do) for [O'Reilly](http://oreilly.com/) (_out in March!_).  
-Occasional adjunct faculty at [NYU ITP](http://itp.nyu.edu).
+&nbsp;
 
-I live in Jersey City, NJ with my wife and dog, and I work in Brooklyn.
+## What do you do?
 
-<hr/>
+All sorts of stuff!  I co-founded [Socialbomb](http://socialbomb.com), a social technology agency based in Brooklyn. I've taught at places like [NYU ITP](http://itp.nyu.edu) and [General Assembly](http://generalassemb.ly/), and spoken at places like [O'Reilly OSCon](http://www.oscon.com/oscon2011) and the [Mobile Gaming Summit](http://nyc.mogasummit.com/). Most recently, I co-wrote a book for [O'Reilly Media](http://oreilly.com/) called [Introduction to Tornado](http://shop.oreilly.com/product/0636920021292.do), and it will be out this March!
 
-## The professional version:
+When not doing all that, I like to take hikes, shoot pictures, and ride boards. I really like coffee, too.
 
-I've spent the last decade studying the ways people communicate and working to make their conversations better. Since co-founding Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them.
+&nbsp;
 
-Previously, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine. 
+## Hey, I want to get in touch with you!
 
-I graduated with a BA in Journalism & Media Studies from Rutgers University and an MPS in Interactive Telecommunications from NYU ITP.
+That sounds rad! You can:
 
-<hr/>
+- read my witty banter on [Twitter](https://twitter.com/mike_dory)
+- check out my timeline on [Facebook](https://facebook.com/michael.dory)
+- fork my latest work on [Github](https://github.com/mikedory)
+- do... professional stuff... on [Linkedin](http://www.linkedin.com/in/michaeldory)
 
-<!-- ### <small>The fun stuff:</small> -->
+<!-- - [Twitter](https://twitter.com/mike_dory)
+- [Facebook](https://facebook.com/michael.dory)
+- [Github](https://github.com/mikedory)
+- [Linkedin](http://www.linkedin.com/in/michaeldory)
+ -->
 
-<small>This site was built using Hyde and Markdown, with a Python thrown in for good measure. SCSS and Coffeescript handle styles and scripting. It is served via Ruby/Rack on Heroku. </small>
+But for most things, you can also just <a href="mailto:mike@dory.me">email</a> me. It would be cool to hear from you!
+
+&nbsp;
+
+## So, how did you make this thing?
+
+This site was built using Hyde and Markdown, with a few Python tools thrown in for good measure. SCSS and Coffeescript handle styles and scripting. It is served via Ruby/Rack on Heroku, and the source is up on Github.
+
 
 <!-- <div class="alert ">
 	If you are still reading this, you should probably just email me.
@@ -52,9 +68,6 @@ I graduated with a BA in Journalism & Media Studies from Rutgers University and 
 
 </div>
 
-{% endblock %}
 
-{# this is the main text to be concerned with #}
-{% block main %}
 {% endblock main %}
 
