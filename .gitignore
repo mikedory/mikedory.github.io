@@ -12,3 +12,4 @@ deploy/
 content/
 src/deploy/
 src/content/
+node_modules/
