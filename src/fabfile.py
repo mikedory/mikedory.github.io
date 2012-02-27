@@ -18,7 +18,10 @@ def scss(watch=False,fresh=False):
 		local('sass --update ./content/static/css/style.scss:content/static/css/style.css')
 
 # update the coffeescript script
-def coffee():
+def coffee(fresh=False):
+	if (fresh):
+		local('rm content/static/js/script.coffee')
+	
 	local('/usr/local/bin/coffee -c content/static/js/script.coffee')
 
 # REMOVE ALL THE THINGS
@@ -42,7 +45,7 @@ def regen(fresh=False,compress=False):
 	scss(False,fresh)
 	
 	# run the coffeescript->js update
-	# coffee()
+	coffee()
 		
 	# generate the fancy files
 	local('hyde gen')
@@ -57,6 +60,7 @@ def reserve(fresh=False,compress=False):
 	notify('Hyde','Finished building')
 	serve()
 
+
 #### DEPLOY #######
 
 def deploy_prep():
@@ -64,33 +68,9 @@ def deploy_prep():
 	local('cp -r ./deploy ../public/')
 	notify('Hyde','Deploy prep finished')
 
-# # the user to use for the remote commands
-# env.user = 'mjd'
-# # the servers where the commands are executed
-# env.hosts = ['mjd.xen.prgmr.com']
-# 
-# # def pack():
-# #     # create a new source distribution as tarball
-# #     local('python setup.py sdist --formats=gztar', capture=False)
-# 
-# def deploy():
-#     # upload the source tarball to the temporary folder on the server
-#     put('dist/%s.tar.gz' % dist, '/tmp/yourapplication.tar.gz')
-#     # create a place where we can unzip the tarball, then enter
-#     # that directory and unzip it
-#     run('mkdir /tmp/yourapplication')
-#     with cd('/tmp/yourapplication'):
-#         run('tar xzf /tmp/yourapplication.tar.gz')
-#         # now setup the package with our virtual environment's
-#         # python interpreter
-#         run('/var/www/yourapplication/env/bin/python setup.py install')
-#     # now that all is set up, delete the folder again
-#     run('rm -rf /tmp/yourapplication /tmp/yourapplication.tar.gz')
-#     # and finally touch the .wsgi file so that mod_wsgi triggers
-#     # a reload of the application
-#     run('touch /var/www/yourapplication.wsgi')
-
-
+def deploy():
+	deploy_prep()
+	local('git commit -am "deploy to production"')
 
 #### HELPERS #######
 
