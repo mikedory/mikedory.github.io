@@ -61,6 +61,14 @@ article img {
 .email-me {
   margin-top: 15px; }
 
+.portfolio_carousel_div {
+  width: 700px;
+  margin: auto; }
+
+.portfolio_carousel_div .item img {
+  margin: auto;
+  height: 200px; }
+
 p {
   font-size: 14px;
   font-family: Georgia;
