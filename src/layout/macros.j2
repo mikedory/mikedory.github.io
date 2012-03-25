@@ -19,8 +19,17 @@
 {% refer to res.url as project %}
 <article {{'class='~class if class }}>
 	<h2><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h2>
+    {% if res.meta.thumb %}
+    <a href="{{ content_url(res.url) }}"><img src="{{ res.meta.thumb }}" /></a>
+    {%- endif %}
 	<a href="{{ content_url(res.url) }}">{{ project.image|markdown|typogrify }}</a>
-	{{ project.excerpt|markdown|typogrify }}
+	
+    {# blurb! #}
+    {{ project.excerpt|markdown|typogrify }}
+    
+    {# read more? #}
+    <a class="btn" href="{{ content_url(latest.url) }}">Read more &raquo;</a>
+
 </article>
 {% endmacro %}
 
