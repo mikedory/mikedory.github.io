@@ -18,7 +18,6 @@ $margin: 16px;
 // outer shadow handlerifying
 @mixin outer_shadow($background_white, $shadow_gray) {
 	background-color: $background_white;
-//	background-color: #eaeaea;
 	margin: 0 auto;
 	padding: 12px;
 	-moz-box-shadow: 0px 4px 12px $shadow_gray;
@@ -47,13 +46,12 @@ body {
 		color: $link;		
 	}
 
-	// background-color: #800; 
 	background-color: #FAFAFA; 
 	background-image: -moz-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px); 
 	-moz-background-size: 22px 22px;
-	 background-image: -webkit-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px);
-	 -webkit-background-size: 22px 22px; 
-	 background-size: 12px 12px;  
+	background-image: -webkit-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px);
+	-webkit-background-size: 22px 22px; 
+	background-size: 12px 12px;  
 
 }
 
@@ -63,6 +61,9 @@ body {
 // 	@include outer_shadow($background_white, $shadow_gray);
 }
 
+	.intro_container {
+		// max-width: 900px
+	}
 
 // --- HEADER --- //
 
@@ -98,7 +99,6 @@ header {
 		color: lighten($link, 25%);
 	}
 
-	
 }
 
 // --- CONTENT ---- //
