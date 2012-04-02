@@ -5,6 +5,7 @@
 .hyde_deps
 .sass-cache/
 npm-debug.log
+src/node_modules/
 
 
 # directories
