@@ -52,9 +52,12 @@
 					</ul>
 				{% endif %}
 
+				<!-- render out the post -->
 				{% filter markdown|typogrify -%}
 					{% mark post -%}
-						{% block post -%}{%- endblock %}
+						{% block post -%}
+							<!-- {{ resource.meta }} -->
+						{%- endblock %}
 					{%- endmark %}
 				{%- endfilter %}
 			</article>
