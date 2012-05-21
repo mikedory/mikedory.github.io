@@ -7,11 +7,10 @@ listable: false
 ---
 
 {% block intro %}
-	<div class="hero-unit">
-		<div class="page-header">
-			<h1>Hi! I'm Mike. <small>I make things and drink coffee.</small></h1>
-			<!-- <h2> I make things and drink coffee. Let's build something together!</h2> -->
-		</div>
+<div class="hero-unit">
+	<div class="page-header">
+		<h1>Hi! I'm Mike. <small>I make things and drink coffee.</small></h1>
+	</div>
 
 <div class="intro_container">
 {% filter markdown -%}
@@ -43,27 +42,15 @@ I graduated with a BA in Journalism & Media Studies from Rutgers University and 
 {%- endfilter %}
 </div>
 
-
-<!-- 		<p class="email-me">
-			<a class="btn btn-large" href="mailto:mike@dory.me">
-				Email me &raquo;
-			</a>
-		</p> -->
-
-<!-- 		<p>
-			<button class="btn btn-large">Facebook</button>
-			<button class="btn btn-large">Twitter</button>
-			<button class="btn btn-large">Github</button>
-			<button class="btn btn-large">Tumblr</button>
-		  </p>
- -->
-	</div>
+</div>
 {% endblock intro %}
 
 
 {% block main %}
+{#
 	{% from "macros.j2" import render_excerpt with context %}
 	<section class="blog_excerpt">
+#}
 
 
 	{# grab the latest 3 entries #}
@@ -82,6 +69,6 @@ I graduated with a BA in Journalism & Media Studies from Rutgers University and 
 				{%- endfor %}
 		</div>
 	{%- endif %}
-#}	
 	</section>
+#}	
 {% endblock main %}
