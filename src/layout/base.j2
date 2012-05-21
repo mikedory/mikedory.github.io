@@ -54,31 +54,31 @@
 				{% endblock %}
 				</div><!--/.nav-collapse -->
 			</div>
-			</div>
+		</div>
 	</div>
 	{% endblock topbar %}
 
 	<div class="container main_container">
-		{% block container %}
+	{% block container %}
 
-			{# main block #}
-			{% block intro %}
-			{% endblock intro %}
+		{# main block #}
+		{% block intro %}
+		{% endblock intro %}
 
-			{# main block #}
-			{% block main %}
-			{% endblock main %}
+		{# main block #}
+		{% block main %}
+		{% endblock main %}
 
 
-			{# nice lil' footer #}
-			{% block footer %}
-				<hr>
-				<footer>
-					&copy; Mike Dory, 2006-2012
-				</footer>
-			{% endblock footer %}
+		{# nice lil' footer #}
+		{% block footer %}
+		<hr>
+		<footer>
+			&copy; Mike Dory, 2006-2012
+		</footer>
+		{% endblock footer %}
 
-		{% endblock container %}
+	{% endblock container %}
 	</div> <!-- end of container -->
 
 	{% endblock body%}
@@ -95,17 +95,6 @@
 		{% block scripts %}
 		<!-- Bootstrap goodies -->
 		<script src="{{ media_url('js/bootstrap.js') }}"= ></script>
-<!--		<script src="{{ media_url('js/bootstrap-transition.js') }}"= ></script>
-		<script src="{{ media_url('js/bootstrap-alert.js') }}"= ></script>
-		<script src="{{ media_url('js/bootstrap-modal.js') }}"= ></script>
-		<script src="{{ media_url('js/bootstrap-dropdown.js') }}"= ></script>
-		<script src="{{ media_url('js/bootstrap-scrollspy.js') }}"= ></script>
-		<script src="{{ media_url('js/bootstrap-tab.js') }}"= ></script>
-		<script src="{{ media_url('js/bootstrap-tooltip.js') }}"= ></script>
-		<script src="{{ media_url('js/bootstrap-popover.js') }}"= ></script>
-		<script src="{{ media_url('js/bootstrap-button.js') }}"= ></script>
-		<script src="{{ media_url('js/bootstrap-collapse.js') }}"= ></script>
--->
 		<!-- <script src="{{ media_url('js/bootstrap-carousel.js') }}"= ></script> -->
 		<!-- <script src="{{ media_url('js/bootstrap-typeahead.js') }}"= ></script> -->
 
