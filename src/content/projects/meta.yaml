@@ -1,4 +1,4 @@
 extends: portfolio.j2
-default_block: post
+default_block: None
 listable: true
 level: projects
