@@ -51,6 +51,33 @@ But soon, I promise, I will actually document the stuff I've been working on! So
 </div>
 {# these are the fancy projects #}
 
+
+{% from "macros.j2" import get_three_posts with context %}
+
+<!-- Teaching and planning -->
+<h2>Teaching</h2>
+
+{% set projects = node.walk_resources_tagged_with_teaching() %}
+{{ get_three_posts(projects) }}
+
+<!-- ITP work -->
+<h2>ITP academic work</h2>
+
+{% set projects = node.walk_resources_tagged_with_itp() %}
+{{ get_three_posts(projects) }}
+
+
+<!-- Socialbomb -->
+<h2>With Socialbomb</h2>
+
+{% set projects = node.walk_resources_tagged_with_socialbomb() %}
+{{ get_three_posts(projects) }}
+
+
+{# 
+<!-- Projects -->
+<h2>Projects</h2>
+
 {% set projects = node.walk_resources_tagged_with_projects() %}
 
 {% if projects -%}
@@ -71,8 +98,12 @@ But soon, I promise, I will actually document the stuff I've been working on! So
 		{% endif %}
 
 	{%- endfor %}
-	</div>
 {%- endif %}
+#}
+
+
+	</div>
+
 
 </section>
 
