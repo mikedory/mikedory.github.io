@@ -34,6 +34,30 @@
 {% endmacro %}
 
 
+{# For snagging 3 portfolio entries and making a row #}
+
+{% macro get_three_posts(projects) %}
+
+{% if projects -%}
+    {% for project in projects -%}
+        {% if loop.index0 % 3 == 0 %}
+        <div class="row">
+        {% endif %}
+
+            <div class="span4">
+                {{ render_portfolio_excerpt(project, 'post') }}
+            </div>
+        {% if (loop.index0 % 3 == 2) or if (loop.last) %}
+        </div>
+        <hr>
+        {% endif %}
+        {% if loop.index >= 3 %} {% break %} {% endif %}
+    {%- endfor %}
+{%- endif %}
+{% endmacro %}
+
+
+
 {# The main nav bar #}
 
 {% macro render_nav(menu, cls=None) -%}
