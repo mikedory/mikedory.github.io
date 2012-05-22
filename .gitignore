@@ -14,3 +14,6 @@ content/
 src/deploy/
 src/content/
 node_modules/
+
+.css
+src/content/static/css/style.css

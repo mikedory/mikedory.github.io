@@ -8,33 +8,16 @@
 {% block main -%}
 <!-- THIS IS PROJECT SINGLE ENTRY -->
 	<div class="row">
-		<div class="span4">
+		<div class="span8">
 
 			<article class="post">
-				<nav class="post_nav">
-				<a class="backlink" href="{{ content_url(resource.node.url) }}">Back</a>
-				<a class="prev{{' disabled' if not resource.prev_by_time }}"
-					title="{{ resource.prev_by_time.meta.title }}"
-					{% if resource.prev_by_time %}
-					href="{{ content_url(resource.prev_by_time.url) }}"{% endif %}>
-					Previous
-				</a>
 
-				<a class="next{{' disabled' if not resource.next_by_time }}"
-					title="{{ resource.next_by_time.meta.title }}"
-					{% if resource.next_by_time %}
-					href="{{ content_url(resource.next_by_time.url) }}"{% endif %}>
-					Next
-				</a>
-
-				<br>
-				</nav>
 				<h1 class="title">
 					<a href="{{ content_url(resource.url) }}">
 						{{ resource.meta.title }}
 					</a>
 				</h1>
-				<time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
+<!-- 				<time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
 
 					Posted: {{ resource.meta.created.strftime('%a, %d %b %Y') }}
 
@@ -50,7 +33,7 @@
 						</li>
 						{% endfor %}
 					</ul>
-				{% endif %}
+				{% endif %} -->
 
 				<!-- render out the post -->
 				{% filter markdown|typogrify -%}
@@ -62,6 +45,33 @@
 				{%- endfilter %}
 			</article>
 
+		</div><!-- end post body div -->
+
+		<!-- this exists purely to add padding -->
+		<div class="span1">
+			&nbsp;
 		</div>
+
+		<div class="span3">
+			<p>More stuff to go here, I bet.
+
+				<nav class="post_nav">
+					<a class="backlink" href="{{ content_url(resource.node.url) }}">Back</a>
+					<a class="prev{{' disabled' if not resource.prev_by_time }}"
+						title="{{ resource.prev_by_time.meta.title }}"
+						{% if resource.prev_by_time %}
+						href="{{ content_url(resource.prev_by_time.url) }}"{% endif %}>
+						Previous
+					</a>
+
+					<a class="next{{' disabled' if not resource.next_by_time }}"
+						title="{{ resource.next_by_time.meta.title }}"
+						{% if resource.next_by_time %}
+						href="{{ content_url(resource.next_by_time.url) }}"{% endif %}>
+						Next
+					</a>
+
+				</nav>
+		</div><!-- end sidebar div -->
 	</div>
 {%- endblock %}
