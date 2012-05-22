@@ -1,0 +1,415 @@
+---
+title: ArborOptics
+description: ArborOptics
+created: !!timestamp '2011-04-07 10:00:00'
+tags:
+    - portfolio
+    - projects
+    - itp
+    - art
+thumb: http://static.flickr.com/138/318120480_2184062da1.jpg?v=0
+excerpt: I started this with a very simple idea -- I wanted to bring a piece of the outdoors to the indoor space. 
+---
+
+<a href="http://flickr.com/photos/bentobox/318120480/in/set-72157594412802428/"><img src="http://static.flickr.com/138/318120480_2184062da1.jpg?v=0" /></a>
+
+Having spent the entire second half of the semester focused on one single project for Physical Computing, it's very difficult to take a few steps back and try to recap the entire experience.  However, as that's pretty much the whole point of presenting to an audience, let's give this a try, shall we?
+
+I started this with a very simple idea -- I wanted to bring a piece of the outdoors to the indoor space.  The room in my apartment with all my pcomp and studio gear has no windows, and if one were to spend more than about 20 minutes in that space (or any room with no windows), a sense of detachment and general malaise seems to set in.  In my case, what I missed most, even more than the general "gee, what's going on out there" feeling, was not seeing trees.  I grew up surrounded by big, old, dense forests, and to constantly be in an area with very few trees is really off-putting for me.
+
+So, after a bit of thought, the best direction for this outdoor -&gt;&gt; indoor transfer seemed to be making a tree of my own, and that this tree could convey the changes in the outdoor world primarily by calming colors.  I wanted this whole project to stay very simple and calming in appearance -- this should be as simple and beautiful as a tree itself.
+The process was not so beautiful, but was absolutely way more fun than expected (and I expected it'd be fun!).  I worked by myself on this project, primarily because I really wanted an excuse to REALLY learn the code and the process start to finish, and I really feel I did accomplish that -- there are things I understand now about Arduino and pComp in general that I wouldn't have ever dreamed earlier this semester.
+
+I started by writing a very simple program to PWM a tri-color LED, changing each pin's color individually, allowing me to access nearly every color of the rainbow.  After that was up and running, I started to think of ways to control that color based on the weather.  What I ended up doing was using Processing to parse Yahoo's XML weather feed (thanks to the wonderful simpleML library from Daniel Shiffman), and having Processing send single-letter values to Arduino based on the temperature value it picked up.  In the end, I went with a new letter for every five degrees Fahrenheit, but I tried 10 and 20 first.  Turns out that 20-degree shifts don't happen all that often, and hence, it was kinda boring to watch.
+
+The next step was to add a structure.  I'd initially thought of making a wire structure and running fiberoptic cables through it, but I ended up just ripping the end off a crappy pen from Staples (which had a bunch of several-inch-long fiberoptic strands), and plugging the LED in right below them.  I wrapped plain ol' copper wire around the bottom to give the appearance of a trunk, and split off groups of 10 strands or so (also wrapped in said copper wire) to make branches.  I wrapped the LED itself in a piece of plastic (cut off a piece of standard packaging from a mouse I'd bought) and hotglued that to the base of the tree, and then put all that top of a piece of foamcore with a hole in the middle.  Better picture of that whole assembly below:
+
+<a href="http://flickr.com/photos/bentobox/310799250/in/set-72157594399862492/"><img src="http://static.flickr.com/112/310799250_a6f6b372ac.jpg?v=0" /></a>
+
+This is what the guts looked like before they were completed and stashed in the base:
+
+<a href="http://flickr.com/photos/bentobox/318111013/in/set-72157594412802428/"><img src="http://static.flickr.com/136/318111013_aff52214a1.jpg?v=0" /></a>
+
+When I first started showing the tree off, I was really pleased to see that people really seemed to like the design and concept (though some didn't see why it had to be a tree).  More than anything, people really seemed to be happy with the color and styling, which was the whole point -- to be calmed by an ambient display.  The weather function ended up as kinda secondary, but it still seemed to be doing what I'd set out to do.  However, the second thing everybody seemed to do (after asking what the hell it was) was to try to touch the tree.  At this point, nothing happened when people touched it (or, honestly, in any way having to do with local input).  So, I added in a snippet of code for the Arduino that made it pulse other colors quickly (at varying speeds for the red, green and blue so as to have a whole bunch of random colors) and wired in a rolling rocker switch (which, in a super-hacky way, was triggered when the wires were pushed down hard enough).
+After all that, I wired up a perfboard and attached (via headers) the tri-color LED, Arduino Mini (chosen originally for its neato-tiny size, but eventually necessary because my code was 14k and the minis can take 16k, whereas the full-size Arduinos can only do 8k), USB connector, and eventually a switch (to make the tree temporarily go spastic).
+
+<a href="http://flickr.com/photos/bentobox/318115990/in/set-72157594412802428/"><img src="http://static.flickr.com/95/318115990_dfab53e48a.jpg?v=0" /></a>
+
+So, in short, it was successful.  It actually WORKED when I was presenting it (a lesson learned from my up-in-flames midterm project), it seemed to go over well with people, and it gave me an excuse to <em>really</em> learn the ins and outs of coding and physical computing.  I'm pretty happy with it, and despite some things left undone (xBee integration/wireless usage, additional environmental inputs, a lil' cocktail umbrella that opens or closes depending on rain percentages), it was a pretty successful experience.
+
+The code, for anyone curious, is below for both the Arduino and Processing sides:
+
+//=========================
+
+Arduino code:
+
+	//PWM'ing a tri-color LED that pulses in color according to the weather
+	//DxM, ITP Fall 2006
+
+	int val = 0;
+	int ledR = 9;    // PWM pin that the LED is on.  n.b. PWM 0 is on digital pin 9
+	int ledG = 11;    // PWM pin that the LED is on.  n.b. PWM 0 is on digital pin 11
+	int ledB = 10;    // PWM pin that the LED is on.  n.b. PWM 0 is on digital pin 10
+	int b = 50;
+	int c = 0;
+	int potPin = 2;    // Analog input pin that the potentiometer is attached to
+	int p = 0;   // value read from the pot
+	int d = 0; //dimmer value
+	int bdir = 1;
+	int testPin = 13;
+	int counter = 0;
+	int switchPin = 7;
+	int switchState = 0;
+
+	void setup()
+	{
+	Serial.begin(9600);
+
+	pinMode(switchPin, INPUT);       // set the switch pin to be an input
+
+	//display test//
+	digitalWrite(testPin, HIGH);
+	delay(100);
+	digitalWrite(testPin, LOW);
+	delay(100);
+	digitalWrite(testPin, HIGH);
+	delay(100);
+	digitalWrite(testPin, LOW);
+	delay(100);
+	digitalWrite(testPin, HIGH);
+	delay(100);
+	digitalWrite(testPin, LOW);
+	delay(100);
+	}
+
+	void loop(){
+	// read the switch input:
+	switchState = digitalRead(switchPin);
+
+	if (switchState == 1) {
+	// if the switch is closed:
+
+	analogWrite(ledR, (.816 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.757 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.954 * b));    // PWM the LED with the pot value
+
+	if ((b &lt;= 49)){ //&amp;&amp; (b &lt; 10)){
+	//  Serial.println("going up!");
+	bdir = -bdir;
+	}
+
+	if (b &gt;= 1000){
+	//  Serial.println("going down!");
+	bdir = -bdir;
+	}
+	b =  (b + ((bdir) *2));
+	p = analogRead(potPin); // read the pot value
+	delay(5);
+	d = p/10;
+	}
+
+	else{
+	val = Serial.read();
+
+	if (val == 'a') { //off
+
+	digitalWrite(ledR, LOW); // sets the LED off
+	digitalWrite(ledG, LOW); // sets the LED off
+	digitalWrite(ledB, LOW); // sets the LED off
+	}
+	if (val == 'A') { // ends with 0
+	analogWrite(ledR, (.215 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+
+	}
+
+	if (val == 'B') { // ends with 5
+	analogWrite(ledR, (.55 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.225 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.255 * b));    // PWM the LED with the pot value
+	}
+
+	if (val == 'C') { // ends with 10
+	analogWrite(ledR, (.100 * b ));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.155 * b));    // PWM the LED with the pot value
+	}
+
+	if (val == 'D') { // ends with 15
+	analogWrite(ledR, (.100 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.150 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.100 *b));    // PWM the LED with the pot value
+	}
+
+	if (val == 'E') { // ends with 20
+	analogWrite(ledR, (.055 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.250 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.100 * b));    // PWM the LED with the pot value
+	}
+
+	if (val == 'F') { // ends with 25
+	analogWrite(ledR, (.055 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.057 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.255 * b));    // PWM the LED with the pot value
+	}
+
+	if (val == 'G') { // ends with 30
+	analogWrite(ledR, (.055 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.097 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.255 * b));    // PWM the LED with the pot value
+	}
+
+	if (val == 'H') { // ends with 35
+	analogWrite(ledR, (.055 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.154 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.255 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'I') { // ends with 40
+	analogWrite(ledR, (.055 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.139 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.255 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'J') { // ends with 45
+	analogWrite(ledR, (.055 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'K') { // ends with 50
+	analogWrite(ledR, (.025 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.125 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.255 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'L') { // ends with 55
+	analogWrite(ledR, (.025 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.247 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'M') { // ends with 60
+	analogWrite(ledR, (.055 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.093 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'N') { // ends with 65
+	analogWrite(ledR, (.025 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.101 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'O') { // ends with 70
+	analogWrite(ledR, (.055 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.075 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'P') { // ends with 75
+	analogWrite(ledR, (.087 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.025 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'Q') { // ends with 80
+	analogWrite(ledR, (.155 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.027 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'R') { // ends with 85
+	analogWrite(ledR, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.020 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'S') { // ends with 90
+	analogWrite(ledR, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.171 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.025 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'T') { // ends with 95
+	analogWrite(ledR, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.139 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.025 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'U') { // ends with 100
+	analogWrite(ledR, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.101 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.025 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'V') { // ends with 105
+	analogWrite(ledR, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.025 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.025 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'W') { // TEST RED
+	analogWrite(ledR, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.000 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.000 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'X') { // TEST GREEN
+	analogWrite(ledR, (.000 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.255 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.000 * b));    // PWM the LED with the pot value
+	}
+	if (val == 'Y') { // TEST BLUE
+	analogWrite(ledR, (.000 * b));    // PWM the LED with the pot value
+	analogWrite(ledG, (.000 * b));    // PWM the LED with the pot value
+	analogWrite(ledB, (.255 * b));    // PWM the LED with the pot value
+	}
+
+	if ((b &lt;= 49)){
+	//  Serial.println("going up!");
+	bdir = -bdir;
+	}
+
+	if (b &gt;= 1000){
+	//  Serial.println("going down!");
+	bdir = -bdir;
+	}
+	b =  (b + ((bdir) *2));
+
+	//    p = analogRead(potPin); // read the pot value
+	//  analogWrite(led, potValue/4);  // PWM the LED with the pot value (divided by 4 to fit in a byte)
+	//  Serial.println(p);      // print the pot value back to the debugger pane
+	//   delay(100);
+	//  Serial.println(p - 600);
+	delay(5);
+	// Serial.println(bdir);
+	c = b * 10;
+	//  Serial.println(c);
+	d = p/10;
+	}
+	}
+
+Processing code:
+	
+	// PWM'ing a tri-color LED based on weather temperatures
+
+	import processing.serial.*;
+
+	String weather = "";
+	String[] zips = {
+	"10003","21209","90210"};
+
+	int temp;
+	int counter = 0;
+
+	// The serial port:
+	Serial myPort;
+
+	void setup(){
+	getWeather(zips[counter]);
+	// List all the available serial ports:
+	println(Serial.list());
+
+	// Open whatever port is the one you’re using.
+	myPort = new Serial(this, Serial.list()[0], 9600);
+
+	println(temp);
+	println(zips);
+	println(weather);
+	}
+
+	void draw(){
+
+	if (temp &gt;= -40 &amp;&amp; temp &lt;=0){
+	myPort.write('A');
+	println("ass-cold!");
+	}
+	if (temp &gt;= 0 &amp;&amp; temp &lt;=5){
+	myPort.write('B');
+	}
+	if (temp &gt;= 5 &amp;&amp; temp &lt;=10){
+	myPort.write('C');
+	}
+	if (temp &gt;= 10 &amp;&amp; temp &lt;=15){
+	myPort.write('D');
+	}
+	if (temp &gt;= 115 &amp;&amp; temp &lt;=20){
+	myPort.write('E');
+	}
+	if (temp &gt;= 20 &amp;&amp; temp &lt;=25){
+	myPort.write('F');
+	}
+	if (temp &gt;= 25 &amp;&amp; temp &lt;=30){
+	myPort.write('G');
+	}
+	if (temp &gt;= 30 &amp;&amp; temp &lt;=35){
+	myPort.write('H');
+	}
+	if (temp &gt;= 35 &amp;&amp; temp &lt;=40){
+	myPort.write('I');
+	}
+	if (temp &gt;= 40 &amp;&amp; temp &lt;=45){
+	myPort.write('J');
+	}
+	if (temp &gt;= 45 &amp;&amp; temp &lt;=50){
+	myPort.write('K');
+	}
+	if (temp &gt;= 50 &amp;&amp; temp &lt;=55){
+	myPort.write('L');
+	}
+	if (temp &gt;= 55 &amp;&amp; temp &lt;=60){
+	myPort.write('M');
+	}
+	if (temp &gt;= 60 &amp;&amp; temp &lt;=65){
+	myPort.write('N');
+	}
+	if (temp &gt;= 65 &amp;&amp; temp &lt;=70){
+	myPort.write('O');
+	}
+	if (temp &gt;= 70 &amp;&amp; temp &lt;=75){
+	myPort.write('P');
+	}
+	if (temp &gt;= 75 &amp;&amp; temp &lt;=80){
+	myPort.write('Q');
+	}
+	if (temp &gt;= 80 &amp;&amp; temp &lt;=85){
+	myPort.write('R');
+	}
+	if (temp &gt;= 85 &amp;&amp; temp &lt;=90){
+	myPort.write('S');
+	}
+	if (temp &gt;= 90 &amp;&amp; temp &lt;=95){
+	myPort.write('T');
+	}
+	if (temp &gt;= 95 &amp;&amp; temp &lt;=100){
+	myPort.write('U');
+	}
+	if (temp &gt;= 100 &amp;&amp; temp &lt;=105){
+	myPort.write('V');
+	}
+
+	//essplain it, yo.///////
+	println(temp);
+	println(weather);
+
+	}
+
+	void getWeather(String zip) {
+	//Get all the HTML/XML source code into an array of strings (each line is one element in the array)
+	String url = "http://itp.nyu.edu/icm/proxy/proxy.php?url=http://xml.weather.yahoo.com/forecastrss?p=" + zip;
+	String[] lines = loadStrings(url);
+
+	String xml = join(lines, " "); // Get rid of the array and make it one very long String
+
+	// The manual way to concatenate
+	// String xml = "";
+	// for (int i = 0; i &lt; lines.length; i++) {
+	//   xml += lines[i];
+	// }
+
+	// Searching for weather condition
+	String lookfor = " String end = "\"";
+	weather = giveMe(xml,lookfor,end);
+
+	// Searching for temperature
+	lookfor = "temp=\"";
+	temp = int(giveMe(xml,lookfor,end));
+
+	}
+
+	// A function that returns a substring between two substrings
+	String giveMe(String s, String before, String after) {
+	String found = "";
+	int start = s.indexOf(before);  // Find the index of the beginning tag
+	if (start == -1) return ""; // If we don't find anything, send back a blank String
+	start += before.length(); // Move to the end of the beginning tag
+	int end = s.indexOf(after,start); // Find the index of the end tag
+	if (end == -1) return ""; // If we don't find the end tag, send back a blank String
+	return s.substring(start,end); // Return the text in between
+	}

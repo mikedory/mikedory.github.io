@@ -10,9 +10,8 @@ src/node_modules/
 
 # directories
 deploy/
-content/
-src/deploy/
-src/content/
+#content/
+#src/content/
 node_modules/
 
 .css

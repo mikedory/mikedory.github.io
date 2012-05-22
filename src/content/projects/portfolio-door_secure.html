@@ -1,0 +1,34 @@
+---
+title: Door Secure
+description: Door Secure
+created: !!timestamp '2011-05-07 10:00:00'
+tags:
+    - portfolio
+    - projects
+    - itp
+    - sustainable
+thumb: http://farm1.static.flickr.com/187/381855069_d713c3febe.jpg?v=0
+excerpt: Collecting energy from our door-opening efforts
+---
+
+
+This was something I'd worked on with my fellow ITPer Matt Burton, where we had spent  three weeks working on this idea we'd had for harvesting the kinetic energy used to slide the doors on the ITP floor back and forth.  As nearly all the classrooms on our floor have big glass sliding doors, we figured we'd be getting a good amount of energy from the effort and not be interfering with people's daily lives much if at all.  We were half-right, overall: we managed to make a prototype that likely would have no noticible effect on those using the doors, but sadly, the amount of energy gathered is small at best.  Our prototype can generate four or five volts at a shot, which is great, but rather low amperage (~.04 amps at peak) and only in one-or-two-second bursts.  By Rob Faludi's calculations, that'd be WEEKS just to charge a set of AA batteries.  So, we'd have to rethink the uses of this idea.
+
+However, to break it down a bit more, here was our initial idea, done in SketchUp:
+
+<img src="http://farm1.static.flickr.com/187/381855069_d713c3febe.jpg?v=0" alt="381855069 D713C3Febe" border="1" height="341" hspace="4" vspace="4" width="500" />
+
+We were limited in this project to making the prototype fit within the size and weight constraints of the One Laptop Per Child specifications, so we were aiming to make one small unit that could be attached to a door by magnets -- thankfully, all the doors on our floor are magnetic, and we didn't want to mar the doors in any way, so this worked out well.  Our crude prototype features a 5v stepper motor with two coils with a wheel attached at the top (salvaged from a K'Nex set), and in our model, as the door opens and closes, the motor spins, generating current.
+<img src="http://farm1.static.flickr.com/177/381407795_1272ec7322.jpg?v=0" alt="381407795 1272Ec7322" border="1" height="375" hspace="4" vspace="4" width="500" />
+
+The motor's leads out are connected to a small breadboard, with each coil's leads running into a rectifier bridge (and the central leads are buried in the board).  By rectifying the AC coming from the motor, we were able to get a good 3-5v on each opening of the door.  In this example, our output was just a blue superbright LED.
+
+<img src="http://farm1.static.flickr.com/148/381407631_8fd1e7bd16.jpg?v=0" alt="381407631 8Fd1E7Bd16" border="1" height="375" hspace="4" vspace="4" width="500" />
+
+In action:
+
+<img src="http://farm1.static.flickr.com/126/381408154_4ea85cfba3.jpg?v=0" alt="381408154 4Ea85Cfba3" border="1" height="375" hspace="4" vspace="4" width="500" />
+
+For any further development, we'd orginially hoped to store the energy in the form of rechargable batteries, but as mentioned above, that might not make much sense now.  Our classmates had some great suggestions after our presentation, which included such excellent ideas as including a gearbox to make the energy-to-movement ratio better for us, use the energy to turn on lights in the room, and use the door energy to power the motion sensors in the room.  I don't believe we've worked out our next steps, but any/all of these warrant further research.
+
+Also, a <a href="http://www.doryexmachina.com/itpblog/classwork/spring07/sustainable/DSCN7948.MOV">movie of our prototype in action</a>.
