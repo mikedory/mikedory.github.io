@@ -38,7 +38,7 @@
 				<!-- render out the post -->
 				{% filter markdown|typogrify -%}
 					{% mark post -%}
-						{% block postbody -%}
+						{% block post -%}
 							<!-- {{ resource.meta }} -->
 						{%- endblock %}
 					{%- endmark %}
