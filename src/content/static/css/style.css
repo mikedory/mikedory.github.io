@@ -1,6 +1,11 @@
 /* ==|== primary styles =====================================================
    Author: Mike Dory | http://doryexmachina.com
    ========================================================================== */
+@font-face {
+  font-family: 'WebSymbolsRegular';
+  src: url("/static/fonts/websymbols-regular-webfont.eot");
+  src: url("/static/fonts/websymbols-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/websymbols-regular-webfont.woff") format("woff"), url("/static/fonts/websymbols-regular-webfont.ttf") format("truetype"), url("/static/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format("svg"); }
+
 body {
   font-family: adelle-1, adelle-2, serif;
   font-weight: 100;
@@ -86,6 +91,13 @@ blockquote {
   font-style: italic;
   color: #bed1dd; }
 
+.center {
+  text-align: center; }
+
 span.amp {
   font-family: Baskerville, Palatino, "Book Antiqua", serif;
   font-style: italic; }
+
+span.icon_text {
+  font-family: WebSymbolsRegular;
+  font-size: 2em; }

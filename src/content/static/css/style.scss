@@ -33,6 +33,15 @@ $margin: 16px;
 	font-weight: $weight;
 	font-style: $style;
 }
+
+@font-face{ 
+	font-family: 'WebSymbolsRegular';
+	src: url('/static/fonts/websymbols-regular-webfont.eot');
+	src: url('/static/fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('/static/fonts/websymbols-regular-webfont.woff') format('woff'),
+	     url('/static/fonts/websymbols-regular-webfont.ttf') format('truetype'),
+	     url('/static/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+	}
  
 // --- BODY --- //
 
@@ -159,7 +168,21 @@ blockquote {
 	color: lighten($blue, 5%);
 }
 
+.center {
+	text-align: center;
+}
+
+.bottomborder{
+	border-bottom: 1px solid #555;
+}
+
 span.amp {
 	font-family: Baskerville, Palatino, "Book Antiqua", serif;
 	font-style: italic;
 }
+
+span.icon_text {
+	font-family: WebSymbolsRegular;
+	font-size: 2em;
+}
+
