@@ -94,6 +94,10 @@ blockquote {
 .center {
   text-align: center; }
 
+.bottomborder {
+  border-bottom: 1px solid #999;
+  margin-bottom: 15px; }
+
 span.amp {
   font-family: Baskerville, Palatino, "Book Antiqua", serif;
   font-style: italic; }

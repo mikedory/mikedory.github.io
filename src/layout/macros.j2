@@ -25,7 +25,7 @@
 	<a href="{{ content_url(res.url) }}">{{ project.image|markdown|typogrify }}</a>
 	
     {# blurb! #}
-    {{ project.excerpt|markdown|typogrify }}
+    {{ res.meta.excerpt|markdown|typogrify }}
     
     {# read more? #}
     <a class="btn" href="{{ content_url(latest.url) }}">Read more &raquo;</a>
