@@ -36,7 +36,9 @@
 
 {# For snagging 3 portfolio entries and making a row #}
 
-{% macro get_three_posts(projects) %}
+{% macro get_three_posts(tag) %}
+
+{% set projects = node.walk_resources_tagged_with(tag) %}
 
 {% if projects -%}
     {% for project in projects -%}
@@ -54,6 +56,9 @@
         {% if loop.index >= 3 %} {% break %} {% endif %}
     {%- endfor %}
 {%- endif %}
+<div class="projects_more">
+    {{ content_url('projects/tags/'~tag~'.html') }}
+</div>
 {% endmacro %}
 
 
