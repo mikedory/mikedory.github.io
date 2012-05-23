@@ -54,24 +54,31 @@ But soon, I promise, I will actually document the stuff I've been working on! So
 
 {% from "macros.j2" import get_three_posts with context %}
 
+<!-- Writing -->
+<h2>Writing</h2>
+
+{{ get_three_posts("writing") }}
+
 <!-- Teaching and planning -->
 <h2>Teaching</h2>
 
-{% set projects = node.walk_resources_tagged_with_teaching() %}
-{{ get_three_posts(projects) }}
+{{ get_three_posts("teaching") }}
+
+<!-- Speaking -->
+<h2>Speaking</h2>
+
+{{ get_three_posts("speaking") }}
 
 <!-- ITP work -->
 <h2>ITP academic work</h2>
 
-{% set projects = node.walk_resources_tagged_with_itp() %}
-{{ get_three_posts(projects) }}
+{{ get_three_posts("itp") }}
 
 
 <!-- Socialbomb -->
 <h2>With Socialbomb</h2>
 
-{% set projects = node.walk_resources_tagged_with_socialbomb() %}
-{{ get_three_posts(projects) }}
+{{ get_three_posts("socialbomb") }}
 
 
 {# 
