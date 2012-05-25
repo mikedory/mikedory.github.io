@@ -107,12 +107,8 @@ span.icon_text {
   font-size: 2em;
   color: #333; }
 
-hr {
-  background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.1), transparent);
-  background-image: -moz-linear-gradient(left, transparent, rgba(0, 0, 0, 0.1), transparent);
-  background-image: -ms-linear-gradient(left, transparent, rgba(0, 0, 0, 0.1), transparent);
-  background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, 0.1), transparent);
-  border: 0;
-  border-top: 1px solid #EEE;
-  border-bottom: 1px solid white;
-  border: 1px blue; }
+.left {
+  float: left; }
+
+.right {
+  float: right; }

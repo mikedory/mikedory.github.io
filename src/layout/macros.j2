@@ -51,14 +51,17 @@
             </div>
         {% if (loop.index0 % 3 == 2) or if (loop.last) %}
         </div>
-        <hr>
+        <!-- <hr> -->
         {% endif %}
-        {% if loop.index >= 3 %} {% break %} {% endif %}
+        {% if loop.index >= 3 %}
+            <div class="projects_more right">
+                <a href="{{ content_url('projects/tags/'~tag) }}">More about {{ tag }}...</a>
+            </div>
+            {% break %}
+        {% endif %}
     {%- endfor %}
 {%- endif %}
-<div class="projects_more">
-    {{ content_url('projects/tags/'~tag~'.html') }}
-</div>
+
 {% endmacro %}
 
 

@@ -8,20 +8,15 @@ listable: false
 
 {# override the intro #}
 {% block intro %}
-<div class="no_hero_padder">
+<!-- <div class="no_hero_padder"> -->
+<div class="hero-unit">
 {% filter markdown -%}
 
-<h2 class="page-header">Projects</h2>
+<h1 class="page-header">Projects</h1>
 
-This is kind of a work in progress.  And by that I mean that there is nothing to see here yet.  
-
-But soon, I promise, I will actually document the stuff I've been working on! Sorted by date and type, even!
+I did some things!
 
 {%- endfilter %}
-</div>
-{% endblock intro %}
-
-{% block main %}
 
 
 <div id="portfolio_carousel" class="carousel slide portfolio_carousel_div">
@@ -49,68 +44,42 @@ But soon, I promise, I will actually document the stuff I've been working on! So
 	<a class="left carousel-control" href="#portfolio_carousel" data-slide="prev">&lsaquo;</a>
 	<a class="right carousel-control" href="#portfolio_carousel" data-slide="next">&rsaquo;</a>
 </div>
+</div>
+{% endblock intro %}
+
+{% block main %}
+
 {# these are the fancy projects #}
-
-
 {% from "macros.j2" import get_three_posts with context %}
 
 <!-- Writing -->
-<h2>Writing</h2>
+<h1>Writing</h1>
 
 {{ get_three_posts("writing") }}
 
 <!-- Teaching and planning -->
-<h2>Teaching</h2>
+<h1>Teaching</h1>
 
 {{ get_three_posts("teaching") }}
 
 <!-- Speaking -->
-<h2>Speaking</h2>
+<h1>Speaking</h1>
 
 {{ get_three_posts("speaking") }}
 
 <!-- ITP work -->
-<h2>ITP academic work</h2>
+<h1>ITP academic work</h1>
 
 {{ get_three_posts("itp") }}
 
 
 <!-- Socialbomb -->
-<h2>With Socialbomb</h2>
+<h1>With Socialbomb</h1>
 
 {{ get_three_posts("socialbomb") }}
 
 
-{# 
-<!-- Projects -->
-<h2>Projects</h2>
-
-{% set projects = node.walk_resources_tagged_with_projects() %}
-
-{% if projects -%}
-	
-	{% for project in projects -%}
-		
-		{% if loop.index0 % 3 == 0 %}
-		<div class="row">
-		{% endif %}
-
-			<div class="span4">
-				{{ render_portfolio_excerpt(project, 'post') }}
-			</div>
-
-		{% if (loop.index0 % 3 == 2) or if (loop.last) %}
-		</div>
-		<hr>
-		{% endif %}
-
-	{%- endfor %}
-{%- endif %}
-#}
-
-
-	</div>
-
+</div>
 
 </section>
 
