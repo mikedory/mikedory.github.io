@@ -46,4 +46,4 @@ So this is being fixed up, but right now this setup requires more than a few thi
 
 - fabric
 	
-		pip install hyde
+		pip install fabric
