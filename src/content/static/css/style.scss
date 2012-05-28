@@ -234,8 +234,9 @@ span.icon_text {
 	display: inline;
 	// margin: 5px 0 50px 0;
 
-	.icon_text {
-		font-size: 1.2em;
+	.icon_text a {
+		font-size: .7em;
+		margin-right: .1em;
 	}
 }
 

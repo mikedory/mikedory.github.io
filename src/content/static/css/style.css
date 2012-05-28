@@ -129,8 +129,9 @@ span.icon_text {
 
 .social_networks {
   display: inline; }
-  .social_networks .icon_text {
-    font-size: 1.2em; }
+  .social_networks .icon_text a {
+    font-size: .7em;
+    margin-right: .1em; }
 
 .project-sort-buttons {
   font-family: adelle-1, adelle-2, serif;
