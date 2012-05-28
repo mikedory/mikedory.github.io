@@ -25,7 +25,7 @@ hideAndShow = (div) ->
 	classToShow = $(div).closest('li').attr('class').split(' ')[0]
 
 	# hide the right groups
-	$('.post-group').fadeOut()
+	$('.post-group').hide()
 
 	# remove active highlights, restore clickable classes
 	$(div).closest('ul').each (index, element) =>
@@ -37,7 +37,7 @@ hideAndShow = (div) ->
 	$(div).closest('li a').removeClass('clickable')
 
 	# show the new one
-	$('.'+classToShow).delay(200).fadeIn(150)
+	$('.'+classToShow).fadeIn(150)
 
 # stop people from clicking the Writing tab on first load
 $('li.writing a').removeClass('clickable')
