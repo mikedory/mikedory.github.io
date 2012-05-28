@@ -154,6 +154,11 @@ footer {
 	font-size: 10px;
 	margin-top: 24px;
 	// text-shadow: 1px 1px 1px $lgray;
+
+	.icon_text {
+		font-size: 1em;
+		line-height: 100%;
+	}
 }
 
 // --- Special things --- //
@@ -227,7 +232,7 @@ span.icon_text {
 
 .social_networks {
 	display: inline;
-	margin: 5px 0 50px 0;
+	// margin: 5px 0 50px 0;
 
 	.icon_text {
 		font-size: 1.2em;

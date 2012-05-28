@@ -82,6 +82,9 @@ p {
 footer {
   font-size: 10px;
   margin-top: 24px; }
+  footer .icon_text {
+    font-size: 1em;
+    line-height: 100%; }
 
 code {
   font-family: Courier; }
@@ -125,8 +128,7 @@ span.icon_text {
   height: 120px; }
 
 .social_networks {
-  display: inline;
-  margin: 5px 0 50px 0; }
+  display: inline; }
   .social_networks .icon_text {
     font-size: 1.2em; }
 
