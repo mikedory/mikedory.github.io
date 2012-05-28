@@ -14,7 +14,11 @@ listable: false
 
 <h1 class="page-header">Projects</h1>
 
-I did some things!
+I've spent the last decade studying the ways people communicate and working to make their conversations better. As the CTO and co-founder of Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them. 
+
+Prior to starting up Socialbomb, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine.
+
+
 
 {%- endfilter %}
 
@@ -50,13 +54,13 @@ I did some things!
 
 {% block main %}
 
-<div class="project-sort-buttons row ">
-	<div class="writing span2">Writing</div>
-	<div class="teaching span2">Teaching</div>
-	<div class="speaking span2">Speaking</div>
-	<div class="itp span2">ITP work</div>
-	<div class="socialbomb span2">Socialbomb</div>
-</div>
+<ul class="nav nav-tabs center project-sort-buttons">
+	<li class="writing span2 active"><a href="#" class="clickable">Writing</a></li>
+	<li class="teaching span2"><a href="#" class="clickable">Teaching</a></li>
+	<li class="speaking span2"><a href="#" class="clickable">Speaking</a></li>
+	<li class="itp span2"><a href="#" class="clickable">ITP work</a></li>
+	<li class="socialbomb span2"><a href="#" class="clickable">Socialbomb</a></li>
+</ul>
 
 {# these are the fancy projects #}
 {% from "macros.j2" import get_three_posts with context %}
@@ -64,32 +68,32 @@ I did some things!
 <div class="post-group-holder">
 	<!-- Writing -->
 	<div class="writing post-group">
-		<h1 class="page-header">Writing</h1>
+		<!-- <h1 class="page-header">Writing</h1> -->
 		{{ get_three_posts("writing") }}
 	</div>
 
 	<!-- Teaching and planning -->
 	<div class="teaching post-group">
-		<h1 class="page-header">Teaching</h1>
+		<!-- <h1 class="page-header">Teaching</h1> -->
 		{{ get_three_posts("teaching") }}
 	</div>
 
 	<!-- Speaking -->
 	<div class="speaking post-group">
-		<h1 class="page-header">Speaking</h1>
+		<!-- <h1 class="page-header">Speaking</h1> -->
 		{{ get_three_posts("speaking") }}
 	</div>
 
 
 	<!-- ITP work -->
 	<div class="itp post-group">
-		<h1 class="page-header">ITP academic work</h1>
+		<!-- <h1 class="page-header">ITP academic work</h1> -->
 		{{ get_three_posts("itp") }}
 	</div>
 
 	<!-- Socialbomb -->
 	<div class="socialbomb post-group">
-		<h1 class="page-header">With Socialbomb</h1>
+		<!-- <h1 class="page-header">With Socialbomb</h1> -->
 		{{ get_three_posts("socialbomb") }}
 	</div>
 </div>
