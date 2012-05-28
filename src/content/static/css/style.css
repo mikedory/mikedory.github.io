@@ -112,3 +112,9 @@ span.icon_text {
 
 .right {
   float: right; }
+
+#social-networks li {
+  list-style: none; }
+#social-networks .icon_text {
+  font-size: 16px;
+  margin-right: 8px; }
