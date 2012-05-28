@@ -1,12 +1,19 @@
 (function() {
-  var boop;
+  var log;
 
-  boop = 'boop';
+  log = function(msg) {
+    if (console) {
+      return console.log(msg);
+    } else {
 
-  if (console) {
-    console.log(boop);
-  } else {
-    alert(boop);
-  }
+    }
+  };
+
+  $(".project-sort-buttons").children().click(function() {
+    var classToShow;
+    $('.post-group').slideUp();
+    classToShow = $(event.target).attr('class').split(' ')[0];
+    return $('.' + classToShow).delay(200).slideDown(150);
+  });
 
 }).call(this);
