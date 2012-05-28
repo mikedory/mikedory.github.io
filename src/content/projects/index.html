@@ -19,7 +19,7 @@ I did some things!
 {%- endfilter %}
 
 
-<div id="portfolio_carousel" class="carousel slide portfolio_carousel_div">
+{# <div id="portfolio_carousel" class="carousel slide portfolio_carousel_div">
 	<div class="carousel-inner">
  
 		<div class="item active">
@@ -44,41 +44,55 @@ I did some things!
 	<a class="left carousel-control" href="#portfolio_carousel" data-slide="prev">&lsaquo;</a>
 	<a class="right carousel-control" href="#portfolio_carousel" data-slide="next">&rsaquo;</a>
 </div>
+#}
 </div>
 {% endblock intro %}
 
 {% block main %}
 
+<div class="project-sort-buttons row ">
+	<div class="writing span2">Writing</div>
+	<div class="teaching span2">Teaching</div>
+	<div class="speaking span2">Speaking</div>
+	<div class="itp span2">ITP work</div>
+	<div class="socialbomb span2">Socialbomb</div>
+</div>
+
 {# these are the fancy projects #}
 {% from "macros.j2" import get_three_posts with context %}
 
-<!-- Writing -->
-<h1>Writing</h1>
+<div class="post-group-holder">
+	<!-- Writing -->
+	<div class="writing post-group">
+		<h1 class="page-header">Writing</h1>
+		{{ get_three_posts("writing") }}
+	</div>
 
-{{ get_three_posts("writing") }}
+	<!-- Teaching and planning -->
+	<div class="teaching post-group">
+		<h1 class="page-header">Teaching</h1>
+		{{ get_three_posts("teaching") }}
+	</div>
 
-<!-- Teaching and planning -->
-<h1>Teaching</h1>
-
-{{ get_three_posts("teaching") }}
-
-<!-- Speaking -->
-<h1>Speaking</h1>
-
-{{ get_three_posts("speaking") }}
-
-<!-- ITP work -->
-<h1>ITP academic work</h1>
-
-{{ get_three_posts("itp") }}
-
-
-<!-- Socialbomb -->
-<h1>With Socialbomb</h1>
-
-{{ get_three_posts("socialbomb") }}
+	<!-- Speaking -->
+	<div class="speaking post-group">
+		<h1 class="page-header">Speaking</h1>
+		{{ get_three_posts("speaking") }}
+	</div>
 
 
+	<!-- ITP work -->
+	<div class="itp post-group">
+		<h1 class="page-header">ITP academic work</h1>
+		{{ get_three_posts("itp") }}
+	</div>
+
+	<!-- Socialbomb -->
+	<div class="socialbomb post-group">
+		<h1 class="page-header">With Socialbomb</h1>
+		{{ get_three_posts("socialbomb") }}
+	</div>
+</div>
 </div>
 
 </section>
