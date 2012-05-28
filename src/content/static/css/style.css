@@ -81,8 +81,7 @@ p {
 
 footer {
   font-size: 10px;
-  margin-top: 24px;
-  text-shadow: 1px 1px 2px #999999; }
+  margin-top: 24px; }
 
 code {
   font-family: Courier; }
@@ -112,3 +111,30 @@ span.icon_text {
 
 .right {
   float: right; }
+
+.center {
+  text-align: center;
+  left: auto;
+  right: auto; }
+
+.things_i_do .icon_text {
+  font-size: 2.2em;
+  margin: 0 10px 0 5px;
+  display: inline;
+  float: left;
+  height: 120px; }
+
+.social_networks {
+  display: inline;
+  margin: 5px 0 50px 0; }
+  .social_networks .icon_text {
+    font-size: 1.2em; }
+
+.project-sort-buttons {
+  font-family: adelle-1, adelle-2, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  color: #666; }
+  .project-sort-buttons li a {
+    color: #555; }
