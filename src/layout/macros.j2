@@ -41,6 +41,31 @@
 {% set projects = node.walk_resources_tagged_with(tag) %}
 
 {% if projects -%}
+	<div class="row">
+    {% for project in projects -%}
+            <div class="span4">
+                {{ render_portfolio_excerpt(project, 'post'+' '+tag) }}
+            </div>
+
+        {% if loop.index >= 3 %}
+            <div class="projects_more right">
+                <a href="{{ content_url('projects/tags/'~tag) }}">More about {{ tag }}...</a>
+            </div>
+            {% break %}
+        {% endif %}
+    {%- endfor %}
+    </div>
+{%- endif %}
+
+{% endmacro %}
+
+
+{# get all portfolio entries matching a tag #}
+{% macro get_all_posts(tag) %}
+
+{% set projects = node.walk_resources_tagged_with(tag) %}
+
+{% if projects -%}
     {% for project in projects -%}
         {% if loop.index0 % 3 == 0 %}
         <div class="row">
@@ -53,17 +78,10 @@
         </div>
         <!-- <hr> -->
         {% endif %}
-        {% if loop.index >= 3 %}
-            <div class="projects_more right">
-                <a href="{{ content_url('projects/tags/'~tag) }}">More about {{ tag }}...</a>
-            </div>
-            {% break %}
-        {% endif %}
     {%- endfor %}
 {%- endif %}
 
 {% endmacro %}
-
 
 
 {# The main nav bar #}
