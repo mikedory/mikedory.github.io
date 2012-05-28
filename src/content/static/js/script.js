@@ -1,7 +1,39 @@
-(function() {
-  var $, log;
 
-  $ = require('/usr/local/lib/node_modules/jquery');
+/*
+Portfolio page
+*/
+
+(function() {
+  var hideAndShow, log;
+
+  $(".project-sort-buttons li a.clickable").click(function() {
+    if ($(this).closest('li a').hasClass('clickable')) {
+      hideAndShow(this);
+    } else {
+
+    }
+    return false;
+  });
+
+  hideAndShow = function(div) {
+    var classToShow,
+      _this = this;
+    classToShow = $(div).closest('li').attr('class').split(' ')[0];
+    $('.post-group').fadeOut();
+    $(div).closest('ul').each(function(index, element) {
+      $(element).find('li').removeClass('active');
+      return $(element).find('li a').addClass('clickable');
+    });
+    $(div).closest('li').addClass('active');
+    $(div).closest('li a').removeClass('clickable');
+    return $('.' + classToShow).delay(200).fadeIn(150);
+  };
+
+  $('li.writing a').removeClass('clickable');
+
+  /*
+  Helper functions
+  */
 
   log = function(msg) {
     if (console) {
@@ -10,12 +42,5 @@
 
     }
   };
-
-  $(".project-sort-buttons").children().click(function() {
-    var classToShow;
-    $('.post-group').slideUp();
-    classToShow = $(event.target).attr('class').split(' ')[0];
-    return $('.' + classToShow).delay(200).slideDown(150);
-  });
 
 }).call(this);
