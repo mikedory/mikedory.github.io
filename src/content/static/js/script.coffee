@@ -1,3 +1,5 @@
+$ = require '/usr/local/lib/node_modules/jquery'
+
 # log wrapper
 log = (msg) ->
 	if console

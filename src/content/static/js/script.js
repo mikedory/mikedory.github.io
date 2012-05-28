@@ -1,5 +1,7 @@
 (function() {
-  var log;
+  var $, log;
+
+  $ = require('/usr/local/lib/node_modules/jquery');
 
   log = function(msg) {
     if (console) {
