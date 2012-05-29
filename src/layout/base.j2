@@ -49,12 +49,22 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="/">Mike Dory</a>
+
+				<!-- shown on smaller screens -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a><!--/.btn-navbar -->
+
+				<!-- shown on full-size screens (over 940px) -->
 				<div class="nav-collapse">
 				{% block nav %}
 					{% from "macros.j2" import render_nav with context %}
 					{{ render_nav(menu, 'main_nav') }}
 				{% endblock %}
 				</div><!--/.nav-collapse -->
+
 			</div>
 		</div>
 	</div>
@@ -106,6 +116,7 @@
 		{% block scripts %}
 		<!-- Bootstrap goodies -->
 		<script src="{{ media_url('js/bootstrap.js') }}"= ></script>
+		<script src="{{ media_url('js/bootstrap-collapse.js') }}"= ></script>
 		<script src="{{ media_url('js/libs/rainbow-custom.min.js') }}"></script>
 		<!-- <script src="{{ media_url('js/bootstrap-carousel.js') }}"= ></script> -->
 		<!-- <script src="{{ media_url('js/bootstrap-typeahead.js') }}"= ></script> -->
