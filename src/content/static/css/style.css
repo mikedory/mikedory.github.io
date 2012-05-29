@@ -2,9 +2,11 @@
    Author: Mike Dory | http://doryexmachina.com
    ========================================================================== */
 @font-face {
-  font-family: 'WebSymbolsRegular';
-  src: url("/static/fonts/websymbols-regular-webfont.eot");
-  src: url("/static/fonts/websymbols-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/websymbols-regular-webfont.woff") format("woff"), url("/static/fonts/websymbols-regular-webfont.ttf") format("truetype"), url("/static/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format("svg"); }
+  font-family: 'FontAwesome';
+  src: url("/static/fonts/fontawesome-webfont.eot");
+  src: url("/static/fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/fontawesome-webfont.woff") format("woff"), url("/static/fonts/fontawesome-webfont.ttf") format("truetype"), url("/static/fonts/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"), url("/static/fonts/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 body {
   font-family: adelle-1, adelle-2, serif;
@@ -105,7 +107,7 @@ span.amp {
   font-style: italic; }
 
 span.icon_text {
-  font-family: WebSymbolsRegular;
+  font-family: FontAwesome;
   font-size: 2em;
   color: #333; }
 
@@ -130,7 +132,7 @@ span.icon_text {
 .social_networks {
   display: inline; }
   .social_networks .icon_text a {
-    font-size: .7em;
+    font-size: .9em;
     margin-right: .1em; }
 
 .project-sort-buttons {
