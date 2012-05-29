@@ -26,10 +26,14 @@ Portfolio page
     });
     $(div).closest('li').addClass('active');
     $(div).closest('li a').removeClass('clickable');
-    return $('.' + classToShow).fadeIn(150);
+    if ($(div).closest('li').hasClass('all')) {
+      return $('.post-group').fadeIn(150);
+    } else {
+      return $('.' + classToShow).fadeIn(150);
+    }
   };
 
-  $('li.writing a').removeClass('clickable');
+  $('li:first a').removeClass('clickable');
 
   /*
   Helper functions
