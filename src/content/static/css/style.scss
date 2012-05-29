@@ -1,5 +1,5 @@
 /* ==|== primary styles =====================================================
-   Author: Mike Dory | http://doryexmachina.com
+   Author: Mike Dory | http://dory.me
    ========================================================================== */
 
 // --- FANCY VARIABLES --- //
@@ -249,6 +249,10 @@ span.icon_text {
 	color: #666;
 
 	li {
+		// temp hack to work around having too many categories
+		// TODO: remove this, and get rid of a category in the portfolio.
+		margin-left: 5px;
+
 		a {
 			color: #555;
 		}
