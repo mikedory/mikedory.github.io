@@ -147,6 +147,79 @@ article {
 	}
 
 
+
+// --- ABOUT ME ---- //
+
+.things_i_do {
+	// margin: 5px 0 20px 0;
+
+	.icon_text {
+		font-size: 2.2em;
+		margin: 0 10px 0 5px;
+		display: inline;
+		float: left;
+		height: 120px;
+	}
+}
+
+// --- PORTFOLIO ---- //
+
+
+
+.project-sort-buttons {
+	@include font_adelle(700, normal);
+	font-size: 20px;
+	color: #666;
+
+	li {
+		// temp hack to work around having too many categories
+		// TODO: remove this, and get rid of a category in the portfolio.
+		margin-left: 5px;
+
+		a {
+			color: #555;
+		}
+		a:hover {
+			// font-style: italic;
+		}
+		// a:active {
+		// 	color: #999;
+		// 	background-color: #999;
+		// }
+	}
+	li.active a {
+		color: #999;
+	}
+
+}
+
+.about-me {
+	// height: 225px;
+
+	.about-me-pic {
+		border: 10px solid #E5E5E5;
+		width: 300px;
+		height: 198px;
+		background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png&grayscale=true");
+	
+		&:hover {
+			background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png");
+		}
+	}
+
+	.about-me-splitter {
+		border-left: 1px solid #E5E5E5;
+		border-right: 1px solid white;
+		height: 200px;
+		width: 1px;
+		margin: 5px 15px 0 35px;
+	}
+
+	.about-me-text {
+		// err, nothing for now I guess.
+	}
+}
+
 // --- FOOTER --- //
 
 p {
@@ -164,7 +237,18 @@ footer {
 		font-size: 1em;
 		line-height: 100%;
 	}
+
+	.social_networks {
+		display: inline;
+		// margin: 5px 0 50px 0;
+
+		.icon_text a {
+			font-size: .9em;
+			margin-right: .1em;
+		}
+	}
 }
+
 
 // --- Special things --- //
 
@@ -223,82 +307,6 @@ span.icon_text {
 	right: auto;
 }
 
-.things_i_do {
-	// margin: 5px 0 20px 0;
-
-	.icon_text {
-		font-size: 2.2em;
-		margin: 0 10px 0 5px;
-		display: inline;
-		float: left;
-		height: 120px;
-	}
-}
-
-.social_networks {
-	display: inline;
-	// margin: 5px 0 50px 0;
-
-	.icon_text a {
-		font-size: .9em;
-		margin-right: .1em;
-	}
-}
-
-.project-sort-buttons {
-	@include font_adelle(700, normal);
-	font-size: 20px;
-	color: #666;
-
-	li {
-		// temp hack to work around having too many categories
-		// TODO: remove this, and get rid of a category in the portfolio.
-		margin-left: 5px;
-
-		a {
-			color: #555;
-		}
-		a:hover {
-			// font-style: italic;
-		}
-		// a:active {
-		// 	color: #999;
-		// 	background-color: #999;
-		// }
-	}
-	li.active a {
-		color: #999;
-	}
-
-}
-
-.about-me {
-	// height: 225px;
-	
-	.about-me-pic {
-		border: 10px solid #E5E5E5;
-		width: 300px;
-		height: 198px;
-			background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png&grayscale=true");
-	
-		&:hover {
-			background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png");
-
-		}
-	}
-
-	.about-me-splitter {
-		border-left: 1px solid #E5E5E5;
-		border-right: 1px solid white;
-		height: 200px;
-		width: 1px;
-		margin: 5px 15px 0 35px;
-	}
-
-	.about-me-text {
-
-	}
-}
 
 // a.brand {
 // 	background-color: #777;
@@ -307,3 +315,4 @@ span.icon_text {
 // 	position: absolute;
 // 	left: 50%;
 // }
+
