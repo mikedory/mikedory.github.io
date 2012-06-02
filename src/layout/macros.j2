@@ -28,7 +28,7 @@
 	{{ res.meta.excerpt|markdown|typogrify }}
 	
 	{# read more? #}
-	<a class="btn" href="{{ content_url(latest.url) }}">Read more &raquo;</a>
+	<!-- <a class="btn" href="{{ content_url(latest.url) }}">Read more &raquo;</a> -->
 
 </article>
 {% endmacro %}
@@ -81,6 +81,17 @@
 	{%- endfor %}
 {%- endif %}
 
+{% endmacro %}
+
+
+
+{# get  #}
+{% macro get_portfolio_grid(tagsandtitles) %}
+	{% if loop.last %}
+		{# nothing #}
+	{% else %}
+		<hr>
+	{% endif %}
 {% endmacro %}
 
 
