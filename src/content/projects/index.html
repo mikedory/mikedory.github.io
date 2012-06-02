@@ -64,38 +64,38 @@ Prior to starting up Socialbomb, I developed installations, sites, and games for
 </ul>
 
 {# these are the fancy projects #}
-{% from "macros.j2" import get_three_posts with context %}
+{% from "macros.j2" import get_portfolio_posts with context %}
 
 <div class="post-group-holder">
 	<!-- Writing -->
 	<div class="writing post-group">
 		<!-- <h1 class="page-header">Writing</h1> -->
-		{{ get_three_posts("writing") }}
+		{{ get_portfolio_posts("writing", 3) }}
 	</div>
 
 	<!-- Teaching and planning -->
 	<div class="teaching post-group">
 		<!-- <h1 class="page-header">Teaching</h1> -->
-		{{ get_three_posts("teaching") }}
+		{{ get_portfolio_posts("teaching", 3) }}
 	</div>
 
 	<!-- Speaking -->
 	<div class="speaking post-group">
 		<!-- <h1 class="page-header">Speaking</h1> -->
-		{{ get_three_posts("speaking") }}
+		{{ get_portfolio_posts("speaking", 3) }}
 	</div>
 
 
 	<!-- ITP work -->
 	<div class="itp post-group">
 		<!-- <h1 class="page-header">ITP academic work</h1> -->
-		{{ get_three_posts("itp") }}
+		{{ get_portfolio_posts("itp", 3) }}
 	</div>
 
 	<!-- Socialbomb -->
 	<div class="socialbomb post-group">
 		<!-- <h1 class="page-header">With Socialbomb</h1> -->
-		{{ get_three_posts("socialbomb") }}
+		{{ get_portfolio_posts("socialbomb", 3) }}
 	</div>
 </div>
 
