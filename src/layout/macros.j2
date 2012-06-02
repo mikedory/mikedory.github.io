@@ -43,10 +43,9 @@
 {% if projects -%}
 	<div class="row">
 	{% for project in projects -%}
-			<div class="span4">
-				{{ render_portfolio_excerpt(project, 'post'+' '+tag) }}
-			</div>
-
+		<div class="span4">
+			{{ render_portfolio_excerpt(project, 'post'+' '+tag) }}
+		</div>
 		{% if loop.index >= 3 %}
 			<div class="projects_more right">
 				<a href="{{ content_url('projects/tags/'~tag) }}">More about {{ tag }}...</a>
@@ -70,7 +69,6 @@
 		{% if loop.index0 % 3 == 0 %}
 		<div class="row">
 		{% endif %}
-
 			<div class="span4">
 				{{ render_portfolio_excerpt(project, 'post'+' '+tag) }}
 			</div>
@@ -85,7 +83,7 @@
 
 
 
-{# get  #}
+{# get ...there is where I'd wrap the portfolio in one big thing to handle loop ending, but I don't even maybe nah probably not  #}
 {% macro get_portfolio_grid(tagsandtitles) %}
 	{% if loop.last %}
 		{# nothing #}
