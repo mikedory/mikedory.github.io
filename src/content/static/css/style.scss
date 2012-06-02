@@ -162,6 +162,34 @@ article {
 	}
 }
 
+
+.about-me {
+	// height: 225px;
+
+	.about-me-pic {
+		border: 10px solid #E5E5E5;
+		width: 300px;
+		height: 198px;
+		background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png&grayscale=true");
+	
+		&:hover {
+			background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png");
+		}
+	}
+
+	.about-me-splitter {
+		border-left: 1px solid #E5E5E5;
+		border-right: 1px solid white;
+		height: 200px;
+		width: 1px;
+		margin: 5px 15px 0 35px;
+	}
+
+	.about-me-text {
+		// err, nothing for now I guess.
+	}
+}
+
 // --- PORTFOLIO ---- //
 
 
@@ -193,32 +221,6 @@ article {
 
 }
 
-.about-me {
-	// height: 225px;
-
-	.about-me-pic {
-		border: 10px solid #E5E5E5;
-		width: 300px;
-		height: 198px;
-		background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png&grayscale=true");
-	
-		&:hover {
-			background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png");
-		}
-	}
-
-	.about-me-splitter {
-		border-left: 1px solid #E5E5E5;
-		border-right: 1px solid white;
-		height: 200px;
-		width: 1px;
-		margin: 5px 15px 0 35px;
-	}
-
-	.about-me-text {
-		// err, nothing for now I guess.
-	}
-}
 
 // --- FOOTER --- //
 
@@ -262,10 +264,6 @@ blockquote {
 	color: lighten($blue, 5%);
 }
 
-.center {
-	text-align: center;
-}
-
 .bottomborder{
 	border-bottom: 1px solid #999;
 	margin-bottom: 15px;
@@ -281,17 +279,6 @@ span.icon_text {
 	font-size: 2em;
 	color: #333;
 }
-
-// hr {
-// 	background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, .1), transparent);
-// 	background-image: -moz-linear-gradient(left, transparent, rgba(0, 0, 0, .1), transparent);
-// 	background-image: -ms-linear-gradient(left, transparent, rgba(0, 0, 0, .1), transparent);
-// 	background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, .1), transparent);
-// 	border: 0;	
-// 	border-top: 1px solid #EEE;
-// 	border-bottom: 1px solid white;
-// 	border: 1px blue;
-// }
 
 .left {
 	float: left;

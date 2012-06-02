@@ -83,19 +83,6 @@ article img {
   float: left;
   height: 120px; }
 
-.project-sort-buttons {
-  font-family: adelle-1, adelle-2, serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 20px;
-  color: #666; }
-  .project-sort-buttons li {
-    margin-left: 5px; }
-    .project-sort-buttons li a {
-      color: #555; }
-  .project-sort-buttons li.active a {
-    color: #999; }
-
 .about-me .about-me-pic {
   border: 10px solid #E5E5E5;
   width: 300px;
@@ -109,6 +96,19 @@ article img {
   height: 200px;
   width: 1px;
   margin: 5px 15px 0 35px; }
+
+.project-sort-buttons {
+  font-family: adelle-1, adelle-2, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  color: #666; }
+  .project-sort-buttons li {
+    margin-left: 5px; }
+    .project-sort-buttons li a {
+      color: #555; }
+  .project-sort-buttons li.active a {
+    color: #999; }
 
 p {
   font-size: 14px;
@@ -133,9 +133,6 @@ code {
 blockquote {
   font-style: italic;
   color: #bed1dd; }
-
-.center {
-  text-align: center; }
 
 .bottomborder {
   border-bottom: 1px solid #999;
