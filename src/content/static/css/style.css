@@ -145,3 +145,19 @@ span.icon_text {
     margin-left: 5px; }
     .project-sort-buttons li a {
       color: #555; }
+  .project-sort-buttons li.active a {
+    color: #999; }
+
+.about-me .about-me-pic {
+  border: 10px solid #E5E5E5;
+  width: 300px;
+  height: 198px;
+  background: url("http://dory-magickly.herokuapp.com?src=http://static.dory.me.s3.amazonaws.com/images/about/me-300.png&grayscale=true"); }
+  .about-me .about-me-pic:hover {
+    background: url("http://dory-magickly.herokuapp.com?src=http://static.dory.me.s3.amazonaws.com/images/about/me-300.png"); }
+.about-me .about-me-splitter {
+  border-left: 1px solid #E5E5E5;
+  border-right: 1px solid white;
+  height: 200px;
+  width: 1px;
+  margin: 5px 15px 0 35px; }
