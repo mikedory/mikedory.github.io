@@ -19,8 +19,13 @@
 {% refer to res.url as project %}
 <article {{'class='~class if class }}>
 	<h2><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h2>
+
+	{# if there's a thumb, load both color and b/w versions #}
 	{% if res.meta.thumb %}
-	<a href="{{ content_url(res.url) }}"><img src="{{ res.meta.thumb }}" /></a>
+	<a href="{{ content_url(res.url) }}" class="bwrollover">
+		<img src="http://dory-magickly.herokuapp.com?src={{ res.meta.thumb }}&grayscale=true" class="gray"/>
+		<img src="{{ res.meta.thumb }}" class="color" style="display:none" />
+	</a>
 	{%- endif %}
 	<a href="{{ content_url(res.url) }}">{{ project.image|markdown|typogrify }}</a>
 	
