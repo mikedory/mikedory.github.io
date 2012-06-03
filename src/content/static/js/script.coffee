@@ -23,7 +23,6 @@ $(".project-sort-buttons li a.clickable").click ->
 		# user is clicking the currently highlighted one, so do nothing
 	return false
 
-
 # black-and-white mouseovers
 $('.bwrollover').hover(
 	-> colorizeRollover(@)
