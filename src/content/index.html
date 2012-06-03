@@ -12,9 +12,9 @@ listable: false
 		<h1>Hi! I'm Mike. <small>I make things and drink coffee.</small></h1>
 	</div>
 
-<div class="intro_container row">
-	<div class="span9">
-<!-- <img src="http://placekitten.com/g/400/250" style="float:right"/> -->
+	<div class="intro_container row">
+		<div class="span9">
+
 {% filter markdown -%}
 
 <!-- ## The short version: -->
@@ -26,13 +26,9 @@ Occasional adjunct faculty at [NYU ITP](http://itp.nyu.edu).
 I live in Jersey City, NJ with my wife and dog, and I work in Brooklyn, NY.
 
 {%- endfilter %}
-
-	</div>
-</div>
-
-
+		</div>
+	</div><!-- end intro_container -->
 {% endblock intro %}
-
 
 {% block main %}
 
@@ -66,9 +62,10 @@ I graduated with a BA in Journalism & Media Studies from Rutgers University and 
 {%- endfilter %}
 #}
 
-</div>
+</div> <!-- end hero unit -->
 
-<!-- <h2 class="page-header">THINGS I DO:</h2>
+{#
+<h2 class="page-header">THINGS I DO:</h2>
 <div class="row things_i_do">
 	<div class="code span4">
 		<span class="icon_text">H</span>
@@ -82,8 +79,8 @@ I graduated with a BA in Journalism & Media Studies from Rutgers University and 
 		<span class="icon_text">U</span>
 		<p>I develop sites, applications, and APIs that let people do stuff. I develop sites, applications, and APIs that let people do stuff. <p>
 	</div>
-</div> -->
-
+</div>
+#}
 
 
 {#
