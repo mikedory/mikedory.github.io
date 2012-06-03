@@ -24,6 +24,16 @@ $(".project-sort-buttons li a.clickable").click ->
 	return false
 
 
+# black-and-white mouseovers
+$('.bwrollover').hover(
+	-> colorizeRollover(@)
+	-> unColorizeRollover(@)
+)
+
+# stop people from clicking the first (default) tab on page load
+$('li:first a').removeClass('clickable')
+
+
 # hide all categories, then show the right one
 hideAndShow = (div) -> 
 
@@ -51,16 +61,7 @@ hideAndShow = (div) ->
 		$('.'+classToShow).fadeIn(150)
 
 
-# stop people from clicking the first (default) tab on page load
-$('li:first a').removeClass('clickable')
-
-
-# black-and-white mouseovers
-$('.bwrollover').hover(
-	-> colorizeRollover(@)
-	-> unColorizeRollover(@)
-)
-
+# black-and-white mouseover functions
 colorizeRollover = (div) ->
 	$(div).find('img.gray').hide()
 	$(div).find('img.color').show()
@@ -69,29 +70,6 @@ unColorizeRollover = (div) ->
 	$(div).find('img.color').hide()
 	$(div).find('img.gray').show()
 
-# colorizeRollover = (div, text) ->
-
-# 	magickly = "http://dory-magickly.herokuapp.com"
-# 	img = $(div).attr('src')
-
-# 	if img.indexOf "grayscale=true"
-# 		#  do nothing
-# 	else
-# 		$(div).attr('src', magickly+"?src="+img+"&grayscale=true")
-
-# unColorizeRollover = (div, text) ->
-# 	magickly = "http://dory-magickly.herokuapp.com"
-# 	img = $(div).attr('src')
-
-# 	if img.indexOf "grayscale=true"
-# 		img.replace /grayscale=true/, "grayscale=false"
-# 		# $(div).attr('src', magickly+"?src="+img)
-# 		$(div).attr('src',img)
-
-
-### 
-HEY - i am doing this all wrong.  load both images, hide
-###
 
 #-----------------------
 
