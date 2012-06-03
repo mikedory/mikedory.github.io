@@ -4,7 +4,7 @@ Portfolio page
 */
 
 (function() {
-  var hideAndShow, log;
+  var colorizeRollover, hideAndShow, log, unColorizeRollover;
 
   $(".project-sort-buttons li a.clickable").click(function() {
     if ($(this).closest('li a').hasClass('clickable')) {
@@ -34,6 +34,26 @@ Portfolio page
   };
 
   $('li:first a').removeClass('clickable');
+
+  $('.bwrollover').hover(function() {
+    return colorizeRollover(this);
+  }, function() {
+    return unColorizeRollover(this);
+  });
+
+  colorizeRollover = function(div) {
+    $(div).find('img.gray').hide();
+    return $(div).find('img.color').show();
+  };
+
+  unColorizeRollover = function(div) {
+    $(div).find('img.color').hide();
+    return $(div).find('img.gray').show();
+  };
+
+  /* 
+  HEY - i am doing this all wrong.  load both images, hide
+  */
 
   /*
   Helper functions
