@@ -7,8 +7,22 @@ Portfolio page
   var colorizeRollover, hideAndShow, log, unColorizeRollover;
 
   $(".project-sort-buttons li a.clickable").click(function() {
+    var classToShow;
     if ($(this).closest('li a').hasClass('clickable')) {
-      hideAndShow(this);
+      classToShow = $(this).closest('li').attr('class').split(' ')[0];
+      hideAndShow(this, classToShow);
+    } else {
+
+    }
+    return false;
+  });
+
+  $(".post-group-all h1 a.clickable").click(function() {
+    var classToShow;
+    if ($(this).hasClass('clickable')) {
+      classToShow = $(this).closest('h1').attr('class').split(' ')[0];
+      $('.project-sort-buttons li.' + classToShow + ' a').tab('show');
+      hideAndShow(this, classToShow);
     } else {
 
     }
@@ -21,12 +35,10 @@ Portfolio page
     return unColorizeRollover(this);
   });
 
-  $('li:first a').removeClass('clickable');
+  $('.project-sort-buttons.li:first a').removeClass('clickable');
 
-  hideAndShow = function(div) {
-    var classToShow,
-      _this = this;
-    classToShow = $(div).closest('li').attr('class').split(' ')[0];
+  hideAndShow = function(div, classToShow) {
+    var _this = this;
     $('.post-group').hide();
     $(div).closest('ul').each(function(index, element) {
       $(element).find('li').removeClass('active');
@@ -34,11 +46,7 @@ Portfolio page
     });
     $(div).closest('li').addClass('active');
     $(div).closest('li a').removeClass('clickable');
-    if ($(div).closest('li').hasClass('all')) {
-      return $('.post-group').fadeIn(150);
-    } else {
-      return $('.' + classToShow).fadeIn(150);
-    }
+    return $('.' + classToShow).fadeIn(150);
   };
 
   colorizeRollover = function(div) {
