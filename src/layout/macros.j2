@@ -18,6 +18,8 @@
 {% macro render_portfolio_excerpt(res, class=None) %}
 {% refer to res.url as project %}
 <article {{'class='~class if class }}>
+
+	{# the post's title #}
 	<h2><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h2>
 
 	{# if there's a thumb, load both color and b/w versions #}
@@ -27,7 +29,6 @@
 		<img src="{{ res.meta.thumb }}" class="color" style="display:none" />
 	</a>
 	{%- endif %}
-	<a href="{{ content_url(res.url) }}">{{ project.image|markdown|typogrify }}</a>
 	
 	{# blurb! #}
 	{{ res.meta.excerpt|markdown|typogrify }}
@@ -68,9 +69,7 @@
 
 {# get all portfolio entries matching a tag #}
 {% macro get_all_posts(tag) %}
-
 {% set projects = node.walk_resources_tagged_with(tag) %}
-
 {% if projects -%}
 	{% for project in projects -%}
 		{% if loop.index0 % 3 == 0 %}
@@ -85,18 +84,6 @@
 		{% endif %}
 	{%- endfor %}
 {%- endif %}
-
-{% endmacro %}
-
-
-
-{# get ...there is where I'd wrap the portfolio in one big thing to handle loop ending, but I don't even maybe nah probably not  #}
-{% macro get_portfolio_grid(tagsandtitles) %}
-	{% if loop.last %}
-		{# nothing #}
-	{% else %}
-		<hr>
-	{% endif %}
 {% endmacro %}
 
 
