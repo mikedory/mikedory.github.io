@@ -55,9 +55,11 @@
 		</div>
 		{% if limit != None %}
 			{% if loop.index >= 3 %}
+				{#
 				<div class="projects_more right">
 					<a href="{{ content_url('projects/tags/'~tag) }}">More about {{ tag }}...</a>
 				</div>
+				#}
 				{% break %}
 			{% endif %}
 		{% endif %}
