@@ -82,29 +82,4 @@ I graduated with a BA in Journalism & Media Studies from Rutgers University and 
 </div>
 #}
 
-
-{#
-	{% from "macros.j2" import render_excerpt with context %}
-	<section class="blog_excerpt">
-#}
-
-
-	{# grab the latest 3 entries #}
-{#
-	{% set projects = node.walk_resources_sorted_by_time()[0:3] %}
-	{% set projects = node.walk_resources_tagged_with('portfolio') %}
-
-	{% if projects -%}
-		<div class="row">
-				{% for project in projects -%}
-				<div class="span4">
-					{{ render_excerpt(project, 'post') }}
-
-					<a class="btn" href="{{ content_url(latest.url) }}">Read more &raquo;</a>
-				</div>
-				{%- endfor %}
-		</div>
-	{%- endif %}
-	</section>
-#}	
 {% endblock main %}
