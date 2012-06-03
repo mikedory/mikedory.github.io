@@ -25,8 +25,9 @@
 	{# if there's a thumb, load both color and b/w versions #}
 	{% if res.meta.thumb %}
 	<a href="{{ content_url(res.url) }}" class="bwrollover">
-		<img src="http://dory-magickly.herokuapp.com?src={{ res.meta.thumb }}&grayscale=true" class="gray"/>
-		<img src="{{ res.meta.thumb }}" class="color" style="display:none" />
+		<img src="http://dory-magickly.herokuapp.com?src={{ res.meta.thumb }}&grayscale=true&thumb=300x200%23" class="gray"/>
+		<img src="http://dory-magickly.herokuapp.com?src={{ res.meta.thumb }}&thumb=300x200%23" class="color" style="display:none"/>
+		<!-- <img src="{{ res.meta.thumb }}" class="color" style="display:none" /> -->
 	</a>
 	{%- endif %}
 	
