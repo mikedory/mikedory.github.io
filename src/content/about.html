@@ -8,9 +8,6 @@ listable: false
 
 {# header override #}
 {% block intro %}
-<!-- 	<div class="no_hero_padder">
-	</div> -->
-
 <div class="hero-unit">
 	<div class="page-header">
 		<h1>Hi! I'm Mike. <small>I might have said that already, but...</small></h1>
@@ -19,7 +16,6 @@ listable: false
 
 {# this is the main text to be concerned with #}
 {% block main %}
-
 <div class="about-me row">
 	<div class="about-me-pic span3" style="float:left" width="350px"></div>
 
@@ -34,9 +30,8 @@ listable: false
 
 <hr>
 
-
 <div class="row">
-	<div class="span10">
+	<div class="span10 bottompad10">
 {% filter markdown -%}
 
 ## What do you do?
@@ -50,7 +45,7 @@ Most recently, I co-wrote a book for [O'Reilly Media](http://oreilly.com/) calle
 </div>
 
 <div class="row">
-	<div class="span10">
+	<div class="span10 bottompad10">
 {% filter markdown -%}
 
 ## Hey, I want to get in touch with you!
@@ -74,20 +69,16 @@ But for most things, you can also just [email](mailto:mike@dory.me) me. It would
 
 ## So, how did you make this thing?
 
+<!-- <div class="alert span2">
+	Nerd alert!
+</div> -->
+
 This site was built using [Hyde](https://hyde.github.com/) and [Markdown](http://daringfireball.net/projects/markdown/), with a few Python tools thrown in for good measure. [SCSS](http://sass-lang.com/) and [Coffeescript](http://coffeescript.org/) handle styles and scripting. It is served via Ruby/Rack on [Heroku](http://heroku.com), and the source is up on [Github](https://github.com).
 
 {%- endfilter %}
 	</div>
 </div>
 
-<!-- <div class="alert ">
-	If you are still reading this, you should probably just email me.
-</div>
- -->
-
-
-</div>
-
-
+</div><!-- end hero -->
 {% endblock main %}
 
