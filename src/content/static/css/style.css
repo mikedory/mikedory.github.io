@@ -157,3 +157,6 @@ span.icon_text {
   text-align: center;
   left: auto;
   right: auto; }
+
+.bottompad10 {
+  padding-bottom: 10px; }

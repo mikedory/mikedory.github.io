@@ -191,8 +191,6 @@ article {
 
 // --- PORTFOLIO ---- //
 
-
-
 .project-sort-buttons {
 	@include font_adelle(700, normal);
 	font-size: 20px;
@@ -200,7 +198,7 @@ article {
 
 	li {
 		// temp hack to work around having too many categories
-		// TODO: remove this, and get rid of a category in the portfolio.
+		// @TODO: remove this, and get rid of a category in the portfolio.
 		margin-left: 5px;
 
 		a {
@@ -254,7 +252,6 @@ footer {
 // --- Special things --- //
 
 code {
-	// color: #555;
 	font-family: Courier;
 }
 
@@ -293,6 +290,9 @@ span.icon_text {
 	right: auto;
 }
 
+.bottompad10 {
+	padding-bottom: 10px;
+}
 
 // a.brand {
 // 	background-color: #777;
