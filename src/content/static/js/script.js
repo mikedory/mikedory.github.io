@@ -15,6 +15,14 @@ Portfolio page
     return false;
   });
 
+  $('.bwrollover').hover(function() {
+    return colorizeRollover(this);
+  }, function() {
+    return unColorizeRollover(this);
+  });
+
+  $('li:first a').removeClass('clickable');
+
   hideAndShow = function(div) {
     var classToShow,
       _this = this;
@@ -33,14 +41,6 @@ Portfolio page
     }
   };
 
-  $('li:first a').removeClass('clickable');
-
-  $('.bwrollover').hover(function() {
-    return colorizeRollover(this);
-  }, function() {
-    return unColorizeRollover(this);
-  });
-
   colorizeRollover = function(div) {
     $(div).find('img.gray').hide();
     return $(div).find('img.color').show();
@@ -50,10 +50,6 @@ Portfolio page
     $(div).find('img.color').hide();
     return $(div).find('img.gray').show();
   };
-
-  /* 
-  HEY - i am doing this all wrong.  load both images, hide
-  */
 
   /*
   Helper functions

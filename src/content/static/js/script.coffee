@@ -11,7 +11,6 @@
 Portfolio page
 ###
 
-
 # bind clicks for the portfolio tab menu
 $(".project-sort-buttons li a.clickable").click ->
 
