@@ -18,14 +18,16 @@
 
 	<meta name="viewport" content="">
 
-		<link rel="shortcut icon" href="/static/images/_favicon.ico">
+	<link rel="shortcut icon" href="/static/images/_favicon.ico">
 	<link rel="apple-touch-icon" href="/static/images/_apple-touch-icon.png">
-	
+
 		<script type="text/javascript" src="https://use.typekit.com/yna6ipo.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<link rel="stylesheet" href="/static/css/bootstrap.css">
 	<link rel="stylesheet" href="/static/css/bootstrap-responsive.css">
 	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/font-awesome.css">
+	<link rel="stylesheet" href="/static/css/rainbowjs-theme-github.css">
 	
 		<script src="/static/js/libs/modernizr-1.7.min.js"></script>
 	
@@ -36,84 +38,92 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="/">Mike Dory</a>
+
+				<!-- shown on smaller screens -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a><!--/.btn-navbar -->
+
+				<!-- shown on full-size screens (over 940px) -->
 				<div class="nav-collapse">
 														<nav class=main_nav>
-    <ul class="nav">
-                <li >
-            <a title="Home Page"
-                class="button white home"
-                href="/index.html">
-                Home
-            </a>
-        </li>        <li >
-            <a title="Projects"
-                class="button white projects"
-                href="/projects">
-                Projects
-            </a>
-        </li>        <li >
-            <a title="About"
-                class="button white about"
-                href="/about.html">
-                About
-            </a>
-        </li>    </ul>
+	<ul class="nav">
+				<li >
+			<a title="Home Page"
+				class="button white home"
+				href="/index.html">
+				Home
+			</a>
+		</li>		<li >
+			<a title="Projects"
+				class="button white projects"
+				href="/projects">
+				Projects
+			</a>
+		</li>		<li >
+			<a title="About"
+				class="button white about"
+				href="/about.html">
+				About
+			</a>
+		</li>	</ul>
 </nav>
 								</div><!--/.nav-collapse -->
+
 			</div>
-			</div>
+		</div>
 	</div>
 	
 	<div class="container main_container">
-		
-									
-						<section class="archives">
+	
+				<div class="no_hero_padder">
+</div>
+
+				<section class="archives">
 <h1 class="tag title">kittens</h1>
 <ul class="posts clear">
-<li class="post clear">
+<li class="post clear span6">
     <time datetime="2011-02-02">
         Wed, 02 Feb 2011
     </time>
+
     <a href="/blog/2011-02-01_blog-post%202.html">Bup?</a>
-        <ul class="tags">
-        <li>
-        <a class="small" href="/blog/tags/puppies.html">
-            puppies
-        </a>
-    </li>
-        <li>
-        <a class="small" href="/blog/tags/kittens.html">
-            kittens
-        </a>
-    </li>
-        </ul>
-    </li><li class="post clear">
+    <!-- <p><img src="" width="200px"></p> -->
+    <p></p>
+
+    </li><li class="post clear span6">
     <time datetime="2011-02-01">
         Tue, 01 Feb 2011
     </time>
+
     <a href="/blog/2011-02-01_blog-post.html">BLOG POST LOL</a>
-        <ul class="tags">
-        <li>
-        <a class="small" href="/blog/tags/puppies.html">
-            puppies
-        </a>
-    </li>
-        <li>
-        <a class="small" href="/blog/tags/kittens.html">
-            kittens
-        </a>
-    </li>
-        </ul>
+    <!-- <p><img src="" width="200px"></p> -->
+    <p></p>
+
     </li></ul>
 </section>
 
+<div style="clear:both"></div>
 
-										<hr>
-				<footer>
-					&copy; Mike Dory, 2006-2012
-				</footer>
-			
-			</div> <!-- end of container -->
+
+
+						<hr>
+		<footer>
+			&copy; Mike Dory, 2006-2012
+
+			<div class="row social_networks right">
+				<span class="icon_text"><a href="http://twitter.com/mike_dory" class="icon-facebook-sign"></a></span>
+				<span class="icon_text"><a href="http://twitter.com/mike_dory" class="icon-twitter-sign"></a></span>
+				<span class="icon_text"><a href="http://github.com/mikedory" class="icon-github-sign"></a></span>
+				<span class="icon_text"><a href="http://www.linkedin.com/in/michaeldory" class="icon-linkedin-sign"></a></span>
+				<span class="icon_text"><a href="mailto:mike@dory.me" class="icon-envelope"></a></span>
+			</div>
+
+		</footer>
+		
+		</div> <!-- end of container -->
 
 	
 	
@@ -121,17 +131,8 @@
 		
 				<!-- Bootstrap goodies -->
 		<script src="/static/js/bootstrap.js"= ></script>
-<!--		<script src="/static/js/bootstrap-transition.js"= ></script>
-		<script src="/static/js/bootstrap-alert.js"= ></script>
-		<script src="/static/js/bootstrap-modal.js"= ></script>
-		<script src="/static/js/bootstrap-dropdown.js"= ></script>
-		<script src="/static/js/bootstrap-scrollspy.js"= ></script>
-		<script src="/static/js/bootstrap-tab.js"= ></script>
-		<script src="/static/js/bootstrap-tooltip.js"= ></script>
-		<script src="/static/js/bootstrap-popover.js"= ></script>
-		<script src="/static/js/bootstrap-button.js"= ></script>
 		<script src="/static/js/bootstrap-collapse.js"= ></script>
--->
+		<script src="/static/js/libs/rainbow-custom.min.js"></script>
 		<!-- <script src="/static/js/bootstrap-carousel.js"= ></script> -->
 		<!-- <script src="/static/js/bootstrap-typeahead.js"= ></script> -->
 

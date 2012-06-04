@@ -1,6 +1,13 @@
 /* ==|== primary styles =====================================================
-   Author: Mike Dory | http://doryexmachina.com
+   Author: Mike Dory | http://dory.me
    ========================================================================== */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/static/fonts/fontawesome-webfont.eot");
+  src: url("/static/fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/fontawesome-webfont.woff") format("woff"), url("/static/fonts/fontawesome-webfont.ttf") format("truetype"), url("/static/fonts/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"), url("/static/fonts/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 body {
   font-family: adelle-1, adelle-2, serif;
   font-weight: 100;
@@ -61,6 +68,57 @@ article img {
 .email-me {
   margin-top: 15px; }
 
+.portfolio_carousel_div {
+  width: 700px;
+  margin: auto; }
+
+.portfolio_carousel_div .item img {
+  margin: auto;
+  height: 200px; }
+
+.things_i_do .icon_text {
+  font-size: 2.2em;
+  margin: 0 10px 0 5px;
+  display: inline;
+  float: left;
+  height: 120px; }
+
+.about-me .about-me-pic {
+  border: 10px solid #E5E5E5;
+  width: 300px;
+  height: 198px;
+  background: url("http://dory-magickly.herokuapp.com?src=http://static.dory.me.s3.amazonaws.com/images/about/me-300.png&grayscale=true"); }
+  .about-me .about-me-pic:hover {
+    background: url("http://dory-magickly.herokuapp.com?src=http://static.dory.me.s3.amazonaws.com/images/about/me-300.png"); }
+.about-me .about-me-splitter {
+  border-left: 1px solid #E5E5E5;
+  border-right: 1px solid white;
+  height: 200px;
+  width: 1px;
+  margin: 5px 15px 0 35px; }
+
+.project-sort-buttons {
+  font-family: adelle-1, adelle-2, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  color: #666; }
+  .project-sort-buttons li {
+    margin-left: 5px; }
+    .project-sort-buttons li a {
+      color: #555; }
+  .project-sort-buttons li.active a {
+    color: #999; }
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  background-color: #FAFAFA; }
+
+.post-group-holder .post-group-all h1 a {
+  color: #333; }
+.post-group-holder .post-group-all h1 a:hover {
+  color: #999; }
+
 p {
   font-size: 14px;
   font-family: Georgia;
@@ -68,8 +126,15 @@ p {
 
 footer {
   font-size: 10px;
-  margin-top: 24px;
-  text-shadow: 1px 1px 2px #999999; }
+  margin-top: 24px; }
+  footer .icon_text {
+    font-size: 1em;
+    line-height: 100%; }
+  footer .social_networks {
+    display: inline; }
+    footer .social_networks .icon_text a {
+      font-size: .9em;
+      margin-right: .1em; }
 
 code {
   font-family: Courier; }
@@ -78,6 +143,29 @@ blockquote {
   font-style: italic;
   color: #bed1dd; }
 
+.bottomborder {
+  border-bottom: 1px solid #999;
+  margin-bottom: 15px; }
+
 span.amp {
   font-family: Baskerville, Palatino, "Book Antiqua", serif;
   font-style: italic; }
+
+span.icon_text {
+  font-family: FontAwesome;
+  font-size: 2em;
+  color: #333; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.center {
+  text-align: center;
+  left: auto;
+  right: auto; }
+
+.bottompad10 {
+  padding-bottom: 10px; }
