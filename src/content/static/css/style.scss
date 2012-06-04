@@ -218,6 +218,23 @@ article {
 
 }
 
+// override the tab background color
+.nav-tabs > .active > a, 
+.nav-tabs > .active > a:hover {
+	background-color: #FAFAFA;
+}
+
+// changes the colors of the sub-headers in the portfolio
+.post-group-holder .post-group-all h1 {
+	a {
+		color: #333;
+	}
+
+	a:hover {
+		color: #999;
+	}
+
+}
 
 // --- FOOTER --- //
 

@@ -110,6 +110,15 @@ article img {
   .project-sort-buttons li.active a {
     color: #999; }
 
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  background-color: #FAFAFA; }
+
+.post-group-holder .post-group-all h1 a {
+  color: #333; }
+.post-group-holder .post-group-all h1 a:hover {
+  color: #999; }
+
 p {
   font-size: 14px;
   font-family: Georgia;
