@@ -10,7 +10,6 @@ listable: false
 {% block intro %}
 <div class="hero-unit">
 	<h1 class="page-header">Projects</h1>
-
 {% filter markdown -%}
 
 I've spent the last decade studying the ways people communicate and working to make their conversations better. As the CTO and co-founder of Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them. 
@@ -18,33 +17,6 @@ I've spent the last decade studying the ways people communicate and working to m
 Prior to starting up Socialbomb, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine.
 
 {%- endfilter %}
-
-{# <div id="portfolio_carousel" class="carousel slide portfolio_carousel_div">
-	<div class="carousel-inner">
- 
-		<div class="item active">
-			<img src="static/images/gdf-141.jpg" alt="">
-			<div class="carousel-caption">
-				<h4>First!</h4>
-				<p>Lorem ipsum...</p>
-			</div><!--end caption-->
-		</div><!--end item-->
- 
-		 <div class="item">
-			<img src="static/images/gdf-141.jpg" alt="">
-			<div class="carousel-caption">
-				<h4>Second!</h4>
-				<p>Lorem ipsum...</p>
-			</div><!--end caption-->
-		</div><!--end item-->
- 
-	</div><!--end inner-->
- 
-	<!--nav-->
-	<a class="left carousel-control" href="#portfolio_carousel" data-slide="prev">&lsaquo;</a>
-	<a class="right carousel-control" href="#portfolio_carousel" data-slide="next">&rsaquo;</a>
-</div>
-#}
 </div><!-- end hero -->
 {% endblock intro %}
 
@@ -65,19 +37,19 @@ Prior to starting up Socialbomb, I developed installations, sites, and games for
 <div class="post-group-holder">
 
 	<div id="all" class="all post-group post-group-all">
-		<h1 class="writing page-header"><a href="#writing" class="clickable">Writing</a></h1>
+		<h1 class="writing page-header"><a href="#writing" class="clickable">Writing &raquo;</a></h1>
 		{{ get_portfolio_posts("writing", 3) }}
 
-		<h1 class="teaching page-header"><a href="#teaching" class="clickable">Teaching</a></h1>
+		<h1 class="teaching page-header"><a href="#teaching" class="clickable">Teaching &raquo;</a></h1>
 		{{ get_portfolio_posts("teaching", 3) }}
 
-		<h1 class="speaking page-header"><a href="#speaking" class="clickable">Speaking</a></h1>
+		<h1 class="speaking page-header"><a href="#speaking" class="clickable">Speaking &raquo;</a></h1>
 		{{ get_portfolio_posts("speaking", 3) }}
 
-		<h1 class="itp page-header"><a href="#itp" class="clickable">ITP</a></h1>
+		<h1 class="itp page-header"><a href="#itp" class="clickable">ITP &raquo;</a></h1>
 		{{ get_portfolio_posts("itp", 3) }}
 
-		<h1 class="socialbomb page-header"><a href="#socialbomb" class="clickable">Socialbomb</a></h1>
+		<h1 class="socialbomb page-header"><a href="#socialbomb" class="clickable">Socialbomb &raquo;</a></h1>
 		{{ get_portfolio_posts("socialbomb", 3) }}
 	</div>
 
