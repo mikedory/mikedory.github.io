@@ -27,10 +27,11 @@ def coffee(fresh=False):
 # REMOVE ALL THE THINGS
 def clean():
 	notify('Hyde','Local copy torched')
-	local('rm -rf ./deploy')
+	# local('rm -rf ./deploy')
+	local('rm -rf ../public')
 
 # regenerate the output files (optionally, do so with a fresh install, and/or compress the css and js)
-def regen(fresh=False,compress=False):
+def regen(fresh=False,compress=False,deploy=False):
 
 	# compress (not yet implemented)
 	if (compress):
@@ -50,6 +51,12 @@ def regen(fresh=False,compress=False):
 	# generate the fancy files
 	local('hyde gen')
 
+	# if we're deploying
+	if (deploy):
+		# ship to s3
+		# do other stuff
+		pass
+
 # just serve dis
 def serve():
 	local('hyde serve')
@@ -64,8 +71,9 @@ def reserve(fresh=False,compress=False):
 #### DEPLOY #######
 
 def deploy_prep():
+	# nuke the local public copy, then rewrite the contents fresh
 	local('rm -rf ../public/')
-	local('cp -r ./deploy ../public/')
+	regen(True,True,True)
 	notify('Hyde','Deploy prep finished')
 
 def deploy():
