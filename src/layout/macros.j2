@@ -60,15 +60,13 @@
 		{% endif %}
 
 		{# if there's a limit, enforce it #}
-		{% if limit != None %}
-			{% if loop.index >= limit %}
+		{% if limit != None and loop.index >= limit %}
 			{#
 			<div class="projects_more right">
 				<a href="{{ content_url('projects/tags/'~tag) }}">More about {{ tag }}...</a>
 			</div>
 			#}
-				{% break %}
-			{% endif %}
+			{% break %}
 		{% endif %}
 	{%- endfor %}
 {%- endif %}
