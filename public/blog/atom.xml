@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2012-06-04T13:01:22Z</updated>
+    <updated>2012-06-05T00:23:25Z</updated>
 
     <id>/blog/atom.xml/</id>
 
@@ -91,10 +91,10 @@
             <entry>
             <title type="html"></title>
             <author><name>Mike Dory</name></author>
-            <link href="/blog/tags/group.html"/>
+            <link href="/blog/tags/games.html"/>
             <updated>2012-02-18T10:00:00Z</updated>
             <published>2012-02-18T10:00:00Z</published>
-            <id>/blog/tags/group.html</id>
+            <id>/blog/tags/games.html</id>
             
             <content type="html">
                                             </content>
@@ -168,17 +168,6 @@
             <entry>
             <title type="html"></title>
             <author><name>Mike Dory</name></author>
-            <link href="/blog/tags/portfoliooooo.html"/>
-            <updated>2012-02-18T10:00:00Z</updated>
-            <published>2012-02-18T10:00:00Z</published>
-            <id>/blog/tags/portfoliooooo.html</id>
-            
-            <content type="html">
-                                            </content>
-        </entry>
-            <entry>
-            <title type="html"></title>
-            <author><name>Mike Dory</name></author>
             <link href="/blog/tags/projects.html"/>
             <updated>2012-02-18T10:00:00Z</updated>
             <published>2012-02-18T10:00:00Z</published>
@@ -194,17 +183,6 @@
             <updated>2012-02-18T10:00:00Z</updated>
             <published>2012-02-18T10:00:00Z</published>
             <id>/blog/tags/puppies.html</id>
-            
-            <content type="html">
-                                            </content>
-        </entry>
-            <entry>
-            <title type="html"></title>
-            <author><name>Mike Dory</name></author>
-            <link href="/blog/tags/puppies_yeah.html"/>
-            <updated>2012-02-18T10:00:00Z</updated>
-            <published>2012-02-18T10:00:00Z</published>
-            <id>/blog/tags/puppies_yeah.html</id>
             
             <content type="html">
                                             </content>
