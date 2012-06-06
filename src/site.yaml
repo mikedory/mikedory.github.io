@@ -19,7 +19,7 @@ context:
         description: Home Page
         css_class: home
         type: page
-        url: index.html
+        url: /
       -
         name: Projects
         description: Projects
@@ -37,7 +37,7 @@ context:
         description: About
         css_class: about
         type: page
-        url: about.html
+        url: about
 meta:
   nodemeta: meta.yaml
   created: !!timestamp 2012-02-18 10:00:00
