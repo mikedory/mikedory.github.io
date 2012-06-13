@@ -83,6 +83,10 @@
 		{% if item.type == 'page' -%}
 			{% set active = (resource.url ==
 				site.content.resource_from_relative_path(item.url).url) -%}
+		{#
+		{% elif item.type == 'link' -%}
+			{% set active = (item.url) -%}
+		#}
 		{% else -%}
 			{% set active = (node ==
 				site.content.node_from_relative_path(item.url)) -%}
@@ -93,7 +97,11 @@
 		<li {% if active %} class="active" {% endif %}>
 			<a title="{{ item.description }}"
 				class="{{ classes|join(' ') }}"
+				{% if item.type =='link' -%}
+				href="{{ item.url }}">
+				{% else -%}
 				href="{{ content_url(item.url) }}">
+				{%- endif %}
 				{{ item.name }}
 			</a>
 		</li>
