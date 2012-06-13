@@ -36,47 +36,38 @@ Prior to starting up Socialbomb, I developed installations, sites, and games for
 
 <div class="post-group-holder">
 
+	{# fill out the "all" posts section #}
 	<div id="all" class="all post-group post-group-all">
-		<h1 class="writing page-header"><a href="#writing" class="clickable">Writing &raquo;</a></h1>
-		{{ get_portfolio_posts("writing", 3) }}
 
-		<h1 class="teaching page-header"><a href="#teaching" class="clickable">Teaching &raquo;</a></h1>
-		{{ get_portfolio_posts("teaching", 3) }}
+	{% for tag, title in [
+		('writing','Writing'),
+		('teaching','Teaching'),
+		('speaking','Speaking'),
+		('itp','ITP'),
+		('socialbomb','Socialbomb')] %}
 
-		<h1 class="speaking page-header"><a href="#speaking" class="clickable">Speaking &raquo;</a></h1>
-		{{ get_portfolio_posts("speaking", 3) }}
+		<h1 class="{{ tag }} page-header"><a href="#{{ tag }}" class="clickable">{{ title }} &raquo;</a></h1>
+		{{ get_portfolio_posts(tag, 3) }}
 
-		<h1 class="itp page-header"><a href="#itp" class="clickable">ITP &raquo;</a></h1>
-		{{ get_portfolio_posts("itp", 3) }}
+	{% endfor %}
 
-		<h1 class="socialbomb page-header"><a href="#socialbomb" class="clickable">Socialbomb &raquo;</a></h1>
-		{{ get_portfolio_posts("socialbomb", 3) }}
 	</div>
 
-	<!-- Writing -->
-	<div id="writing" class="writing post-group" style="display:none">
-		{{ get_portfolio_posts("writing") }}
-	</div>
+	{# fill out the posts for each section #}
+	{% for tag, title in [
+		('writing','Writing'),
+		('teaching','Teaching'),
+		('speaking','Speaking'),
+		('itp','ITP'),
+		('socialbomb','Socialbomb')] %}
 
-	<!-- Teaching and planning -->
-	<div id="teaching" class="teaching post-group" style="display:none">
-		{{ get_portfolio_posts("teaching") }}
-	</div>
+		<!-- {{ title }} -->	
+		<div id="{{ tag }}" class="{{ tag }} post-group" style="display:none">
+			{{ get_portfolio_posts(tag) }}
+		</div>
 
-	<!-- Speaking -->
-	<div id="speaking" class="speaking post-group" style="display:none">
-		{{ get_portfolio_posts("speaking") }}
-	</div>
+	{% endfor %}
 
-	<!-- ITP work -->
-	<div id="itp" class="itp post-group" style="display:none">
-		{{ get_portfolio_posts("itp") }}
-	</div>
-
-	<!-- Socialbomb -->
-	<div id="socialbomb" class="socialbomb post-group" style="display:none">
-		{{ get_portfolio_posts("socialbomb") }}
-	</div>
 </div>
 
 </section>
