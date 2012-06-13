@@ -20,12 +20,12 @@ context:
         css_class: home
         type: page
         url: /
-      -
-        name: Projects
-        description: Projects
-        css_class: projects
-        type: node
-        url: projects
+      # -
+      #   name: Projects
+      #   description: Projects
+      #   css_class: projects
+      #   type: node
+      #   url: projects
       -
         name: Blog
         description: Blog
