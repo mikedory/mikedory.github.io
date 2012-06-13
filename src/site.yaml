@@ -32,12 +32,6 @@ context:
         css_class: blog
         type: link
         url: http://blog.doryexmachina.com
-      # -
-      #   name: Boog
-      #   description: Blog
-      #   css_class: blog
-      #   type: node
-      #   url: blog
       -
         name: About
         description: About
