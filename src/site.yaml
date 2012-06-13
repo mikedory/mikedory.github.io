@@ -26,6 +26,12 @@ context:
         css_class: projects
         type: node
         url: projects
+      -
+        name: Blog
+        description: Blog
+        css_class: blog
+        type: link
+        url: http://blog.doryexmachina.com
       # -
       #   name: Boog
       #   description: Blog
