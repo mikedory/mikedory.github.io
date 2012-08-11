@@ -1,5 +1,5 @@
 /* ==|== primary styles =====================================================
-   Author: Mike Dory | http://doryexmachina.com
+   Author: Mike Dory | http://dory.me
    ========================================================================== */
 
 // --- FANCY VARIABLES --- //
@@ -12,6 +12,8 @@ $shadow_gray: #ccc;
 $link: darken($blue, 10%); 
 $margin: 16px;
 
+$cdn: "http://static.dory.me.s3.amazonaws.com";
+$magickly: "http://dory-magickly.herokuapp.com";
 
 // --- FANCY MIXINS --- //
 
@@ -32,6 +34,18 @@ $margin: 16px;
 	font-family: adelle-1,adelle-2,serif;
 	font-weight: $weight;
 	font-style: $style;
+}
+ 
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('/static/fonts/fontawesome-webfont.eot');
+	src: url('/static/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+		url('/static/fonts/fontawesome-webfont.woff') format('woff'),
+		url('/static/fonts/fontawesome-webfont.ttf') format('truetype'),
+		url('/static/fonts/fontawesome-webfont.svgz#FontAwesomeRegular') format('svg'),
+		url('/static/fonts/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
  
 // --- BODY --- //
@@ -107,20 +121,120 @@ header {
 	margin: 40px 0 30px 0;
 }
 
-
 .main_container {
 	@include outer_shadow($background_white, $shadow_gray);
 }
 
 article {
 // 	@include outer_shadow($background_white, $shadow_gray);
- 	img {
- 		margin: 0 0 15px 0;
- 	}
+	img {
+		margin: 0 0 15px 0;
+	}
 }
 
 .email-me {
 	margin-top: 15px;
+}
+
+.portfolio_carousel_div {
+	width: 700px;
+	margin: auto;
+}
+	.portfolio_carousel_div .item img {
+		margin: auto;
+		height: 200px;
+	}
+
+
+
+// --- ABOUT ME ---- //
+
+.things_i_do {
+	// margin: 5px 0 20px 0;
+
+	.icon_text {
+		font-size: 2.2em;
+		margin: 0 10px 0 5px;
+		display: inline;
+		float: left;
+		height: 120px;
+	}
+}
+
+
+.about-me {
+	// height: 225px;
+
+	.about-me-pic {
+		border: 10px solid #E5E5E5;
+		width: 300px;
+		height: 198px;
+		float: left;
+		background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png&grayscale=true");
+	
+		&:hover {
+			background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png");
+		}
+	}
+
+	.about-me-splitter {
+		border-left: 1px solid #E5E5E5;
+		border-right: 1px solid white;
+		height: 200px;
+		width: 1px;
+		margin: 5px 15px 0 35px;
+	}
+
+	.about-me-text {
+		// err, nothing for now I guess.
+	}
+}
+
+// --- PORTFOLIO ---- //
+
+.project-sort-buttons {
+	@include font_adelle(700, normal);
+	font-size: 20px;
+	color: #666;
+
+	li {
+		// temp hack to work around having too many categories
+		// @TODO: remove this, and get rid of a category in the portfolio.
+		margin-left: 5px;
+
+		a {
+			color: #555;
+		}
+		a:hover {
+			// font-style: italic;
+		}
+		// a:active {
+		// 	color: #999;
+		// 	background-color: #999;
+		// }
+	}
+	li.active a {
+		color: #999;
+	}
+
+}
+
+// override the tab background color
+.nav-tabs > .active > a, 
+.nav-tabs > .active > a:hover {
+	background-color: #FAFAFA;
+}
+
+// changes the colors of the sub-headers in the portfolio
+.post-group-holder .post-group-all h1 {
+	a {
+		color: #333;
+	}
+
+	a:hover {
+		color: #999;
+	}
+
 }
 
 // --- FOOTER --- //
@@ -134,13 +248,28 @@ p {
 footer {
 	font-size: 10px;
 	margin-top: 24px;
-	text-shadow: 1px 1px 2px $lgray;
+	// text-shadow: 1px 1px 1px $lgray;
+
+	.icon_text {
+		font-size: 1em;
+		line-height: 100%;
+	}
+
+	.social_networks {
+		display: inline;
+		// margin: 5px 0 50px 0;
+
+		.icon_text a {
+			font-size: .9em;
+			margin-right: .1em;
+		}
+	}
 }
+
 
 // --- Special things --- //
 
 code {
-	// color: #555;
 	font-family: Courier;
 }
 
@@ -149,7 +278,48 @@ blockquote {
 	color: lighten($blue, 5%);
 }
 
+.bottomborder{
+	border-bottom: 1px solid #999;
+	margin-bottom: 15px;
+}
+
 span.amp {
 	font-family: Baskerville, Palatino, "Book Antiqua", serif;
 	font-style: italic;
 }
+
+span.icon_text {
+	font-family: FontAwesome;
+	font-size: 2em;
+	color: #333;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	text-align: center;
+	left: auto;
+	right: auto;
+}
+
+.bottompad10 {
+	padding-bottom: 10px;
+}
+
+.hidden {
+	display: none;
+}
+
+// a.brand {
+// 	background-color: #777;
+// 	padding-bottom: 40px;
+// 	height: 200px;
+// 	position: absolute;
+// 	left: 50%;
+// }

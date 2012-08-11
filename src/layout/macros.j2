@@ -7,7 +7,7 @@
 	<a href="{{ content_url(res.url) }}">{{ post.image|markdown|typogrify }}</a>
 	{{ post.excerpt|markdown|typogrify }}
 	<time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
-    Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
+	Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
 	</time>
 </article>
 {% endmacro %}
@@ -18,10 +18,57 @@
 {% macro render_portfolio_excerpt(res, class=None) %}
 {% refer to res.url as project %}
 <article {{'class='~class if class }}>
+
+	{# the post's title #}
 	<h2><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h2>
-	<a href="{{ content_url(res.url) }}">{{ project.image|markdown|typogrify }}</a>
-	{{ project.excerpt|markdown|typogrify }}
+
+	{# if there's a thumb, load both color and b/w versions #}
+	{% if res.meta.thumb %}
+	<a href="{{ content_url(res.url) }}" class="bwrollover">
+		<img src="http://dory-magickly.herokuapp.com?src={{ res.meta.thumb }}&grayscale=true&thumb=300x200%23" class="gray"/>
+		<img src="http://dory-magickly.herokuapp.com?src={{ res.meta.thumb }}&thumb=300x200%23" class="color" style="display:none"/>
+	</a>
+	{%- endif %}
+	
+	{# blurb! #}
+	{{ res.meta.excerpt|markdown|typogrify }}
+	
+	{# read more? #}
+	<!-- <a href="{{ content_url(res.url) }}">Read more &raquo;</a> -->
+
 </article>
+{% endmacro %}
+
+
+{# For snagging [x] portfolio entries matching a tag, and making rows as it goes #}
+
+{% macro get_portfolio_posts(tag, limit=None) %}
+{% set projects = node.walk_resources_tagged_with(tag) %}
+{% if projects -%}
+	{% for project in projects -%}
+
+		{# shell out the row structure #}
+		{% if loop.index0 % 3 == 0 %}
+		<div class="row" >
+		{% endif %}
+			<div class="span4">
+				{{ render_portfolio_excerpt(project, 'post'+' '+tag) }}
+			</div>
+		{% if (loop.index0 % 3 == 2) or (loop.last) %}
+		</div>
+		{% endif %}
+
+		{# if there's a limit, enforce it #}
+		{% if limit != None and loop.index >= limit %}
+			{#
+			<div class="projects_more right">
+				<a href="{{ content_url('projects/tags/'~tag) }}">More about {{ tag }}...</a>
+			</div>
+			#}
+			{% break %}
+		{% endif %}
+	{%- endfor %}
+{%- endif %}
 {% endmacro %}
 
 
@@ -30,28 +77,36 @@
 {% macro render_nav(menu, cls=None) -%}
 {% if menu -%}
 <nav {{'class='~cls if cls }}>
-    <ul class="nav">
-        {% for item in menu -%}
-        {% set active = False -%}
-        {% if item.type == 'page' -%}
-            {% set active = (resource.url ==
-                site.content.resource_from_relative_path(item.url).url) -%}
-        {% else -%}
-            {% set active = (node ==
-                site.content.node_from_relative_path(item.url)) -%}
-        {%- endif %}
-        {% set classes = ['button', 'white'] -%}
-        {% do classes.append('active') if active -%}
-        {% do classes.append(item.css_class) if item.css_class -%}
-        <li {% if active %} class="active" {% endif %}>
-            <a title="{{ item.description }}"
-                class="{{ classes|join(' ') }}"
-                href="{{ content_url(item.url) }}">
-                {{ item.name }}
-            </a>
-        </li>
-        {%- endfor %}
-    </ul>
+	<ul class="nav">
+		{% for item in menu -%}
+		{% set active = False -%}
+		{% if item.type == 'page' -%}
+			{% set active = (resource.url ==
+				site.content.resource_from_relative_path(item.url).url) -%}
+		{#
+		{% elif item.type == 'link' -%}
+			{% set active = (item.url) -%}
+		#}
+		{% else -%}
+			{% set active = (node ==
+				site.content.node_from_relative_path(item.url)) -%}
+		{%- endif %}
+		{% set classes = ['button', 'white'] -%}
+		{% do classes.append('active') if active -%}
+		{% do classes.append(item.css_class) if item.css_class -%}
+		<li {% if active %} class="active" {% endif %}>
+			<a title="{{ item.description }}"
+				class="{{ classes|join(' ') }}"
+				{% if item.type =='link' -%}
+				href="{{ item.url }}">
+				{% else -%}
+				href="{{ content_url(item.url) }}">
+				{%- endif %}
+				{{ item.name }}
+			</a>
+		</li>
+		{%- endfor %}
+	</ul>
 </nav>
 {%- endif %}
 {%- endmacro %}

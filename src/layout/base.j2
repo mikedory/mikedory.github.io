@@ -19,10 +19,10 @@
 
 	<meta name="viewport" content="{{ resource.meta.viewport }}">
 
-	{% block favicons %}
+{% block favicons %}
 	<link rel="shortcut icon" href="{{ media_url('images/_favicon.ico') }}">
 	<link rel="apple-touch-icon" href="{{ media_url('images/_apple-touch-icon.png') }}">
-	{% endblock favicons %}
+{% endblock favicons %}
 
 	{% block css %}
 	<script type="text/javascript" src="https://use.typekit.com/yna6ipo.js"></script>
@@ -30,6 +30,8 @@
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap-responsive.css') }}">
 	<link rel="stylesheet" href="{{ media_url('css/style.css') }}">
+	<link rel="stylesheet" href="{{ media_url('css/font-awesome.css') }}">
+	<link rel="stylesheet" href="{{ media_url('css/rainbowjs-theme-github.css') }}">
 	{% endblock css %}
 
 	{% block headjs %}
@@ -47,12 +49,22 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="/">Mike Dory</a>
+
+				<!-- shown on smaller screens -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a><!--/.btn-navbar -->
+
+				<!-- shown on full-size screens (over 940px) -->
 				<div class="nav-collapse">
 				{% block nav %}
 					{% from "macros.j2" import render_nav with context %}
 					{{ render_nav(menu, 'main_nav') }}
 				{% endblock %}
 				</div><!--/.nav-collapse -->
+
 			</div>
 		</div>
 	</div>
@@ -75,6 +87,13 @@
 		<hr>
 		<footer>
 			&copy; Mike Dory, 2006-2012
+			<div class="row social_networks right">
+				<span class="icon_text"><a href="http://twitter.com/mike_dory" class="icon-facebook-sign"></a></span>
+				<span class="icon_text"><a href="http://twitter.com/mike_dory" class="icon-twitter-sign"></a></span>
+				<span class="icon_text"><a href="http://github.com/mikedory" class="icon-github-sign"></a></span>
+				<span class="icon_text"><a href="http://www.linkedin.com/in/michaeldory" class="icon-linkedin-sign"></a></span>
+				<span class="icon_text"><a href="mailto:mike@dory.me" class="icon-envelope"></a></span>
+			</div>
 		</footer>
 		{% endblock footer %}
 
@@ -95,6 +114,8 @@
 		{% block scripts %}
 		<!-- Bootstrap goodies -->
 		<script src="{{ media_url('js/bootstrap.js') }}"= ></script>
+		<script src="{{ media_url('js/bootstrap-collapse.js') }}"= ></script>
+		<script src="{{ media_url('js/libs/rainbow-custom.min.js') }}"></script>
 		<!-- <script src="{{ media_url('js/bootstrap-carousel.js') }}"= ></script> -->
 		<!-- <script src="{{ media_url('js/bootstrap-typeahead.js') }}"= ></script> -->
 

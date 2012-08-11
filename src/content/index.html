@@ -11,27 +11,46 @@ listable: false
 	<div class="page-header">
 		<h1>Hi! I'm Mike. <small>I make things and drink coffee.</small></h1>
 	</div>
+	<div class="intro_container row">
+		<div class="span9">
 
-<div class="intro_container">
 {% filter markdown -%}
 
-## The short version:
+<!-- ## The short version: -->
 
 Co-founder and CTO of [Socialbomb](http://socialbomb.com). 
-Co-author of a [book about Tornado](http://shop.oreilly.com/product/0636920021292.do) for [O'Reilly Media](http://oreilly.com/) (out now!).  
+Co-author of a [book about Tornado](http://shop.oreilly.com/product/0636920021292.do) for [O'Reilly Media](http://oreilly.com/) (out now!). 
 Occasional adjunct faculty at [NYU ITP](http://itp.nyu.edu).
 
 I live in Jersey City, NJ with my wife and dog, and I work in Brooklyn, NY.
 
+{%- endfilter %}
+		</div>
+	</div><!-- end intro_container -->
+{% endblock intro %}
+
+{% block main %}
+
+{#
+{% filter markdown -%}
+
 <hr/>
 
+</div>
+
 ## The professional version:
+
+<div class="row">
+	<div class="span1">&nbsp;</div>
+	<div class="span8">
 
 I've spent the last decade studying the ways people communicate and working to make their conversations better. Since co-founding Socialbomb, I've worked with companies like Fisher-Price, HBO and Pepsico to build social applications and platforms that connect users with their friends, their devices, and the world around them.
 
 Previously, I developed installations, sites, and games for Unified Field and the Institute of Play. My personal and collaborative projects have appeared in the New York Times, National Public Radio, Gothamist, BoingBoing, Gizmodo and MAKE Magazine. 
 
 I graduated with a BA in Journalism & Media Studies from Rutgers University and an MPS in Interactive Telecommunications from NYU ITP.
+
+</div>
 
 <hr/>
 
@@ -40,35 +59,27 @@ I graduated with a BA in Journalism & Media Studies from Rutgers University and 
 [Email me](mailto:mike@dory.me)!
 
 {%- endfilter %}
-</div>
 
-</div>
-{% endblock intro %}
-
-
-{% block main %}
-{#
-	{% from "macros.j2" import render_excerpt with context %}
-	<section class="blog_excerpt">
 #}
 
+</div> <!-- end hero unit -->
 
-	{# grab the latest 3 entries #}
 {#
-	{% set projects = node.walk_resources_sorted_by_time()[0:3] %}
-	{% set projects = node.walk_resources_tagged_with('portfolio') %}
+<h2 class="page-header">THINGS I DO:</h2>
+<div class="row things_i_do">
+	<div class="code span4">
+		<span class="icon_text">H</span>
+		<p>I develop sites, applications, and APIs that let people do stuff. I develop sites, applications, and APIs that let people do stuff. <p>
+	</div>
+	<div class="code span4">
+		<span class="icon_text">d</span>
+		<p>I develop sites, applications, and APIs that let people do stuff. I develop sites, applications, and APIs that let people do stuff. <p>
+	</div>
+	<div class="code span4">
+		<span class="icon_text">U</span>
+		<p>I develop sites, applications, and APIs that let people do stuff. I develop sites, applications, and APIs that let people do stuff. <p>
+	</div>
+</div>
+#}
 
-	{% if projects -%}
-		<div class="row">
-				{% for project in projects -%}
-				<div class="span4">
-					{{ render_excerpt(project, 'post') }}
-
-					<a class="btn" href="{{ content_url(latest.url) }}">Read more &raquo;</a>
-				</div>
-				{%- endfor %}
-		</div>
-	{%- endif %}
-	</section>
-#}	
 {% endblock main %}
