@@ -88,9 +88,10 @@ article img {
   width: 300px;
   height: 198px;
   float: left;
-  background: url("http://dory-magickly.herokuapp.com?src=http://static.dory.me.s3.amazonaws.com/images/about/me-300.png&grayscale=true"); }
+  overflow: hidden;
+  background: url("/static/images/about/me-sprite.png") no-repeat center top; }
   .about-me .about-me-pic:hover {
-    background: url("http://dory-magickly.herokuapp.com?src=http://static.dory.me.s3.amazonaws.com/images/about/me-300.png"); }
+    background: url("/static/images/about/me-sprite.png") no-repeat center bottom; }
 .about-me .about-me-splitter {
   border-left: 1px solid #E5E5E5;
   border-right: 1px solid white;

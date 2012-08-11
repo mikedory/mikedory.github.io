@@ -170,10 +170,11 @@ article {
 		width: 300px;
 		height: 198px;
 		float: left;
-		background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png&grayscale=true");
+		overflow: hidden;
+		background: url("/static/images/about/me-sprite.png") no-repeat center top;
 	
 		&:hover {
-			background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png");
+			background: url("/static/images/about/me-sprite.png") no-repeat center bottom;
 		}
 	}
 
