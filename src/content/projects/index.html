@@ -22,6 +22,14 @@ Prior to starting up Socialbomb, I developed installations, sites, and games for
 
 {% block main %}
 
+{% set category_tags_and_titles = [
+	('writing','Writing'),
+	('teaching','Teaching'),
+	('speaking','Speaking'),
+	('itp','ITP'),
+	('socialbomb','Socialbomb')] 
+%}
+
 <ul class="nav nav-tabs center project-sort-buttons">
 	<li class="all span2 active"><a href="#all" class="clickable">All</a></li>
 	<li class="writing span2"><a href="#writing" class="clickable">Writing</a></li>
@@ -38,34 +46,18 @@ Prior to starting up Socialbomb, I developed installations, sites, and games for
 
 	{# fill out the "all" posts section #}
 	<div id="all" class="all post-group post-group-all">
-
-	{% for tag, title in [
-		('writing','Writing'),
-		('teaching','Teaching'),
-		('speaking','Speaking'),
-		('itp','ITP'),
-		('socialbomb','Socialbomb')] %}
-
+	{% for tag, title in category_tags_and_titles %}
 		<h1 class="{{ tag }} page-header"><a href="#{{ tag }}" class="clickable">{{ title }} &raquo;</a></h1>
 		{{ get_portfolio_posts(tag, 3) }}
-
 	{% endfor %}
-
 	</div>
 
 	{# fill out the posts for each section #}
-	{% for tag, title in [
-		('writing','Writing'),
-		('teaching','Teaching'),
-		('speaking','Speaking'),
-		('itp','ITP'),
-		('socialbomb','Socialbomb')] %}
-
+	{% for tag, title in category_tags_and_titles %}
 		<!-- {{ title }} -->	
 		<div id="{{ tag }}" class="{{ tag }} post-group" style="display:none">
 			{{ get_portfolio_posts(tag) }}
 		</div>
-
 	{% endfor %}
 
 </div>

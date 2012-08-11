@@ -27,7 +27,6 @@ def coffee(fresh=False):
 # REMOVE ALL THE THINGS
 def clean():
 	notify('Hyde','Local copy torched')
-	# local('rm -rf ./deploy')
 	local('rm -rf ../public')
 
 # regenerate the output files (optionally, do so with a fresh install, and/or compress the css and js)

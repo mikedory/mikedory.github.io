@@ -27,6 +27,12 @@ context:
       #   type: node
       #   url: projects
       -
+        name: The List
+        description: The List
+        css_class: the-list
+        type: page
+        url: the-list
+      -
         name: Blog
         description: Blog
         css_class: blog
