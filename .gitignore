@@ -13,6 +13,7 @@ deploy/
 #content/
 #src/content/
 node_modules/
+_offline/
 
 .css
 src/content/static/css/style.css
