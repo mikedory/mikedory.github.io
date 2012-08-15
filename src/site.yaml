@@ -48,7 +48,7 @@ meta:
   nodemeta: meta.yaml
   created: !!timestamp 2012-02-18 10:00:00
   author: Mike Dory
-  ga_tracking_code: XX-XXXXXXXX-X
+  ga_tracking_code: UA-34096736-1
 sorter:
   time:
     attr:
@@ -60,11 +60,11 @@ sorter:
 tagger:
   sorter: time
   archives:
-    blog:
-      source: blog
-      target: blog/tags
-      template: tagged_posts.j2
-      archive_extension: html
+    # blog:
+    #   source: blog
+    #   target: blog/tags
+    #   template: tagged_posts.j2
+    #   archive_extension: html
     projects:
       source: projects
       target: projects/tags
