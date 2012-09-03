@@ -1,0 +1,19 @@
+permalink: /:categories/:year/:month/:day/:title 
+
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+auto: true
+pygments: true
+
+title : dory.me
+tagline: Turning coffee into snark and software.
+author :
+  name : Mike Dory
+  github : mikedory
+  twitter : mike_dory
+
+production_url : http://username.github.com
+
+  analytics :
+    provider : google 
+    google : 
+        tracking_id : 'XX-XXX-XXXX'
