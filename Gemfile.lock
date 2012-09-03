@@ -1,14 +1,35 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    albino (1.3.3)
+      posix-spawn (>= 0.3.6)
+    classifier (1.3.3)
+      fast-stemmer (>= 1.0.0)
+    directory_watcher (1.4.1)
+    fast-stemmer (1.0.0)
+    jekyll (0.11.2)
+      albino (~> 1.3)
+      classifier (~> 1.3)
+      directory_watcher (~> 1.1)
+      kramdown (~> 0.13)
+      liquid (~> 2.3)
+      maruku (~> 0.5)
+    kramdown (0.13.3)
+    liquid (2.4.1)
+    maruku (0.6.0)
+      syntax (>= 1.0.0)
+    posix-spawn (0.3.6)
     rack (1.4.1)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
     rack-rewrite (1.2.1)
+    syntax (1.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  jekyll
+  rack
   rack-contrib
   rack-rewrite
