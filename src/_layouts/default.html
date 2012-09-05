@@ -46,7 +46,19 @@
 
                 <!-- shown on full-size screens (over 940px) -->
                 <div class="nav-collapse">
-NAV GOES HERE
+                    <nav >
+                        <ul class="nav">
+                            <li class="{% if page.url == '/index.html' %}active{% endif %}">
+                                <a class="" href="/">Home</a>
+                            </li>
+                            <li class="">
+                                <a class="" href="http://blog.doryexmachina.com">Blog</a>
+                            </li>
+                            <li class="{% if page.url == '/about.html' %}active{% endif %}">
+                                <a class="" href="/about.html">About</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div><!--/.nav-collapse -->
 
             </div>
@@ -54,11 +66,11 @@ NAV GOES HERE
     </div>
 
     <div class="container main_container">
-
         {{ content }}
 
         <hr>
         <footer>
+        {{ page.woo }}
             &copy; Mike Dory, 2006-2012
             <div class="row social_networks right">
                 <span class="icon_text"><a href="http://www.facebook.com/michael.dory" class="icon-facebook-sign"></a></span>
