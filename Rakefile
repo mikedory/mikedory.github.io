@@ -24,7 +24,7 @@ namespace :local do
 end
 
 # development mode: ENGAGED!
-namespace :herkou do
+namespace :heroku do
 
     desc 'serve on heroku'
     task :serve do
