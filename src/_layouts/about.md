@@ -19,6 +19,8 @@ layout: default
         </div>
     </div>
 
+    <hr/>
+
     {{ content }}
 
 </div> <!-- end hero unit -->
