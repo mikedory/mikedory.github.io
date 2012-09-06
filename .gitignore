@@ -6,7 +6,7 @@
 .sass-cache/
 npm-debug.log
 src/node_modules/
-
+.env
 
 # directories
 deploy/
