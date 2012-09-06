@@ -5,7 +5,7 @@ server: false
 pygments: true
 server_port: 5000
 
-permalink: /:categories/:year/:month/:day/:title 
+permalink: /:categories/:title 
 
 
 # all about me
@@ -24,8 +24,5 @@ production_url : http://username.github.com
 
 # analytics
 analytics :
-provider : google 
-google : 
-    tracking_id : 'XX-XXX-XXXX'
-
-woo : 'yay'
+    google : 
+        tracking_id : 'XX-XXX-XXXX'
