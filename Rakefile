@@ -29,7 +29,7 @@ namespace :herkou do
     desc 'serve on heroku'
     task :serve do
         sh 'jekyll --no-auto --no-server ./src/ ./public/'
-        sh 'rackup config.ru -p $PORT'
+        sh 'bundle exec thin start -p $PORT -e $RACK_ENV'
     end
 
 end
