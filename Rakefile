@@ -28,6 +28,7 @@ namespace :heroku do
 
     desc 'serve on heroku'
     task :serve do
+        sh 'sass --update ./src/static/css/style.scss:src/static/css/style.css'
         sh 'jekyll --no-auto --no-server ./src/ ./public/'
         sh 'bundle exec thin start -p $PORT -e $RACK_ENV'
     end
