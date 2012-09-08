@@ -1,6 +1,9 @@
 require 'rubygems'
 require 'rake'
 
+# by default, build and serve locally
+task :default => 'local:serve'
+
 # development mode: ENGAGED!
 namespace :local do
 
@@ -11,6 +14,9 @@ namespace :local do
         end
         fork do
            sh 'sass --watch ./src/static/css/style.scss:src/static/css/style.css'
+        end
+        fork do
+            sh 'coffee -w -o ./src/static/js -c ./src/static/js'
         end
         sh 'rackup config.ru -p 5000'
     end
@@ -23,12 +29,21 @@ namespace :local do
 
 end
 
-# development mode: ENGAGED!
+# all the fancy heroku options
 namespace :heroku do
 
-    desc 'serve on heroku'
-    task :serve do
+    desc 'build and export the coffee (and make one file of it all)'
+    task :coffee do
+        sh 'coffee -j ./src/static/js/script.js -c ./src/static/js/*.coffee'
+    end    
+
+    desc 'build and export the sass'
+    task :sass do
         sh 'sass --update ./src/static/css/style.scss:src/static/css/style.css'
+    end    
+
+    desc 'serve on heroku'
+    task :serve => [:coffee, :sass] do
         sh 'jekyll --no-auto --no-server ./src/ ./public/'
         sh 'bundle exec thin start -p $PORT -e $RACK_ENV'
     end
