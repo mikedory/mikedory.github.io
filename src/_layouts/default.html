@@ -32,38 +32,8 @@
     <script src="{{ BASE_URL }}/static/js/libs/modernizr-1.7.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="brand" href="/">Mike Dory</a>
 
-                <!-- shown on smaller screens -->
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a><!--/.btn-navbar -->
-
-                <!-- shown on full-size screens (over 940px) -->
-                <div class="nav-collapse">
-                    <nav >
-                        <ul class="nav">
-                            <li class="{% if page.url == '/index.html' %}active{% endif %}">
-                                <a class="" href="/">Home</a>
-                            </li>
-                            <li class="">
-                                <a class="" href="http://blog.doryexmachina.com">Blog</a>
-                            </li>
-                            <li class="{% if page.url == '/about.html' %}active{% endif %}">
-                                <a class="" href="/about">About</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div><!--/.nav-collapse -->
-
-            </div>
-        </div>
-    </div>
+    {% include header_nav %}
 
     <div class="container main_container">
 
@@ -71,16 +41,7 @@
 
         <hr>
 
-        <footer>
-            &copy; Mike Dory, 2006-2012
-            <div class="row social_networks right">
-                <span class="icon_text"><a href="http://www.facebook.com/michael.dory" class="icon-facebook-sign"></a></span>
-                <span class="icon_text"><a href="http://twitter.com/mike_dory" class="icon-twitter-sign"></a></span>
-                <span class="icon_text"><a href="http://github.com/mikedory" class="icon-github-sign"></a></span>
-                <span class="icon_text"><a href="http://www.linkedin.com/in/michaeldory" class="icon-linkedin-sign"></a></span>
-                <span class="icon_text"><a href="mailto:mike@dory.me" class="icon-envelope"></a></span>
-            </div>
-        </footer>
+        {% include footer %}
     </div> <!-- end of container -->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js"></script>
