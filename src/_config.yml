@@ -31,34 +31,34 @@ analytics :
 
 # nav bar
 nav :
-    - title: home
-      name: Home
-      href : /
-      activelink: /index.html
-    - title: blog
-      name: Blog
-      href : http://blog.doryexmachina.com
-      activelink: /blog.html
-    - title: about
-      name: About
-      href : about
-      activelink: /about.html
+  - title: home
+    name: Home
+    href : /
+    activelink: /index.html
+  - title: blog
+    name: Blog
+    href : http://blog.doryexmachina.com
+    activelink: /blog.html
+  - title: about
+    name: About
+    href : about
+    activelink: /about.html
 
 # footer links
 
 footer :
-    - title: facebook
-      href: http://www.facebook.com/michael.dory
-      class: icon-facebook-sign
-    - title: twitter
-      href: http://twitter.com/mike_dory
-      class: icon-twitter-sign
-    - title: github
-      href: http://github.com/mikedory
-      class: icon-github-sign
-    - title: linkedin
-      href: http://www.linkedin.com/in/michaeldory
-      class: icon-linkedin-sign
-    - title: email
-      href: mailto:mike@dory.me
-      class: icon-envelope
+  - title: facebook
+    href: http://www.facebook.com/michael.dory
+    class: icon-facebook-sign
+  - title: twitter
+    href: http://twitter.com/mike_dory
+    class: icon-twitter-sign
+  - title: github
+    href: http://github.com/mikedory
+    class: icon-github-sign
+  - title: linkedin
+    href: http://www.linkedin.com/in/michaeldory
+    class: icon-linkedin-sign
+  - title: email
+    href: mailto:mike@dory.me
+    class: icon-envelope
