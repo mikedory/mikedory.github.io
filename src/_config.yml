@@ -24,5 +24,23 @@ production_url : http://username.github.com
 
 # analytics
 analytics :
-    google : 
-        tracking_id : 'XX-XXX-XXXX'
+  google : 
+    tracking_id : 'XX-XXX-XXXX'
+
+# -----------
+
+# nav bar
+
+nav :
+    - title: home
+      name: Home
+      href : /
+      activelink: /index.html
+    - title: blog
+      name: Blog
+      href : http://blog.doryexmachina.com
+      activelink: /blog.html
+    - title: about
+      name: About
+      href : about
+      activelink: /about.html
