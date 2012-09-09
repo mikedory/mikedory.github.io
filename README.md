@@ -29,7 +29,7 @@ Most tasks are easiest handled by rake.  For example, to do local development, r
 
 And to mimic what will be served on Heroku, you can run:
 
-	heroku:serve
+	rake heroku:serve
 
 
 ## requirements: ##
