@@ -46,8 +46,12 @@ nav :
     activelink: /blog.html
   - title: about
     name: About
-    href : about
+    href : /about
     activelink: /about.html
+  - title: projects
+    name: Projects
+    href : /projects
+    activelink: /projects.html
 
 # footer links
 footer :

@@ -1,8 +1,7 @@
 ---
-layout: page
+layout: portfolio_single
 title: Introduction to Tornado
 description: Introduction to Tornado
-created: !!timestamp '2012-05-26 07:29:30'
 tags: [writing, book]
 category: projects
 thumb: http://akamaicovers.oreilly.com/images/0636920021292/lrg.jpg
