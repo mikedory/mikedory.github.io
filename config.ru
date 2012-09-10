@@ -14,6 +14,7 @@
 # http://mwmanning.com/2011/12/04/Jekyll-on-Heroku-Part-2.html
 # 
 
+require 'rubygems'
 require 'rack'
 require 'rack/contrib/try_static'
 require 'rack-rewrite'
