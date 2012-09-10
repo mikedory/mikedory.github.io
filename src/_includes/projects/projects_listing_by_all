@@ -1,3 +1,4 @@
+<div id="all" class="all post-group post-group-all">
 {% for category in page.categories %}
     <h1 class="{{ category.tag }} page-header">
         <a href="#{{ category.tag }}" class="clickable">{{ category.title }} &raquo;</a>
@@ -44,3 +45,4 @@
     {% endif %}
 
 {% endfor %}
+</div>
