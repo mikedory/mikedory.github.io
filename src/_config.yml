@@ -1,12 +1,30 @@
+# -----------------------------------
+# Jekyll and site config settings
+# -----------------------------------
+
 # jekyll setup details
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "migration/", ".gitignore", "Gemfile", "Gemfile.lock"]
 auto: false
 server: false
 pygments: true
 server_port: 5000
-
 permalink: /:categories/:title 
 
+# source and deploy deets
+source : .
+destination : ../public
+# plugins:     ./_plugins
+production_url : http://dory.me
+
+# analytics
+analytics :
+  google : 
+    tracking_id : 'XX-XXX-XXXX'
+
+
+# -----------------------------------
+# Personalization and details
+# -----------------------------------
 
 # all about me
 title : dory.me
@@ -15,19 +33,6 @@ author :
   name : Mike Dory
   github : mikedory
   twitter : mike_dory
-
-# deets
-source : .
-destination : ../public
-# plugins:     ./_plugins
-production_url : http://username.github.com
-
-# analytics
-analytics :
-  google : 
-    tracking_id : 'XX-XXX-XXXX'
-
-# -----------
 
 # nav bar
 nav :
@@ -45,7 +50,6 @@ nav :
     activelink: /about.html
 
 # footer links
-
 footer :
   - title: facebook
     href: http://www.facebook.com/michael.dory

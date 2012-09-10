@@ -8,7 +8,8 @@ layout: default
         <h2>{{ page.headertextsmall }}</h2>
     </div>
     <div class="intro_container row">
-        <div class="span9">
+        <!-- <div class="span9"> -->
+        <div class="{% if page.mainspan %}span{{ page.mainspan }}{% else %}span11{% endif %}">
             {{ content }}
         </div>
     </div><!-- end intro_container -->

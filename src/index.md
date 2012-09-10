@@ -7,6 +7,7 @@ tags: [home, page]
 group: navigation
 headertext: Hi! I'm Mike.
 headertextsmall: I make things and drink coffee.
+mainspan: 9
 ---
 
 Co-founder of [Socialbomb](http://socialbomb.com). 

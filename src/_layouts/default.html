@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="{{ site.description }}">
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
 
     <title>{{ page.title }}</title>
@@ -16,13 +16,18 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <!-- ios viewport thingies -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- iconzz -->
     <link rel="shortcut icon" href="{{ BASE_URL }}/static/images/_favicon.ico">
     <link rel="apple-touch-icon" href="{{ BASE_URL }}/static/images/_apple-touch-icon.png">
 
+    <!-- typekit! -->
     <script type="text/javascript" src="https://use.typekit.com/yna6ipo.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <!-- ermahgerd, stherl sherts -->
     <link rel="stylesheet" href="{{ BASE_URL }}/static/css/bootstrap.css">
     <link rel="stylesheet" href="{{ BASE_URL }}/static/css/bootstrap-responsive.css">
     <link rel="stylesheet" href="{{ BASE_URL }}/static/css/style.css">
