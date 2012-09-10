@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: portfolio
 title: Mike Dory | Projects
 tagline: 
 category: projects
