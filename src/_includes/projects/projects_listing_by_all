@@ -8,8 +8,11 @@
     {% assign projects = site.tags.[category.tag] %}
     {% if projects %}
         {% for project in projects limit:3 %}
+        {% capture modulus %}{{ forloop.index0 | mod:3 }}{% endcapture %}
         {% comment %} <!-- shell out the row structure --> {% endcomment %}
-        {% cycle 'add rows'project: '<div class="row">', nil, nil %}
+        {% if modulus == "0" %}
+        <div class="row">
+        {% endif %}
             <div class="span4">
                 <article class='{{ project.class }}' >
                 {% comment %} <!-- the post's title --> {% endcomment %}
@@ -27,10 +30,12 @@
                 <!-- <a href="{{ content_url(res.url) }}">Read more &raquo;</a> -->
                 </article>
             </div>
-        {% cycle 'close rows'project: nil, nil, '</div>' %}
+        {% if modulus == "2" or forloop.last %}
+        </div>
+        {% endif %}
+
         {% endfor %}
-    {% cycle 'close rows'project: nil, '</div>', '</div>' %}
     {% endif %}
-    
+
 {% endfor %}
 </div>
