@@ -4,7 +4,7 @@
 <div id="{{ category.tag }}" class="{{ category.tag }} post-group" style="display:none">
     {% assign projects = site.tags.[category.tag] %}
     {% if projects %}
-        {% for project in projects limit %}
+        {% for project in projects %}
 
             {% comment %} shell out the row structure {% endcomment %}
             {% if forloop.index0 % 3 == 0 %}

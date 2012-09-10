@@ -32,11 +32,9 @@ categories:
 
 <!-- show the "all" div filled with three of each post  -->
 <div id="all" class="all post-group post-group-all">
-    {% assign projectlimit = 3 %}
     {% include projects/projects_listing_by_all %}
 </div>
 
-{% assign projectlimit = 20 %}
 {% include projects/projects_listing_by_tag %}
 
 
