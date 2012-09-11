@@ -20,7 +20,6 @@ require 'rack/contrib/try_static'
 require 'rack-rewrite'
 
 use Rack::Rewrite do
-
 	# rewrite doryexmachina.com to dory.me
 	# r301 %r{.*}, 'http://doryexmachina.com$&',
 		# :if => Proc.new { |rack_env| rack_env['SERVER_NAME'] != 'dory.me' }
