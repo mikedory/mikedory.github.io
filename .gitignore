@@ -10,12 +10,9 @@ src/node_modules/
 
 # directories
 deploy/
-#content/
-#src/content/
 node_modules/
 _offline/
 public/
-migration/
 
 .css
-src/content/static/css/style.css
+src/static/css/style.css
