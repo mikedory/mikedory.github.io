@@ -26,7 +26,7 @@ use Rack::Rewrite do
 
 	r301 '/index.html', '/' # rewrite index.html to root
 	r301 %r{^/(.*)/$}, '/$1' # rewrite out .html extensions (and everything else)
-	r301 %r{/projects/(\S+).html}, '/projects/$1/'
+	r301 %r{/work/(\S+).html}, '/work/$1/'
 	# http://www.doryexmachina.com/projects/concrete-crickets
 end
 
