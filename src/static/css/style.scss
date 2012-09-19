@@ -98,7 +98,7 @@ pre {
 .navbar .brand {
     float: right;
     display: block;
-    padding: 12px 20px 8px;
+    padding: 12px 20px 5px 20px;
     margin-left: -20px;
     font-size: 20px;
     font-weight: 200;
@@ -234,6 +234,8 @@ body {
 	background-image: -webkit-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px);
 	-webkit-background-size: 22px 22px; 
 	background-size: 12px 12px;
+
+	font-size: 13px;
 
 }
 
