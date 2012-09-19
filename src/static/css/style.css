@@ -117,17 +117,17 @@ article img {
   width: 1px;
   margin: 5px 15px 0 35px; }
 
-.project-sort-buttons {
+.work-sort-buttons {
   font-family: adelle-1, adelle-2, serif;
   font-weight: 700;
   font-style: normal;
   font-size: 20px;
   color: #666; }
-  .project-sort-buttons li {
+  .work-sort-buttons li {
     margin-left: 5px; }
-    .project-sort-buttons li a {
+    .work-sort-buttons li a {
       color: #555; }
-  .project-sort-buttons li.active a {
+  .work-sort-buttons li.active a {
     color: #999; }
 
 .nav-tabs > .active > a,
