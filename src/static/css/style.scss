@@ -47,6 +47,27 @@ $magickly: "http://dory-magickly.herokuapp.com";
 	font-weight: normal;
 	font-style: normal;
 }
+
+
+// --- MEDIA QUERIES --- //
+
+// excellent advice from The Sass Way!
+// http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
+
+$break-small: 320px;
+$break-large: 979px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
  
 // --- BODY --- //
 
@@ -164,17 +185,34 @@ article {
 
 .about-me {
 
+	ul {
+		list-style-type: circle;
+		padding: 10px 5px;
+
+		li {
+			margin: 10px 0;
+			font-size: 18px;
+			font-weight: 200;
+			line-height: 27px;
+			color: gray;
+		}
+	}
+
 	.about-me-pic {
-		border: 10px solid #E5E5E5;
-		width: 300px;
+		// width: 300px;
+		@include respond-to(handhelds) { width: 100% ;}
+		@include respond-to(medium-screens) { width: 200px; }
+		@include respond-to(wide-screens) { width: 300px; }
 		height: 198px;
-		float: left;
+		border: 10px solid #E5E5E5;
 		background: url("/static/images/about/me-sprite.png") no-repeat;
 		background-position: center top;
+		float: left;
 	
 		&:hover {
 			// background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png");
 			background-position: center bottom;
+			border: 10px solid darken(#E5E5E5, 10%);
 		}
 	}
 
