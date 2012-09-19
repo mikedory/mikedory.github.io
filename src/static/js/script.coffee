@@ -12,7 +12,7 @@ Portfolio page
 ###
 
 # bind clicks for the portfolio tab menu
-$(".project-sort-buttons li a.clickable").click ->
+$(".work-sort-buttons li a.clickable").click ->
 	# what did you click on there buddy?
 	if $(@).closest('li a').hasClass('clickable')
 
@@ -34,7 +34,7 @@ $(".post-group-all h1 a.clickable").click ->
 		classToShow = $(@).closest('h1').attr('class').split(' ')[0]
 
 		# the user clicked a non-active one, so show it
-		$('.project-sort-buttons li.'+classToShow+' a').tab('show')
+		$('.work-sort-buttons li.'+classToShow+' a').tab('show')
 		hideAndShow(@, classToShow)
 	else 
 		# user is clicking the currently highlighted one, so do nothing
@@ -48,7 +48,7 @@ $('.bwrollover').hover(
 )
 
 # stop people from clicking the first (default) tab on page load
-$('.project-sort-buttons.li:first a').removeClass('clickable')
+$('.work-sort-buttons.li:first a').removeClass('clickable')
 
 
 # hide all categories, then show the right one

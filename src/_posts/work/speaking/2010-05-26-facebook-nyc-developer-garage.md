@@ -8,7 +8,7 @@ tags:
     - application
     - speaking
     - socialbomb
-category: projects
+category: work
 thumb: http://posterous.com/getfile/files.posterous.com/doryex/BvtlaonjjoygeqibfgCzzxCnlcghinksJCwAfkwrBbEaukrdqAgysuwJvgqk/media_httpfarm5static_wIojy.jpg.scaled500.jpg
 excerpt: The event was hosted by the nice folks at Syncapse, and featured a platform talk from Facebook's Matt Kelly as well as development tales from SocialAmp, Large Animal and Ready, Set, Rocket (as well as yours truly).
 ---

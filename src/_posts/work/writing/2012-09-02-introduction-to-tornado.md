@@ -3,7 +3,7 @@ layout: portfolio_single
 title: Introduction to Tornado
 description: Introduction to Tornado
 tags: [writing, book]
-category: projects
+category: work
 thumb: http://akamaicovers.oreilly.com/images/0636920021292/lrg.jpg
 excerpt: Tornado is a scalable, non-blocking web server and web application framework written in Python. It is also light-weight to deploy, fun to write for, and incredibly powerful. 
 ---

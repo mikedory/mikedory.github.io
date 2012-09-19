@@ -5,7 +5,7 @@ description: General Assembly - Introduction to Facebook class
 tags:
     - teaching
     - class
-category: projects
+category: work
 thumb: https://si0.twimg.com/profile_images/1444136902/GA_logo_1797cog.png
 excerpt: This course will address those concerns, with an overview of the offerings, examples of past campaigns that have succeeded (alongside some that have failed), and suggestions for how you might best use the Facebook platform for your next project. We'll also cover some best practices for how to keep your users happy, and use the environment to truly connect with fans and newcomers alike. 
 ---

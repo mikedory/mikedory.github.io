@@ -5,7 +5,7 @@ description: General Assembly - Facebook for Developers class
 tags:
     - teaching
     - class
-category: projects
+category: work
 thumb: https://si0.twimg.com/profile_images/1444136902/GA_logo_1797cog.png
 excerpt: This class will give developers an overview of these tools, as well as outlining best practices for building applications on or through Facebook. We'll cover the primary Facebook API's, the use cases for each, and some examples of how to use user data to enrich your sites and projects.
 ---
