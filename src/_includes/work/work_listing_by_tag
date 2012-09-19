@@ -2,27 +2,27 @@
 {% for category in page.categories %}
 
 <div id="{{ category.tag }}" class="{{ category.tag }} post-group" style="display:none">
-    {% assign projects = site.tags.[category.tag] %}
-    {% if projects %}
-        {% for project in projects %}
+    {% assign posts = site.tags.[category.tag] %}
+    {% if posts %}
+        {% for post in posts %}
         {% capture modulus %}{{ forloop.index0 | mod:3 }}{% endcapture %}
             {% comment %} <!-- shell out the row structure --> {% endcomment %}
             {% if modulus == "0" %}
             <div class="row">
             {% endif %}
                 <div class="span4">
-                    <article class='{{ project.class }}' >
+                    <article class='{{ post.class }}' >
                         {% comment %}<!--  the post's title  -->{% endcomment %}
-                        <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
                         {% comment %} <!-- if there's a thumb, load both color and b/w versions --> {% endcomment %}
-                        {% if project.thumb %}
-                        <a href="{{ project.url }}" class="bwrollover">
-                            <img src="http://dory-magickly.herokuapp.com?src={{ project.thumb }}&grayscale=true&thumb=300x200%23" class="gray"/>
-                            <img src="http://dory-magickly.herokuapp.com?src={{ project.thumb }}&thumb=300x200%23" class="color" style="display:none"/>
+                        {% if post.thumb %}
+                        <a href="{{ post.url }}" class="bwrollover">
+                            <img src="http://dory-magickly.herokuapp.com?src={{ post.thumb }}&grayscale=true&thumb=300x200%23" class="gray"/>
+                            <img src="http://dory-magickly.herokuapp.com?src={{ post.thumb }}&thumb=300x200%23" class="color" style="display:none"/>
                         </a>
                         {% endif %}
                         {% comment %} <!-- blurb! --> {% endcomment %}
-                        {{ project.excerpt }}
+                        {{ post.excerpt }}
                         {% comment %} <!-- read more? --> {% endcomment %}
                         <!-- <a href="{{ content_url(res.url) }}">Read more &raquo;</a> -->
                     </article>
