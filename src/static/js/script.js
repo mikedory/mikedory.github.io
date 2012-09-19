@@ -8,7 +8,7 @@ Portfolio page
 (function() {
   var colorizeRollover, hideAndShow, log, unColorizeRollover;
 
-  $(".project-sort-buttons li a.clickable").click(function() {
+  $(".work-sort-buttons li a.clickable").click(function() {
     var classToShow;
     if ($(this).closest('li a').hasClass('clickable')) {
       classToShow = $(this).closest('li').attr('class').split(' ')[0];
@@ -23,7 +23,7 @@ Portfolio page
     var classToShow;
     if ($(this).hasClass('clickable')) {
       classToShow = $(this).closest('h1').attr('class').split(' ')[0];
-      $('.project-sort-buttons li.' + classToShow + ' a').tab('show');
+      $('.work-sort-buttons li.' + classToShow + ' a').tab('show');
       hideAndShow(this, classToShow);
     } else {
 
@@ -37,7 +37,7 @@ Portfolio page
     return unColorizeRollover(this);
   });
 
-  $('.project-sort-buttons.li:first a').removeClass('clickable');
+  $('.work-sort-buttons.li:first a').removeClass('clickable');
 
   hideAndShow = function(div, classToShow) {
     var _this = this;
