@@ -16,3 +16,5 @@ public/
 
 .css
 src/static/css/style.css
+src/static/js/script.js
+
