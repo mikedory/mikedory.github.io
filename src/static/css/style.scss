@@ -200,17 +200,17 @@ article {
 
 	.about-me-pic {
 		// width: 300px;
-		@include respond-to(handhelds) { width: 100% ;}
-		@include respond-to(medium-screens) { width: 200px; }
+		@include respond-to(handhelds) { width: 100%;}
+		@include respond-to(medium-screens) { width: 200px; margin-right: 15px; }
 		@include respond-to(wide-screens) { width: 300px; }
 		height: 198px;
 		border: 10px solid #E5E5E5;
-		background: url("/static/images/about/me-sprite.png") no-repeat;
+		background: url("/static/images/home/me-sprite.png") no-repeat;
 		background-position: center top;
 		float: left;
 	
 		&:hover {
-			// background: url("#{$magickly}?src=#{$cdn}/images/about/me-300.png");
+			// background: url("#{$magickly}?src=#{$cdn}/images/home/me-300.png");
 			background-position: center bottom;
 			border: 10px solid darken(#E5E5E5, 10%);
 		}
