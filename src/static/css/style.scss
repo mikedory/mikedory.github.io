@@ -72,23 +72,6 @@ $break-large: 979px;
 
 // --- BOOSTRAP OVERRIDES --- //
 
-// override the tab background color
-.nav-tabs > .active > a, 
-.nav-tabs > .active > a:hover {
-	background-color: #FAFAFA;
-}
-
-.navbar .brand {
-    float: right;
-    display: block;
-    padding: 12px 20px 8px;
-    margin-left: -20px;
-    font-size: 20px;
-    font-weight: 200;
-    line-height: 1;
-    color: #ffffff;
-}
-
 code,
 pre {
   -webkit-border-radius: 0;
@@ -105,6 +88,23 @@ pre {
 	border: none;	
 }
 
+
+// override the tab background color
+.nav-tabs > .active > a, 
+.nav-tabs > .active > a:hover {
+	background-color: #FAFAFA;
+}
+
+.navbar .brand {
+    float: right;
+    display: block;
+    padding: 12px 20px 8px;
+    margin-left: -20px;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1;
+    color: #ffffff;
+}
 .navbar .nav > li > a {
 	float: none;
 	padding: 10px 10px 11px;
@@ -113,11 +113,6 @@ pre {
 	text-decoration: none;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
-
-// li {
-// 	line-height: 18px;
-// 	font-size: 13px;
-// }
 
 .navbar-inverse .navbar-inner {
 	padding-left: 20px;
@@ -137,6 +132,14 @@ pre {
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar-fixed-top .navbar-inner {
+	padding-left: 0;
+	padding-right: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
