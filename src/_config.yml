@@ -44,10 +44,10 @@ nav :
     name: Blog
     href : http://blog.doryexmachina.com
     activelink: /blog.html
-  - title: about
-    name: About
-    href : /about
-    activelink: /about.html
+  # - title: about
+  #   name: About
+  #   href : /about
+  #   activelink: /about.html
   - title: projects
     name: Projects
     href : /projects
