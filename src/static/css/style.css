@@ -83,15 +83,33 @@ article img {
   float: left;
   height: 120px; }
 
+.about-me ul {
+  list-style-type: circle;
+  padding: 10px 5px; }
+  .about-me ul li {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 27px;
+    color: gray; }
 .about-me .about-me-pic {
-  border: 10px solid #E5E5E5;
-  width: 300px;
   height: 198px;
-  float: left;
+  border: 10px solid #E5E5E5;
   background: url("/static/images/about/me-sprite.png") no-repeat;
-  background-position: center top; }
+  background-position: center top;
+  float: left; }
+  @media only screen and (max-width: 320px) {
+    .about-me .about-me-pic {
+      width: 100%; } }
+  @media only screen and (min-width: 321px) and (max-width: 978px) {
+    .about-me .about-me-pic {
+      width: 200px; } }
+  @media only screen and (min-width: 979px) {
+    .about-me .about-me-pic {
+      width: 300px; } }
   .about-me .about-me-pic:hover {
-    background-position: center bottom; }
+    background-position: center bottom;
+    border: 10px solid #cccccc; }
 .about-me .about-me-splitter {
   border-left: 1px solid #E5E5E5;
   border-right: 1px solid white;
