@@ -40,18 +40,18 @@ nav :
     name: Home
     href : /
     activelink: /index.html
+  - title: cv
+    name: CV
+    href : /cv
+    activelink: /cv.html
+  - title: work
+    name: Work
+    href : /work
+    activelink: /work.html
   - title: blog
     name: Blog
-    href : http://blog.doryexmachina.com
+    href : http://blog.dory.me
     activelink: /blog.html
-  # - title: about
-  #   name: About
-  #   href : /about
-  #   activelink: /about.html
-  - title: projects
-    name: Projects
-    href : /projects
-    activelink: /projects.html
 
 # footer links
 footer :
