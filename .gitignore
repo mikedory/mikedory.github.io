@@ -6,14 +6,15 @@
 .sass-cache/
 npm-debug.log
 src/node_modules/
-
+.env
 
 # directories
 deploy/
-#content/
-#src/content/
 node_modules/
 _offline/
+public/
 
 .css
-src/content/static/css/style.css
+src/static/css/style.css
+src/static/js/script.js
+
