@@ -353,6 +353,7 @@ article {
 		height: 198px;
 		border: 10px solid #E5E5E5;
 		background: url("/static/images/home/me-sprite.png") no-repeat;
+		@media #{$retinafy} { background: url("/static/images/home/me-sprite@2x.png") no-repeat };
 		background-position: center top;
 		float: left;
 
