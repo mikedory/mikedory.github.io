@@ -4,6 +4,7 @@
 
 // --- FANCY VARIABLES --- //
 
+// colors and laout
 $blue: #ADC5D4;
 $lgray: #999;
 $dgray: #666;
@@ -12,8 +13,17 @@ $shadow_gray: #ccc;
 $link: darken($blue, 10%); 
 $margin: 16px;
 
+// URLs
 $cdn: "http://static.dory.me.s3.amazonaws.com";
 $magickly: "http://dory-magickly.herokuapp.com";
+
+// retina stuff
+$retinafy: "only screen and (-webkit-min-device-pixel-ratio: 2)";
+
+// media query breaks
+$break-small: 320px;
+$break-large: 979px;
+
 
 // --- FANCY MIXINS --- //
 
@@ -53,9 +63,6 @@ $magickly: "http://dory-magickly.herokuapp.com";
 
 // excellent advice from The Sass Way!
 // http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
-
-$break-small: 320px;
-$break-large: 979px;
 
 @mixin respond-to($media) {
   @if $media == handhelds {
