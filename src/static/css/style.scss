@@ -352,13 +352,14 @@ article {
 		@include respond-to(wide-screens) { width: 300px; }
 		height: 198px;
 		border: 10px solid #E5E5E5;
-		background: url("/static/images/home/me-sprite.png") no-repeat;
-		@media #{$retinafy} { background: url("/static/images/home/me-sprite@2x.png") no-repeat };
-		background-position: center top;
+		background: url("/static/images/home/me-sprite.jpg") no-repeat;
+		background-size: 300px 396px;
+		@media #{$retinafy} { background: url("/static/images/home/me-sprite@2x.jpg") no-repeat; background-size: 300px 396px; background-position: -110px -210px; clear: both; };
+		background-position: center bottom;
 		float: left;
 
 		&:hover {
-			background-position: center bottom;
+			background-position: center top;
 		}
 	}
 
