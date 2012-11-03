@@ -371,8 +371,9 @@ article {
 		margin: 5px 15px 0 35px;
 	}
 
-	.about-me-text {
-		// err, nothing for now I guess.
+	.about-me-bullets {
+		@include respond-to(handhelds) { clear: both; }
+		@include respond-to(medium-screens) { clear: both; }
 	}
 }
 
