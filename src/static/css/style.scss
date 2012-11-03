@@ -361,14 +361,13 @@ article {
 		@media #{$retina} { 
 			background: url("/static/images/home/me-sprite@2x.jpg") no-repeat;
 		};
-
 		// retina handhelds in portrait
-		@media #{$retina} and (orientation : portrait) { 
+		@media #{$retina} and (orientation: portrait) { 
 			background: url("/static/images/home/me-sprite@2x.jpg") no-repeat;
 			background-position: -110px -210px;
 		};
 		// retina handhelds in landscape
-		@media #{$retina} and (orientation : landscape) { 
+		@media #{$retina} and (orientation: landscape) { 
 			background: url("/static/images/home/me-sprite@2x.jpg") no-repeat;
 			background-position: -110px -210px;
 		};
