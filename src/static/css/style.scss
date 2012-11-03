@@ -4,6 +4,7 @@
 
 // --- FANCY VARIABLES --- //
 
+// colors and laout
 $blue: #ADC5D4;
 $lgray: #999;
 $dgray: #666;
@@ -12,8 +13,17 @@ $shadow_gray: #ccc;
 $link: darken($blue, 10%); 
 $margin: 16px;
 
+// URLs
 $cdn: "http://static.dory.me.s3.amazonaws.com";
 $magickly: "http://dory-magickly.herokuapp.com";
+
+// retina stuff
+$retinafy: "only screen and (-webkit-min-device-pixel-ratio: 2)";
+
+// media query breaks
+$break-small: 320px;
+$break-large: 979px;
+
 
 // --- FANCY MIXINS --- //
 
@@ -53,9 +63,6 @@ $magickly: "http://dory-magickly.herokuapp.com";
 
 // excellent advice from The Sass Way!
 // http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
-
-$break-small: 320px;
-$break-large: 979px;
 
 @mixin respond-to($media) {
   @if $media == handhelds {
@@ -220,14 +227,11 @@ h6 {
 
 body {
 
-	// color: darken($blue,40%);
+	// font funtimes
 	@include font_adelle(100, normal);
+	font-size: 13px;
 
-	a {
-		text-decoration: none;
-		color: $link;		
-	}
-
+	// background details
 	background-color: #FAFAFA; 
 	background-image: -moz-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px); 
 	-moz-background-size: 22px 22px;
@@ -235,19 +239,14 @@ body {
 	-webkit-background-size: 22px 22px; 
 	background-size: 12px 12px;
 
-	font-size: 13px;
 
-}
-
-// --- CONTAINERS --- //
-
-.container {
-// 	@include outer_shadow($background_white, $shadow_gray);
-}
-
-	.intro_container {
-		// max-width: 900px
+	a {
+		text-decoration: none;
+		color: $link;		
 	}
+
+}
+
 
 // --- HEADER --- //
 
@@ -285,6 +284,7 @@ header {
 
 }
 
+
 // --- CONTENT ---- //
 
 .no_hero_padder {
@@ -296,7 +296,6 @@ header {
 }
 
 article {
-// 	@include outer_shadow($background_white, $shadow_gray);
 	img {
 		margin: 0 0 15px 0;
 	}
@@ -348,20 +347,19 @@ article {
 	}
 
 	.about-me-pic {
-		// width: 300px;
 		@include respond-to(handhelds) { width: 100%;}
 		@include respond-to(medium-screens) { width: 200px; margin-right: 15px; }
 		@include respond-to(wide-screens) { width: 300px; }
 		height: 198px;
 		border: 10px solid #E5E5E5;
-		background: url("/static/images/home/me-sprite.png") no-repeat;
-		background-position: center top;
+		background: url("/static/images/home/me-sprite.jpg") no-repeat;
+		background-size: 300px 396px;
+		@media #{$retinafy} { background: url("/static/images/home/me-sprite@2x.jpg") no-repeat; background-size: 300px 396px; background-position: -110px -210px; clear: both; };
+		background-position: center bottom;
 		float: left;
 
 		&:hover {
-			// background: url("#{$magickly}?src=#{$cdn}/images/home/me-300.png");
-			background-position: center bottom;
-			// border: 10px solid darken(#E5E5E5, 3%);
+			background-position: center top;
 		}
 	}
 
@@ -377,6 +375,7 @@ article {
 		// err, nothing for now I guess.
 	}
 }
+
 
 // --- PORTFOLIO ---- //
 
@@ -404,7 +403,6 @@ article {
 	li.active a {
 		color: #999;
 	}
-
 }
 
 // changes the colors of the sub-headers in the portfolio
@@ -418,6 +416,7 @@ article {
 	}
 
 }
+
 
 // --- FOOTER --- //
 
