@@ -18,9 +18,8 @@ production_url : http://dory.me
 
 # analytics
 analytics :
-  google : 
-    tracking_id : 'UA-34096736-1'
-
+  google :
+    tracking_id : UA-34096736-1
 
 # -----------------------------------
 # Personalization and details
@@ -48,18 +47,10 @@ nav :
     name: Blog
     href : http://blog.dory.me
     activelink: /blog.html
-  # - title: cv
-  #   name: CV
-  #   href : /cv
-  #   activelink: /cv.html
   # - title: work
   #   name: Work
   #   href : /work
   #   activelink: /work.html
-  # - title: blog
-  #   name: Blog
-  #   href : http://blog.dory.me
-  #   activelink: /blog.html
 
 # footer links
 footer :
