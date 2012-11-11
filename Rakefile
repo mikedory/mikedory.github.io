@@ -36,7 +36,7 @@ namespace :heroku do
 
     desc 'build and export the coffee (and make one file of it all)'
     task :coffee do
-        file "./public/static/js/script.js" => Dir[File.join(Rails.root, './static/js/*.coffee')] do |t|
+        file "./public/static/js/script.js" => Dir['./static/js/*.coffee'] do |t|
             Rake::Task["bistro_car"].invoke
         end
     end    
