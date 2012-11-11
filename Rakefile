@@ -41,13 +41,12 @@ namespace :heroku do
         end
     end    
 
-    desc "Generate the cached bundle/default.js file from app/scripts/*.coffee files"
+    desc "Turn the .coffee files into .js files"
     task :bistro_car => :environment do
         path = "./public/static/js/script.js"
         puts "Building *.coffee -> #{path}"
         File.open(path, "w") { |file| file << BistroCar::Bundle.new('default').to_javascript }
     end
-
 
     desc 'build and export the sass'
     task :sass do
