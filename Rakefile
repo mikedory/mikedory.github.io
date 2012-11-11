@@ -1,5 +1,8 @@
 require 'rubygems'
 require 'rake'
+require 'sass'
+require 'barista'
+require 'coffee-rails'
 
 # by default, build and serve locally
 task :default => 'local:serve'
