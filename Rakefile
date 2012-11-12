@@ -34,10 +34,10 @@ end
 # all the fancy heroku options
 namespace :heroku do
 
-    desc 'build and export the coffee (and make one file of it all)'
-    task :coffee do
-        CoffeeScript.compile File.read("script.coffee")
-    end
+    # desc 'build and export the coffee (and make one file of it all)'
+    # task :coffee do
+    #     CoffeeScript.compile File.read("src/static/js/script.coffee")
+    # end
 
     desc 'build and export the sass'
     task :sass do
@@ -45,7 +45,7 @@ namespace :heroku do
     end
 
     desc 'serve on heroku'
-    task :serve => [:coffee, :sass] do
+    task :serve => [:sass] do
         sh 'jekyll --no-auto --no-server ./src/ ./public/'
         sh 'bundle exec thin start -p $PORT -e $RACK_ENV'
     end
