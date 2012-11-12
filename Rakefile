@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'rake'
 require 'sass'
-require 'barista'
+require 'coffee-script'
 
 # by default, build and serve locally
 task :default => 'local:serve'
@@ -36,22 +36,13 @@ namespace :heroku do
 
     desc 'build and export the coffee (and make one file of it all)'
     task :coffee do
-        file "./public/static/js/script.js" => Dir['./static/js/*.coffee'] do |t|
-            Rake::Task["bistro_car"].invoke
-        end
-    end    
-
-    desc "Turn the .coffee files into .js files"
-    task :bistro_car => :environment do
-        path = "./public/static/js/script.js"
-        puts "Building *.coffee -> #{path}"
-        File.open(path, "w") { |file| file << BistroCar::Bundle.new('default').to_javascript }
+        CoffeeScript.compile File.read("script.coffee")
     end
 
     desc 'build and export the sass'
     task :sass do
         sh 'sass --update ./src/static/css/style.scss:src/static/css/style.css'
-    end    
+    end
 
     desc 'serve on heroku'
     task :serve => [:coffee, :sass] do
