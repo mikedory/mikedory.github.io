@@ -60,6 +60,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
+  coffee-script-source
   foreman
   heroku
   jekyll
