@@ -13,7 +13,9 @@ headertextsmall: I make things and drink coffee.
     <div class="about-me-pic span3">&nbsp;</div>
     <div class="about-me-splitter span1 visible-desktop">&nbsp;</div>
     <ul class="about-me-bullets span5">
-        <li>Executive Director of Technology at <a href="http://kbsp.com">kbs+ | Spies &amp; Assassins</a>.</li>
+        <li>Executive Director of Technology at <a href="http://kbsp.com">
+        <br/>
+        kbs+ | Spies &amp; Assassins</a>.</li>
         <li>Co-author of the book <a href="http://shop.oreilly.com/product/0636920021292.do">Introduction to Tornado</a>, published by <a href="http://oreilly.com">O'Reilly Media</a>.</li>
         <li>Occasional adjunct faculty at <a href="http://itp.nyu.edu">NYU ITP</a>.</li>
         <li>Technologist, artist, educator, and general coffee nerd.</li>
