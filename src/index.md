@@ -24,7 +24,7 @@ headertextsmall: I make things and drink coffee.
 
 <div class="row">
     <div class="about-me-text span9">
-        <p>I live in Jersey City, NJ with my wife, daughter, and dog, and I work in New York, NY.</p>
+        <p>I live in Maplewood, NJ with my wife, daughter, and dog, and I work in New York, NY.</p>
         <p>Want to get in touch? <a href="mailto:mike@dory.me">Drop me a line</a>!</p>
     </div>
 </div>
