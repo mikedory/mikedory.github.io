@@ -1,0 +1,73 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>      <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>      <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+
+    <title>{{ page.title }}</title>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- ios viewport thingies -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- iconzz -->
+    <link rel="shortcut icon" href="{{ BASE_URL }}/static/images/_favicon.ico">
+    <link rel="apple-touch-icon" href="{{ BASE_URL }}/static/images/_apple-touch-icon.png">
+
+    <!-- typekit! -->
+    <script type="text/javascript" src="https://use.typekit.com/yna6ipo.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <!-- ermahgerd, stherl sherts -->
+    <link rel="stylesheet" href="{{ BASE_URL }}/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ BASE_URL }}/static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="{{ BASE_URL }}/static/css/style.css">
+    <link rel="stylesheet" href="{{ BASE_URL }}/static/css/font-awesome.css">
+    <link rel="stylesheet" href="{{ BASE_URL }}/static/css/rainbowjs-theme-github.css">
+
+    <script src="{{ BASE_URL }}/static/js/libs/modernizr-1.7.min.js"></script>
+</head>
+<body>
+
+    {% include header_nav %}
+
+    <div class="container main_container">
+
+        {{ content }}
+
+        <hr>
+
+        {% include footer %}
+
+    </div> <!-- end of container -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ BASE_URL }}/static/js/libs/jquery-1.7.1.min.js">\x3C/script>')</script>
+
+    <!-- Bootstrap goodies -->
+    <script src="{{ BASE_URL }}/static/js/bootstrap.js"= ></script>
+    <script src="{{ BASE_URL }}/static/js/bootstrap-collapse.js"= ></script>
+    <script src="{{ BASE_URL }}/static/js/libs/rainbow-custom.min.js"></script>
+
+    <!-- site-specific scripts -->
+    <script src="{{ BASE_URL }}/static/js/script.js"= ></script>
+
+    <!--[if lt IE 7 ]>
+        <script src="js/libs/dd_belatedpng.js"></script>
+        <script>DD_belatedPNG.fix('img, .png_bg'); </script>
+    <![endif]-->
+
+    <!-- analytic partytimes  -->
+    {% include google_analytics %}
+
+</body>
+</html>
