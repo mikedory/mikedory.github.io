@@ -11,8 +11,8 @@ server_port: 5000
 permalink: /:categories/:title 
 
 # source and deploy deets
-source : .
-destination : ../public
+# source : .
+# destination : ../public
 # plugins:     ./_plugins
 production_url : http://dory.me
 
