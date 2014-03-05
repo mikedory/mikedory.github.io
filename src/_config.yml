@@ -4,10 +4,10 @@
 
 # jekyll setup details
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "migration/", ".gitignore", "Gemfile", "Gemfile.lock"]
-auto: false
-server: false
-pygments: true
-server_port: 5000
+# auto: false
+# server: false
+# pygments: true
+# server_port: 5000
 permalink: /:categories/:title 
 
 # source and deploy deets
