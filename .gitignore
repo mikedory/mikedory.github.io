@@ -1,8 +1,6 @@
 *.pyc
 *~
 .DS_Store
-.python
-.hyde_deps
 .sass-cache/
 npm-debug.log
 src/node_modules/
