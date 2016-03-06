@@ -1,3 +1,4 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "http://dory.me/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Mike Dory | Hi!"
+theme = "hyde-x"
