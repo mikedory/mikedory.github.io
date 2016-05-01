@@ -1,4 +1,43 @@
 baseurl = "http://dory.me/"
 languageCode = "en-us"
 title = "Mike Dory | Hi!"
-theme = "hyde-x"
+# theme = "hyde-x"
+theme = "hugo-identity-theme"
+
+[author]
+    name = "Mike Dory"
+
+
+
+[params]
+    tagline = "I make things and drink coffee"
+
+
+    defaultDescription = "Your default page description"
+    defaultKeywords = "your,default,page,keywords"
+
+
+    favicon = "favicon.ico"
+    appletouchicon = "apple-touch-icon-precomposed.png"
+    background = "bg1.jpg"
+    avatar = "jane.jpg"
+
+    # Personal settings
+
+    name = "Jane Doe"
+    position = "Senior Psychonautics Engineer"
+    # theme = "theme-base-08"
+
+
+    # Sidebar social links, these must be full URLs.
+    github = "https://github.com/mikedory"
+    bitbucket = ""
+    stackOverflow = ""
+    linkedin = "mikedory"
+    googleplus = ""
+    facebook = "michael.dory"
+    twitter = ""
+    youtube = ""
+
+    # Other social-like sidebar links
+    rss = false  # switch to true to enable RSS icon link
