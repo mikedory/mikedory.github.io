@@ -15,8 +15,9 @@ theme = "hugo-sustain"
 [params]
     # To provide some metadata for search engines feel free to add a few
     # information about you and your website.
-    name = "Your name"
+    name = "Mike Dory"
     description = "Describe your website"
+    avatar = "me-bw-square.jpg"
 
     # Enable Google Analytics by inserting your tracking code
     googleAnalytics = ""
@@ -118,3 +119,8 @@ theme = "hugo-sustain"
             email = "Email"
             message = "Message"
             submit = "Send message"
+
+
+[social]
+    twitter = "mike_dory"
+    email = "mike@dory.me"
