@@ -1,0 +1,503 @@
+/* ==|== primary styles =====================================================
+   Author: Mike Dory | http://dory.me
+   ========================================================================== */
+
+// --- FANCY VARIABLES --- //
+
+// colors and laout
+$blue: #ADC5D4;
+$lgray: #999;
+$dgray: #666;
+$background_white: #FAFAFA;
+$shadow_gray: #ccc;
+$link: darken($blue, 10%); 
+$margin: 16px;
+
+// URLs
+$cdn: "http://static.dory.me.s3.amazonaws.com";
+$magickly: "http://dory-magickly.herokuapp.com";
+
+// retina stuff
+$retina: "only screen and (-webkit-min-device-pixel-ratio: 2)";
+
+// media query breaks
+$break-small: 320px;
+$break-large: 979px;
+
+
+// --- FANCY MIXINS --- //
+
+// outer shadow handlerifying
+@mixin outer_shadow($background_white, $shadow_gray) {
+	background-color: $background_white;
+	margin: 0 auto;
+	padding: 12px;
+	-moz-box-shadow: 0px 4px 12px $shadow_gray;
+	-webkit-box-shadow: 0px 4px 12px $shadow_gray;
+	box-shadow: 0px 4px 12px $shadow_gray; 
+	filter:  progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='$shadow_gray');
+	-ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='$shadow_gray')";
+}
+
+// teh fonts
+@mixin font_adelle($weight, $style) {
+	font-family: adelle-1,adelle-2,serif;
+	font-weight: $weight;
+	font-style: $style;
+}
+ 
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('/static/fonts/fontawesome-webfont.eot');
+	src: url('/static/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+		url('/static/fonts/fontawesome-webfont.woff') format('woff'),
+		url('/static/fonts/fontawesome-webfont.ttf') format('truetype'),
+		url('/static/fonts/fontawesome-webfont.svgz#FontAwesomeRegular') format('svg'),
+		url('/static/fonts/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+// --- MEDIA QUERIES --- //
+
+// excellent advice from The Sass Way!
+// http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+
+// --- BOOSTRAP OVERRIDES --- //
+
+code,
+pre {
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+
+code {
+	border: none;
+}
+
+pre {
+	background-color: inherit;
+	border: none;	
+}
+
+
+// override the tab background color
+.nav-tabs > .active > a, 
+.nav-tabs > .active > a:hover {
+	background-color: #FAFAFA;
+}
+
+.navbar .brand {
+    float: right;
+    display: block;
+    padding: 12px 20px 5px 20px;
+    margin-left: -20px;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1;
+    color: #ffffff;
+}
+.navbar .nav > li > a {
+	float: none;
+	padding: 10px 10px 11px;
+	line-height: 19px;
+	color: #999;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar-inverse .navbar-inner {
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #2C2C2C;
+	background-image: -moz-linear-gradient(top, #333, #222);
+	background-image: -ms-linear-gradient(top, #333, #222);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#222));
+	background-image: -webkit-linear-gradient(top, #333, #222);
+	background-image: -o-linear-gradient(top, #333, #222);
+	background-image: linear-gradient(top, #333, #222);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar-fixed-top .navbar-inner {
+	padding-left: 0;
+	padding-right: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #333;
+}
+
+.hero-unit {
+	h1, h2, h3, h4, h5, h6 {
+		color: #333;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: bold;
+	color: #333333;
+	text-rendering: optimizelegibility;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+	font-weight: normal;
+	color: #999999;
+}
+h1 {
+	font-size: 30px;
+	line-height: 36px;
+}
+h1 small {
+	font-size: 18px;
+}
+h2 {
+	font-size: 24px;
+	line-height: 36px;
+}
+h2 small {
+	font-size: 18px;
+}
+h3 {
+	line-height: 27px;
+	font-size: 18px;
+}
+h3 small {
+	font-size: 14px;
+}
+h4, h5, h6 {
+	line-height: 18px;
+}
+h4 {
+	font-size: 14px;
+}
+h4 small {
+	font-size: 12px;
+}
+h5 {
+	font-size: 12px;
+}
+h6 {
+	font-size: 11px;
+	color: #999999;
+	text-transform: uppercase;
+}
+
+.hero-unit p {
+	color: gray;
+}
+
+
+// --- BODY --- //
+
+body {
+
+	// font funtimes
+	@include font_adelle(100, normal);
+	font-size: 13px;
+
+	// background details
+	background-color: #FAFAFA; 
+	background-image: -moz-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px); 
+	-moz-background-size: 22px 22px;
+	background-image: -webkit-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 12px, rgba(0, 0, 0, 0) 12px, rgba(0, 0, 0, 0) 15px);
+	-webkit-background-size: 22px 22px; 
+	background-size: 12px 12px;
+
+
+	a {
+		text-decoration: none;
+		color: $link;		
+	}
+
+}
+
+
+// --- HEADER --- //
+
+header {
+	
+	h1 {
+		@include font_adelle(700, normal);
+		text-shadow: 1px 1px 2px lighten($lgray, 25%);
+		display: inline;
+		margin: 0 40px 0 0;
+	}
+
+	h2 {
+		@include font_adelle(100, italic);
+		text-shadow: 1px 1px 1px lighten($lgray, 25%);
+		display: inline;
+		font-size: 14px;
+	}
+
+	ul {
+		margin: 20px 0 20px 0;
+		text-decoration: none;
+		text-shadow: 1px 1px 0px $lgray;
+	}
+	
+	li {
+		@include font_adelle(100, italic);
+		display: inline;
+		margin: 0 15px 0 0;
+	}
+
+	a {
+		color: lighten($link, 25%);
+	}
+
+}
+
+
+// --- CONTENT ---- //
+
+.no_hero_padder {
+	margin: 40px 0 30px 0;
+}
+
+.main_container {
+	@include outer_shadow($background_white, $shadow_gray);
+}
+
+article {
+	img {
+		margin: 0 0 15px 0;
+	}
+}
+
+.email-me {
+	margin-top: 15px;
+}
+
+.portfolio_carousel_div {
+	width: 700px;
+	margin: auto;
+}
+	.portfolio_carousel_div .item img {
+		margin: auto;
+		height: 200px;
+	}
+
+
+
+// --- ABOUT ME ---- //
+
+.things_i_do {
+
+	.icon_text {
+		font-size: 2.2em;
+		margin: 0 10px 0 5px;
+		display: inline;
+		float: left;
+		height: 120px;
+	}
+
+}
+
+
+.about-me {
+
+	ul {
+		list-style-type: circle;
+		padding: 10px 5px;
+
+		li {
+			margin: 10px 0;
+			font-size: 18px;
+			font-weight: 200;
+			line-height: 27px;
+			color: gray;
+		}
+	}
+
+	.about-me-pic {
+		@include respond-to(handhelds) { width: 100%;}
+		@include respond-to(medium-screens) { width: 200px; margin-right: 15px; }
+		@include respond-to(wide-screens) { width: 300px; }
+		height: 198px;
+		border: 10px solid #E5E5E5;
+		background: url("/static/images/home/me-sprite.jpg") no-repeat;
+		background-size: 300px 396px;
+		background-position: center bottom;
+		float: left;
+
+		// retina devices
+		@media #{$retina} { 
+			background-image: url("/static/images/home/me-sprite@2x.jpg") no-repeat;
+		};
+		
+		&:hover {
+			background-position: center top;
+		}
+	}
+
+	.about-me-splitter {
+		border-left: 1px solid #E5E5E5;
+		border-right: 1px solid white;
+		height: 200px;
+		width: 1px;
+		margin: 5px 15px 0 35px;
+	}
+
+	.about-me-bullets {
+		@include respond-to(handhelds) { clear: both; }
+		@include respond-to(medium-screens) { margin: -20px 0 0 20px; }
+	}
+}
+
+
+// --- PORTFOLIO ---- //
+
+.work-sort-buttons {
+	@include font_adelle(700, normal);
+	font-size: 20px;
+	color: #666;
+
+	li {
+		// temp hack to work around having too many categories
+		// @TODO: remove this, and get rid of a category in the portfolio.
+		margin-left: 5px;
+
+		a {
+			color: #555;
+		}
+		a:hover {
+			// font-style: italic;
+		}
+		// a:active {
+		// 	color: #999;
+		// 	background-color: #999;
+		// }
+	}
+	li.active a {
+		color: #999;
+	}
+}
+
+// changes the colors of the sub-headers in the portfolio
+.post-group-holder .post-group-all h1 {
+	a {
+		color: #333;
+	}
+
+	a:hover {
+		color: #999;
+	}
+
+}
+
+
+// --- FOOTER --- //
+
+p {
+	font-size: 14px;
+	font-family: Georgia;
+	color: darken($lgray,10%);
+}
+
+footer {
+	font-size: 10px;
+	margin-top: 24px;
+	// text-shadow: 1px 1px 1px $lgray;
+
+	.icon_text {
+		font-size: 1em;
+		line-height: 100%;
+	}
+
+	.social_networks {
+		display: inline;
+		// margin: 5px 0 50px 0;
+
+		.icon_text a {
+			font-size: .9em;
+			margin-right: .1em;
+		}
+	}
+}
+
+
+// --- Special things --- //
+
+code {
+	font-family: Courier;
+}
+
+blockquote {
+	font-style: italic;
+	color: lighten($blue, 5%);
+}
+
+.bottomborder {
+	border-bottom: 1px solid #999;
+	margin-bottom: 15px;
+}
+
+span.amp {
+	font-family: Baskerville, Palatino, "Book Antiqua", serif;
+	font-style: italic;
+}
+
+span.icon_text {
+	font-family: FontAwesome;
+	font-size: 2em;
+	color: #333;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	text-align: center;
+	left: auto;
+	right: auto;
+}
+
+.bottompad10 {
+	padding-bottom: 10px;
+}
+
+.hidden {
+	display: none;
+}
