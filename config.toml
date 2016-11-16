@@ -9,6 +9,19 @@ theme = "hugo-sustain"
 [author]
     name = "Mike Dory"
 
+[menu]
+    # [[menu.main]]
+    #     name = "about me"
+    #     identifier = "about"
+    #     url = "/about/"
+    [[menu.main]]
+        name = "CV"
+        identifier = "CV"
+        url = "http://linkedin.com/in/mikedory"
+    [[menu.main]]
+        name = "blog"
+        identifier = "blog"
+        url = "buh"
 
 [params]
     # To provide some metadata for search engines feel free to add a few
