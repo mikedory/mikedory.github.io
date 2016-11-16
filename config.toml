@@ -3,7 +3,9 @@ languageCode = "en-us"
 title = "Mike Dory | Hi!"
 # theme = "hyde-x"
 # theme = "hugo-identity-theme"
-theme = "hugo-strata-theme"
+# theme = "hugo-strata-theme"
+theme = "hugo-sustain"
+
 
 [author]
     name = "Mike Dory"
