@@ -28,9 +28,11 @@ googleanalytics = "UA-34096736-1"
     name = "Mike Dory"
     description = "The personal homepage of Mike Dory."
     avatar = "me-bw-square-tightcrop.jpg"
+    resume = "mike-dory-resume.pdf"
 
 [social]
     Twitter = "mike_dory"
     Email = "mike@dory.me"
     LinkedIn = "mikedory"
     Github = "mikedory"
+    Facebook="michael.dory"
