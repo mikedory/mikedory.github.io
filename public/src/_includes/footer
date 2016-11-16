@@ -1,0 +1,8 @@
+<footer>
+    <span class="copyright">&copy; Mike Dory, 2006-2014</span>
+    <div class="row social_networks right">
+        {% for footeritem in site.footer %}
+        <span class="icon_text"><a href="{{ footeritem.href }}" class="{{ footeritem.class }}"></a></span>
+        {% endfor %}
+    </div>
+</footer>

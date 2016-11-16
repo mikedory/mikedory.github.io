@@ -1,0 +1,18 @@
+*.pyc
+*~
+.DS_Store
+.sass-cache/
+npm-debug.log
+src/node_modules/
+.env
+
+# directories
+deploy/
+node_modules/
+_offline/
+public/
+
+.css
+src/static/css/style.css
+src/static/js/script.js
+
