@@ -2,7 +2,8 @@ baseurl = "http://dory.me/"
 languageCode = "en-us"
 title = "Mike Dory | Hi!"
 # theme = "hyde-x"
-theme = "hugo-identity-theme"
+# theme = "hugo-identity-theme"
+theme = "hugo-strata-theme"
 
 [author]
     name = "Mike Dory"
@@ -10,34 +11,108 @@ theme = "hugo-identity-theme"
 
 
 [params]
-    tagline = "I make things and drink coffee"
+    # To provide some metadata for search engines feel free to add a few
+    # information about you and your website.
+    name = "Your name"
+    description = "Describe your website"
+
+    # Enable Google Analytics by inserting your tracking code
+    googleAnalytics = ""
 
 
-    defaultDescription = "Your default page description"
-    defaultKeywords = "your,default,page,keywords"
+    [params.sidebar]
+        # Replace the avatar with a picture of your own under static/images
+        avatar = "avatar.jpg"
+        # Use Markdown to format the string. This works nearly all over the theme
+        bio = "**Hi! I'm Mike.** I make things and drink coffee."
+        # The icons will be shown if you enter your username
+        twitter = "mike_dory"
+        github = "mikedory"
+        dribbble = ""
+        facebook = ""
+
+        copyright = [
+            "&copy; Mike Dory",
+            # "Design: [HTML5 UP](//html5up.net)",
+            # "Demo Images: [Unsplash](//unsplash.com/)"
+        ]
 
 
-    favicon = "favicon.ico"
-    appletouchicon = "apple-touch-icon-precomposed.png"
-    background = "bg1.jpg"
-    avatar = "jane.jpg"
-
-    # Personal settings
-
-    name = "Jane Doe"
-    position = "Senior Psychonautics Engineer"
-    # theme = "theme-base-08"
+    [params.about]
+        title = "A work in progress, at best."
+        content = "Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia."
 
 
-    # Sidebar social links, these must be full URLs.
-    github = "https://github.com/mikedory"
-    bitbucket = ""
-    stackOverflow = ""
-    linkedin = "mikedory"
-    googleplus = ""
-    facebook = "michael.dory"
-    twitter = ""
-    youtube = ""
+    [params.portfolio]
+        title = "Recent Work"
 
-    # Other social-like sidebar links
-    rss = false  # switch to true to enable RSS icon link
+        # The images and thumbnails are stored under static/images
+        # Create and change subfolders as you like
+        [[params.portfolio.gallery]]
+            image = "fulls/01.jpg"
+            thumb = "thumbs/01.jpg"
+            title = "Lorem ipsum dolor."
+            description = "Lorem ipsum dolor sit amet."
+
+        [[params.portfolio.gallery]]
+            image = "fulls/02.jpg"
+            thumb = "thumbs/02.jpg"
+            title = "Lorem ipsum dolor."
+            description = "Lorem ipsum dolor sit amet."
+
+        [[params.portfolio.gallery]]
+            image = "fulls/03.jpg"
+            thumb = "thumbs/03.jpg"
+            title = "Lorem ipsum dolor."
+            description = "Lorem ipsum dolor sit amet."
+
+        [[params.portfolio.gallery]]
+            image = "fulls/04.jpg"
+            thumb = "thumbs/04.jpg"
+            title = "Lorem ipsum dolor."
+            description = "Lorem ipsum dolor sit amet."
+
+        [[params.portfolio.gallery]]
+            image = "fulls/05.jpg"
+            thumb = "thumbs/05.jpg"
+            title = "Lorem ipsum dolor."
+            description = "Lorem ipsum dolor sit amet."
+
+        [[params.portfolio.gallery]]
+            image = "fulls/06.jpg"
+            thumb = "thumbs/06.jpg"
+            title = "Lorem ipsum dolor."
+            description = "Lorem ipsum dolor sit amet."
+
+
+    [params.contact]
+        title = "Get In Touch"
+        content = "Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor."
+
+        address = [
+            "1234 Somewhere Rd.",
+            "Nashville, TN 00000",
+            "United States"
+        ]
+        phone = "000-000-0000"
+
+        # Since this template is static, the contact form uses www.formspree.io as a
+        # proxy. The form makes a POST request to their servers to send the actual
+        # email. Visitors can send up to a 1000 emails each month for free.
+        #
+        # What you need to do for the setup?
+        #
+        # - set your email address under 'email' below
+        # - upload the generated site to your server
+        # - send a dummy email yourself to confirm your account
+        # - click the confirm link in the email from www.formspree.io
+        # - you're done. Happy mailing!
+        email = "hello@example.com"
+
+        [params.contact.form]
+            # Set custom strings for the form if your native
+            # language isn't English
+            name = "Name"
+            email = "Email"
+            message = "Message"
+            submit = "Send message"
