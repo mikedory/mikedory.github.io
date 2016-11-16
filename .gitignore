@@ -9,10 +9,5 @@ src/node_modules/
 # directories
 deploy/
 node_modules/
-_offline/
 public/
-
-.css
-src/static/css/style.css
-src/static/js/script.js
 
