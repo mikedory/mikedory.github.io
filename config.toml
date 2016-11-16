@@ -42,5 +42,7 @@ theme = "hugo-sustain"
 
 
 [social]
-    twitter = "mike_dory"
-    email = "mike@dory.me"
+    Twitter = "mike_dory"
+    Email = "mike@dory.me"
+    LinkedIn = "mikedory"
+    Github = "mikedory"
