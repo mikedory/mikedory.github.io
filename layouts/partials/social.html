@@ -12,12 +12,13 @@
 	  <a href="http://twitter.com/{{ .Site.Social.Twitter }}"><i class="fa fa-twitter"></i></a>
     {{ end }}
 
+    {{ if .Site.Social.Facebook }}
+      <a href="http://facebook.com/{{ .Site.Social.Facebook }}"><i class="fa fa-facebook"></i></a>
+    {{ end }}
+
     {{ if .Site.Social.LinkedIn }}
 	  <a href="http://linkedin.com/in/{{ .Site.Social.LinkedIn }}"><i class="fa fa-linkedin"></i></a>
     {{ end }}
 
-    {{ if .Site.Social.Stackoverflow }}
-	  <a href="http://stackoverflow.com/{{ .Site.Social.Stackoverflow }}"><i class="fa fa-stack-overflow"></i></a>
-    {{ end }}
 	</h4>
 </div>
