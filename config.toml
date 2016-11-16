@@ -1,8 +1,6 @@
 baseurl = "http://dory.me/"
 languageCode = "en-us"
 title = "Mike Dory | Hi!"
-# theme = "hugo-identity-theme"
-# theme = "hugo-strata-theme"
 theme = "hugo-sustain"
 googleanalytics = "UA-34096736-1"
 
