@@ -14,9 +14,9 @@ googleanalytics = "UA-34096736-1"
     #     identifier = "about"
     #     url = "/about/"
     [[menu.main]]
-        name = "CV"
-        identifier = "CV"
-        url = "http://linkedin.com/in/mikedory"
+        name = "resume"
+        identifier = "resume"
+        url = "/pdf/mike-dory-resume.pdf"
     [[menu.main]]
         name = "blog"
         identifier = "blog"
