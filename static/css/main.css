@@ -82,6 +82,11 @@ body {
     color: #6b6b6b;
     background-color: #ffffff;
   }
+
+  /* hiding stuff on mobile */
+  .navbar {
+    display: none;
+  }
 }
 
 /* Custom page CSS
@@ -168,6 +173,12 @@ body {
   text-align: left;
   line-height: 30px;
   font-size: 18px;
+}
+
+/* Main page stuff
+-------------------------------------------------- */
+
+#about h3 {
 }
 
 /* Footer 
