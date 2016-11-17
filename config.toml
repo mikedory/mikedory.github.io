@@ -20,7 +20,7 @@ googleanalytics = "UA-34096736-1"
     [[menu.main]]
         name = "blog"
         identifier = "blog"
-        url = "buh"
+        url = "http://blog.dory.me/"
 
 [params]
     # To provide some metadata for search engines feel free to add a few
@@ -35,4 +35,3 @@ googleanalytics = "UA-34096736-1"
     Email = "mike@dory.me"
     LinkedIn = "mikedory"
     Github = "mikedory"
-    # Facebook = "michael.dory"
